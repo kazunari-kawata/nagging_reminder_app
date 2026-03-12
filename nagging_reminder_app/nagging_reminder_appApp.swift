@@ -1,32 +1,25 @@
-//
-//  nagging_reminder_appApp.swift
-//  nagging_reminder_app
-//
-//  Created by Kawata Kazunari on 2026/03/10.
-//
-
 import SwiftUI
-import SwiftData
+import UserNotifications
 
 @main
 struct nagging_reminder_appApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var settings = AppSettings()
+    @State private var taskManager = TaskManager()
+    @State private var timerManager = TimerManager()
+    @State private var notificationDelegate = NotificationDelegate()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(settings)
+                .environment(taskManager)
+                .environment(timerManager)
+                .preferredColorScheme(settings.theme.colorScheme)
+                .task {
+                    notificationDelegate.taskManager = taskManager
+                    UNUserNotificationCenter.current().delegate = notificationDelegate
+                    taskManager.requestNotificationPermission()
+                }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
