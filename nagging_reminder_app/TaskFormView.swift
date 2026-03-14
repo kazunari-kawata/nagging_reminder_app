@@ -3,286 +3,318 @@ import SwiftUI
 // MARK: - ScheduleTypeSelection (picker helper)
 
 enum ScheduleTypeSelection: String, CaseIterable, Identifiable {
-    case once, daily, weekdays, customWeekdays, weekly, monthly, yearly
-    var id: String { rawValue }
+  case once, daily, weekdays, customWeekdays, weekly, monthly, yearly
+  var id: String { rawValue }
 
-    var displayName: String {
-        switch self {
-        case .once:           return "Once"
-        case .daily:          return "Daily"
-        case .weekdays:       return "Weekdays (Mon–Fri)"
-        case .customWeekdays: return "Custom Days"
-        case .weekly:         return "Weekly"
-        case .monthly:        return "Monthly"
-        case .yearly:         return "Yearly"
-        }
+  var displayName: String {
+    switch self {
+    case .once: return "Once"
+    case .daily: return "Daily"
+    case .weekdays: return "Weekdays (Mon–Fri)"
+    case .customWeekdays: return "Custom Days"
+    case .weekly: return "Weekly"
+    case .monthly: return "Monthly"
+    case .yearly: return "Yearly"
     }
+  }
 }
 
 // MARK: - TaskFormMode
 
 enum TaskFormMode {
-    case add
-    case edit(TaskItem)
+  case add
+  case edit(TaskItem)
 }
 
 // MARK: - TaskFormView
 
 struct TaskFormView: View {
-    @Environment(TaskManager.self) private var taskManager
-    @Environment(\.dismiss) private var dismiss
+  @Environment(TaskManager.self) private var taskManager
+  @Environment(\.dismiss) private var dismiss
 
-    let mode: TaskFormMode
+  let mode: TaskFormMode
 
-    // Form state
-    @State private var taskName: String = ""
-    @State private var scheduleType: ScheduleTypeSelection = .once
-    @State private var selectedWeekday: Int = 2       // Monday (for .weekly)
-    @State private var selectedWeekdays: Set<Int> = [2, 3, 4, 5, 6]  // Mon–Fri (for .customWeekdays)
-    @State private var selectedDay: Int = 1
-    @State private var selectedMonth: Int = 1
-    @State private var selectedHour: Int = 9
-    @State private var selectedMinute: Int = 0
-    @State private var hasDueDate: Bool = false
-    @State private var dueDate: Date = Date().addingTimeInterval(3600)
-    @State private var nagIntervalHours: Int = 1
-    @State private var nagIntervalMins: Int = 0
-    @State private var nagCount: Int = 3
+  // Form state
+  @State private var taskName: String = ""
+  @State private var scheduleType: ScheduleTypeSelection = .once
+  @State private var selectedWeekday: Int = 2  // Monday (for .weekly)
+  @State private var selectedWeekdays: Set<Int> = [2, 3, 4, 5, 6]  // Mon–Fri (for .customWeekdays)
+  @State private var selectedDay: Int = 1
+  @State private var selectedMonth: Int = 1
+  @State private var selectedHour: Int = 9
+  @State private var selectedMinute: Int = 0
+  @State private var hasDueDate: Bool = false
+  @State private var dueDate: Date = Date().addingTimeInterval(3600)
+  @State private var nagIntervalHours: Int = 0
+  @State private var nagIntervalMins: Int = 5
 
-    private var nagIntervalMinutes: Int { max(1, nagIntervalHours * 60 + nagIntervalMins) }
+  private var nagIntervalMinutes: Int { max(1, nagIntervalHours * 60 + nagIntervalMins) }
+  private let taskNameLimit = 50
+  private var isOverLimit: Bool { taskName.count > taskNameLimit }
 
-    private var isEditing: Bool {
-        if case .edit = mode { return true }
-        return false
-    }
+  private var isEditing: Bool {
+    if case .edit = mode { return true }
+    return false
+  }
 
-    // Derived time binding for DatePicker
-    private var timeDateBinding: Binding<Date> {
-        Binding(
-            get: {
-                var comps = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-                comps.hour = selectedHour
-                comps.minute = selectedMinute
-                return Calendar.current.date(from: comps) ?? Date()
-            },
-            set: { date in
-                selectedHour = Calendar.current.component(.hour, from: date)
-                selectedMinute = Calendar.current.component(.minute, from: date)
+  // Derived time binding for DatePicker
+  private var timeDateBinding: Binding<Date> {
+    Binding(
+      get: {
+        var comps = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        comps.hour = selectedHour
+        comps.minute = selectedMinute
+        return Calendar.current.date(from: comps) ?? Date()
+      },
+      set: { date in
+        selectedHour = Calendar.current.component(.hour, from: date)
+        selectedMinute = Calendar.current.component(.minute, from: date)
+      }
+    )
+  }
+
+  var body: some View {
+    NavigationStack {
+      Form {
+        // Task Name
+        Section {
+          TextField("Task name", text: $taskName)
+            .onChange(of: taskName) { _, new in
+              if new.count > taskNameLimit {
+                taskName = String(new.prefix(taskNameLimit))
+              }
             }
-        )
-    }
+          if isOverLimit {
+            Text("\(taskNameLimit)文字以内にしてください")
+              .font(.caption)
+              .foregroundStyle(.red)
+          }
+          HStack {
+            Spacer()
+            Text("\(taskName.count)/\(taskNameLimit)")
+              .font(.caption2)
+              .foregroundStyle(taskName.count >= taskNameLimit ? .red : Color(.systemGray3))
+          }
+        }
 
-    var body: some View {
-        NavigationStack {
-            Form {
-                // Task Name
-                Section {
-                    TextField("Task name", text: $taskName)
-                }
-
-                // Schedule
-                Section("Schedule") {
-                    Picker("Repeat", selection: $scheduleType) {
-                        ForEach(ScheduleTypeSelection.allCases) { type in
-                            Text(type.displayName).tag(type)
-                        }
-                    }
-
-                    // Custom weekday selector
-                    if scheduleType == .customWeekdays {
-                        HStack(spacing: 6) {
-                            ForEach(1...7, id: \.self) { day in
-                                let shortNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
-                                let isSelected = selectedWeekdays.contains(day)
-                                Button {
-                                    if isSelected {
-                                        selectedWeekdays.remove(day)
-                                    } else {
-                                        selectedWeekdays.insert(day)
-                                    }
-                                } label: {
-                                    Text(shortNames[day - 1])
-                                        .font(.system(size: 13, weight: .semibold))
-                                        .frame(width: 36, height: 36)
-                                        .background(isSelected ? Color.blue : Color(.systemGray5))
-                                        .foregroundStyle(isSelected ? Color.white : Color(.label))
-                                        .clipShape(Circle())
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 4)
-                    }
-
-                    if scheduleType == .weekly {
-                        Picker("Day", selection: $selectedWeekday) {
-                            ForEach(1...7, id: \.self) { day in
-                                Text(weekdayName(day)).tag(day)
-                            }
-                        }
-                    }
-
-                    if scheduleType == .monthly {
-                        Picker("Day of month", selection: $selectedDay) {
-                            ForEach(1...31, id: \.self) { day in
-                                Text("Day \(day)").tag(day)
-                            }
-                        }
-                    }
-
-                    if scheduleType == .yearly {
-                        Picker("Month", selection: $selectedMonth) {
-                            ForEach(1...12, id: \.self) { month in
-                                Text(monthName(month)).tag(month)
-                            }
-                        }
-                        Picker("Day", selection: $selectedDay) {
-                            ForEach(1...31, id: \.self) { day in
-                                Text("Day \(day)").tag(day)
-                            }
-                        }
-                    }
-
-                    if scheduleType != .once {
-                        DatePicker("Time", selection: timeDateBinding, displayedComponents: .hourAndMinute)
-                    }
-
-                    if scheduleType == .once {
-                        Toggle("Set due date", isOn: $hasDueDate)
-                        if hasDueDate {
-                            DatePicker("Due date", selection: $dueDate, displayedComponents: [.date, .hourAndMinute])
-                        }
-                    }
-                }
-
-                // Nag Interval — hour + minute wheel pickers
-                Section("Nag interval") {
-                    HStack(spacing: 0) {
-                        Picker("Hours", selection: $nagIntervalHours) {
-                            ForEach(0...8, id: \.self) { h in
-                                Text("\(h) hr").tag(h)
-                            }
-                        }
-                        .pickerStyle(.wheel)
-                        .frame(maxWidth: .infinity)
-                        .clipped()
-
-                        Picker("Minutes", selection: $nagIntervalMins) {
-                            ForEach(0...59, id: \.self) { m in
-                                Text("\(m) min").tag(m)
-                            }
-                        }
-                        .pickerStyle(.wheel)
-                        .frame(maxWidth: .infinity)
-                        .clipped()
-                    }
-                    .frame(height: 120)
-                }
-
-                // Nag Count
-                Section("Nag count") {
-                    Stepper("\(nagCount) times", value: $nagCount, in: 1...20)
-                }
+        // Schedule
+        Section("Schedule") {
+          Picker("Repeat", selection: $scheduleType) {
+            ForEach(ScheduleTypeSelection.allCases) { type in
+              Text(type.displayName).tag(type)
             }
-            .navigationTitle(isEditing ? "Edit Task" : "Add Task")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+          }
+
+          // Custom weekday selector
+          if scheduleType == .customWeekdays {
+            HStack(spacing: 6) {
+              ForEach(1...7, id: \.self) { day in
+                let shortNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+                let isSelected = selectedWeekdays.contains(day)
+                Button {
+                  if isSelected {
+                    selectedWeekdays.remove(day)
+                  } else {
+                    selectedWeekdays.insert(day)
+                  }
+                } label: {
+                  Text(shortNames[day - 1])
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(width: 36, height: 36)
+                    .background(isSelected ? Color.blue : Color(.systemGray5))
+                    .foregroundStyle(isSelected ? Color.white : Color(.label))
+                    .clipShape(Circle())
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        save()
-                        dismiss()
-                    }
-                    .disabled(taskName.trimmingCharacters(in: .whitespaces).isEmpty)
-                }
+                .buttonStyle(.plain)
+              }
             }
-        }
-        .onAppear {
-            populateIfEditing()
-        }
-    }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 4)
+          }
 
-    // MARK: - Helpers
-
-    private func populateIfEditing() {
-        guard case .edit(let task) = mode else { return }
-        taskName = task.name
-        nagIntervalHours = task.nagIntervalMinutes / 60
-        nagIntervalMins  = task.nagIntervalMinutes % 60
-        nagCount = task.nagCount
-
-        switch task.repeatSchedule {
-        case .once:
-            scheduleType = .once
-            if let due = task.dueDate {
-                hasDueDate = true
-                dueDate = due
+          if scheduleType == .weekly {
+            Picker("Day", selection: $selectedWeekday) {
+              ForEach(1...7, id: \.self) { day in
+                Text(weekdayName(day)).tag(day)
+              }
             }
-        case .daily(let time):
-            scheduleType = .daily
-            selectedHour = time.hour; selectedMinute = time.minute
-        case .weekdays(let time):
-            scheduleType = .weekdays
-            selectedHour = time.hour; selectedMinute = time.minute
-        case .selectedWeekdays(let weekdays, let time):
-            scheduleType = .customWeekdays
-            selectedWeekdays = Set(weekdays)
-            selectedHour = time.hour; selectedMinute = time.minute
-        case .weekly(let weekday, let time):
-            scheduleType = .weekly
-            selectedWeekday = weekday
-            selectedHour = time.hour; selectedMinute = time.minute
-        case .monthly(let day, let time):
-            scheduleType = .monthly
-            selectedDay = day
-            selectedHour = time.hour; selectedMinute = time.minute
-        case .yearly(let month, let day, let time):
-            scheduleType = .yearly
-            selectedMonth = month; selectedDay = day
-            selectedHour = time.hour; selectedMinute = time.minute
+          }
+
+          if scheduleType == .monthly {
+            Picker("Day of month", selection: $selectedDay) {
+              ForEach(1...31, id: \.self) { day in
+                Text("Day \(day)").tag(day)
+              }
+            }
+          }
+
+          if scheduleType == .yearly {
+            Picker("Month", selection: $selectedMonth) {
+              ForEach(1...12, id: \.self) { month in
+                Text(monthName(month)).tag(month)
+              }
+            }
+            Picker("Day", selection: $selectedDay) {
+              ForEach(1...31, id: \.self) { day in
+                Text("Day \(day)").tag(day)
+              }
+            }
+          }
+
+          if scheduleType != .once {
+            DatePicker("Time", selection: timeDateBinding, displayedComponents: .hourAndMinute)
+          }
+
+          if scheduleType == .once {
+            Toggle("Set due date", isOn: $hasDueDate)
+            if hasDueDate {
+              DatePicker(
+                "Due date", selection: $dueDate, displayedComponents: [.date, .hourAndMinute])
+            }
+          }
         }
-    }
 
-    private func buildSchedule() -> RepeatSchedule {
-        let time = TimeOfDay(hour: selectedHour, minute: selectedMinute)
-        switch scheduleType {
-        case .once:           return .once
-        case .daily:          return .daily(time: time)
-        case .weekdays:       return .weekdays(time: time)
-        case .customWeekdays:
-            return .selectedWeekdays(weekdays: Array(selectedWeekdays).sorted(), time: time)
-        case .weekly:         return .weekly(weekday: selectedWeekday, time: time)
-        case .monthly:        return .monthly(day: selectedDay, time: time)
-        case .yearly:         return .yearly(month: selectedMonth, day: selectedDay, time: time)
+        // Nag Interval — hour + minute wheel pickers
+        Section("Nag interval") {
+          HStack(spacing: 0) {
+            Picker("Hours", selection: $nagIntervalHours) {
+              ForEach(0...8, id: \.self) { h in
+                Text("\(h) hr").tag(h)
+              }
+            }
+            .pickerStyle(.wheel)
+            .frame(maxWidth: .infinity)
+            .clipped()
+
+            Picker("Minutes", selection: $nagIntervalMins) {
+              ForEach(0...59, id: \.self) { m in
+                Text("\(m) min").tag(m)
+              }
+            }
+            .pickerStyle(.wheel)
+            .frame(maxWidth: .infinity)
+            .clipped()
+          }
+          .frame(height: 120)
         }
-    }
 
-    private func save() {
-        let trimmedName = taskName.trimmingCharacters(in: .whitespaces)
-        let schedule = buildSchedule()
-        let due: Date? = (scheduleType == .once && hasDueDate) ? dueDate : nil
-
-        switch mode {
-        case .add:
-            taskManager.addTask(name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes, nagCount: nagCount, dueDate: due)
-        case .edit(let task):
-            taskManager.updateTask(task, name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes, nagCount: nagCount, dueDate: due)
+      }
+      .navigationTitle(isEditing ? "Edit Task" : "Add Task")
+      .navigationBarTitleDisplayMode(.inline)
+      .scrollDismissesKeyboard(.interactively)
+      .toolbar {
+        ToolbarItem(placement: .keyboard) {
+          Button("完了") {
+            UIApplication.shared.sendAction(
+              #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+          }
         }
+        ToolbarItem(placement: .cancellationAction) {
+          Button("Cancel") { dismiss() }
+        }
+        ToolbarItem(placement: .confirmationAction) {
+          Button("Save") {
+            save()
+            dismiss()
+          }
+          .disabled(taskName.trimmingCharacters(in: .whitespaces).isEmpty || isOverLimit)
+        }
+      }
     }
+    .onAppear {
+      populateIfEditing()
+    }
+  }
 
-    private func weekdayName(_ weekday: Int) -> String {
-        let names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-        guard weekday >= 1 && weekday <= 7 else { return "" }
-        return names[weekday - 1]
-    }
+  // MARK: - Helpers
 
-    private func monthName(_ month: Int) -> String {
-        let names = ["January", "February", "March", "April", "May", "June",
-                     "July", "August", "September", "October", "November", "December"]
-        guard month >= 1 && month <= 12 else { return "" }
-        return names[month - 1]
+  private func populateIfEditing() {
+    guard case .edit(let task) = mode else { return }
+    taskName = task.name
+    nagIntervalHours = task.nagIntervalMinutes / 60
+    nagIntervalMins = task.nagIntervalMinutes % 60
+
+    switch task.repeatSchedule {
+    case .once:
+      scheduleType = .once
+      if let due = task.dueDate {
+        hasDueDate = true
+        dueDate = due
+      }
+    case .daily(let time):
+      scheduleType = .daily
+      selectedHour = time.hour
+      selectedMinute = time.minute
+    case .weekdays(let time):
+      scheduleType = .weekdays
+      selectedHour = time.hour
+      selectedMinute = time.minute
+    case .selectedWeekdays(let weekdays, let time):
+      scheduleType = .customWeekdays
+      selectedWeekdays = Set(weekdays)
+      selectedHour = time.hour
+      selectedMinute = time.minute
+    case .weekly(let weekday, let time):
+      scheduleType = .weekly
+      selectedWeekday = weekday
+      selectedHour = time.hour
+      selectedMinute = time.minute
+    case .monthly(let day, let time):
+      scheduleType = .monthly
+      selectedDay = day
+      selectedHour = time.hour
+      selectedMinute = time.minute
+    case .yearly(let month, let day, let time):
+      scheduleType = .yearly
+      selectedMonth = month
+      selectedDay = day
+      selectedHour = time.hour
+      selectedMinute = time.minute
     }
+  }
+
+  private func buildSchedule() -> RepeatSchedule {
+    let time = TimeOfDay(hour: selectedHour, minute: selectedMinute)
+    switch scheduleType {
+    case .once: return .once
+    case .daily: return .daily(time: time)
+    case .weekdays: return .weekdays(time: time)
+    case .customWeekdays:
+      return .selectedWeekdays(weekdays: Array(selectedWeekdays).sorted(), time: time)
+    case .weekly: return .weekly(weekday: selectedWeekday, time: time)
+    case .monthly: return .monthly(day: selectedDay, time: time)
+    case .yearly: return .yearly(month: selectedMonth, day: selectedDay, time: time)
+    }
+  }
+
+  private func save() {
+    let trimmedName = taskName.trimmingCharacters(in: .whitespaces)
+    let schedule = buildSchedule()
+    let due: Date? = (scheduleType == .once && hasDueDate) ? dueDate : nil
+
+    switch mode {
+    case .add:
+      taskManager.addTask(
+        name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes, dueDate: due)
+    case .edit(let task):
+      taskManager.updateTask(
+        task, name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes,
+        dueDate: due)
+    }
+  }
+
+  private func weekdayName(_ weekday: Int) -> String {
+    let names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    guard weekday >= 1 && weekday <= 7 else { return "" }
+    return names[weekday - 1]
+  }
+
+  private func monthName(_ month: Int) -> String {
+    let names = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December",
+    ]
+    guard month >= 1 && month <= 12 else { return "" }
+    return names[month - 1]
+  }
 }
