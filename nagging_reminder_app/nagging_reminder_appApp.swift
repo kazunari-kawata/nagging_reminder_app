@@ -1,6 +1,6 @@
+import GoogleMobileAds
 import SwiftUI
 import UserNotifications
-import GoogleMobileAds
 
 @main
 struct nagging_reminder_appApp: App {
@@ -22,10 +22,10 @@ struct nagging_reminder_appApp: App {
         .task {
           // 1. AdMob 初期化
           await MobileAds.shared.start()
-          
+
           // 2. テストデバイス設定（今はまだIDが分からないのでコメントアウトしておく）
           // GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = [ "ここに後でIDを入れる" ]
-          
+
           // 3. 通知設定
           notificationDelegate.taskManager = taskManager
           UNUserNotificationCenter.current().delegate = notificationDelegate
