@@ -32,9 +32,9 @@ struct ContentView: View {
           TimerView()
             .environment(timerManager)
         }
-        // if !purchaseManager.isAdFree {
-        //   BannerAdContainer()
-        // }
+        if !purchaseManager.isAdFree {
+          BannerAdContainer()
+        }
         bottomTabBar
       }
     }

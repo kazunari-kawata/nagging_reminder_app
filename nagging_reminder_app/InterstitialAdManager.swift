@@ -8,7 +8,7 @@ final class InterstitialAdManager: NSObject {
   #else
     private let adUnitID = "ca-app-pub-6204247576058151/4096927871"
   #endif
-  private let intervalSeconds: TimeInterval = 2 * 60 * 60  // 2 hours
+  private let intervalSeconds: TimeInterval = 10 * 60  // 10 minutes
 
   private var interstitialAd: InterstitialAd?
   private(set) var isAdReady = false
