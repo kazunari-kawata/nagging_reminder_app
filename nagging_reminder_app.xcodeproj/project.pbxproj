@@ -6,8 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4F57B8EE2F64F15D00830E0D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 4F57B8ED2F64F15D00830E0D /* GoogleMobileAds */; };
+		4FCD73922F6647F000E4EB64 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCD73912F6647EF00E4EB64 /* StoreKit.framework */; };
+		4FCD73A82F66614700E4EB64 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD73A72F66614700E4EB64 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FCD739E2F66567A00E4EB64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F76841A2F5FB6FA00F00D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F7684212F5FB6FA00F00D55;
+			remoteInfo = nagging_reminder_app;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4F7684222F5FB6FA00F00D55 /* nagging_reminder_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nagging_reminder_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCD73912F6647EF00E4EB64 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4FCD739A2F66567A00E4EB64 /* nagging_reminder_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nagging_reminder_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCD73A72F66614700E4EB64 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +35,24 @@
 			path = nagging_reminder_app;
 			sourceTree = "<group>";
 		};
+		4FCD739B2F66567A00E4EB64 /* nagging_reminder_appTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = nagging_reminder_appTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4F76841F2F5FB6FA00F00D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F57B8EE2F64F15D00830E0D /* GoogleMobileAds in Frameworks */,
+				4FCD73922F6647F000E4EB64 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCD73972F66567A00E4EB64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,7 +65,10 @@
 		4F7684192F5FB6FA00F00D55 = {
 			isa = PBXGroup;
 			children = (
+				4FCD73A72F66614700E4EB64 /* Localizable.xcstrings */,
 				4F7684242F5FB6FA00F00D55 /* nagging_reminder_app */,
+				4FCD739B2F66567A00E4EB64 /* nagging_reminder_appTests */,
+				4FCD73902F6647EF00E4EB64 /* Frameworks */,
 				4F7684232F5FB6FA00F00D55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +77,17 @@
 			isa = PBXGroup;
 			children = (
 				4F7684222F5FB6FA00F00D55 /* nagging_reminder_app.app */,
+				4FCD739A2F66567A00E4EB64 /* nagging_reminder_appTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4FCD73902F6647EF00E4EB64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD73912F6647EF00E4EB64 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,10 +110,34 @@
 			);
 			name = nagging_reminder_app;
 			packageProductDependencies = (
+				4F57B8ED2F64F15D00830E0D /* GoogleMobileAds */,
 			);
 			productName = nagging_reminder_app;
 			productReference = 4F7684222F5FB6FA00F00D55 /* nagging_reminder_app.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4FCD73992F66567A00E4EB64 /* nagging_reminder_appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FCD73A02F66567A00E4EB64 /* Build configuration list for PBXNativeTarget "nagging_reminder_appTests" */;
+			buildPhases = (
+				4FCD73962F66567A00E4EB64 /* Sources */,
+				4FCD73972F66567A00E4EB64 /* Frameworks */,
+				4FCD73982F66567A00E4EB64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FCD739F2F66567A00E4EB64 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4FCD739B2F66567A00E4EB64 /* nagging_reminder_appTests */,
+			);
+			name = nagging_reminder_appTests;
+			packageProductDependencies = (
+			);
+			productName = nagging_reminder_appTests;
+			productReference = 4FCD739A2F66567A00E4EB64 /* nagging_reminder_appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +152,10 @@
 					4F7684212F5FB6FA00F00D55 = {
 						CreatedOnToolsVersion = 26.3;
 					};
+					4FCD73992F66567A00E4EB64 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 4F7684212F5FB6FA00F00D55;
+					};
 				};
 			};
 			buildConfigurationList = 4F76841D2F5FB6FA00F00D55 /* Build configuration list for PBXProject "nagging_reminder_app" */;
@@ -94,18 +167,30 @@
 			);
 			mainGroup = 4F7684192F5FB6FA00F00D55;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4F57B8EC2F64F15D00830E0D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4F7684232F5FB6FA00F00D55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4F7684212F5FB6FA00F00D55 /* nagging_reminder_app */,
+				4FCD73992F66567A00E4EB64 /* nagging_reminder_appTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4F7684202F5FB6FA00F00D55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FCD73A82F66614700E4EB64 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCD73982F66567A00E4EB64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +207,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FCD73962F66567A00E4EB64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FCD739F2F66567A00E4EB64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F7684212F5FB6FA00F00D55 /* nagging_reminder_app */;
+			targetProxy = 4FCD739E2F66567A00E4EB64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4F76842D2F5FB6FB00F00D55 /* Debug */ = {
@@ -185,6 +285,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -242,6 +343,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -256,6 +358,10 @@
 				DEVELOPMENT_TEAM = PH8ZM7X95H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "nagging-reminder-app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Baddger;
+				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-3940256099942544~1458002511";
+				INFOPLIST_KEY_SKAdNetworkItems = "{\n    SKAdNetworkIdentifier = \"cstr6suwn9.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"4fzdc2r5t5.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"2fnua5014p.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"ydx93a7ass.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"5l3tvu7p5u.skadnetwork\";\n}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +394,10 @@
 				DEVELOPMENT_TEAM = PH8ZM7X95H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "nagging-reminder-app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Baddger;
+				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-6204247576058151~5229570784";
+				INFOPLIST_KEY_SKAdNetworkItems = "{\n    SKAdNetworkIdentifier = \"cstr6suwn9.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"4fzdc2r5t5.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"2fnua5014p.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"ydx93a7ass.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"5l3tvu7p5u.skadnetwork\";\n}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +417,48 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4FCD73A12F66567A00E4EB64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PH8ZM7X95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bridgesllc.co.jp.nagging-reminder-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nagging_reminder_app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nagging_reminder_app";
+			};
+			name = Debug;
+		};
+		4FCD73A22F66567A00E4EB64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PH8ZM7X95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bridgesllc.co.jp.nagging-reminder-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nagging_reminder_app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nagging_reminder_app";
 			};
 			name = Release;
 		};
@@ -331,7 +483,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4FCD73A02F66567A00E4EB64 /* Build configuration list for PBXNativeTarget "nagging_reminder_appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCD73A12F66567A00E4EB64 /* Debug */,
+				4FCD73A22F66567A00E4EB64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F57B8EC2F64F15D00830E0D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F57B8ED2F64F15D00830E0D /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F57B8EC2F64F15D00830E0D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F76841A2F5FB6FA00F00D55 /* Project object */;
 }
