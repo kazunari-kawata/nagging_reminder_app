@@ -71,6 +71,11 @@ struct TimerView: View {
     @State private var editingPreset: TimerPreset? = nil
     @State private var audioPlayer: AVAudioPlayer? = nil
 
+    // Ad-hoc timer state
+    @State private var adHocHours: Int = 0
+    @State private var adHocMinutes: Int = 1
+    @State private var adHocSeconds: Int = 0
+
     private let ticker = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     private var progress: Double {
@@ -118,9 +123,12 @@ struct TimerView: View {
             .padding(.top, 12)
             .padding(.bottom, 16)
 
-            // Active timer display
-            if activePresetID != nil {
+            // Active timer or Ad-hoc picker
+            if isRunning || isFinished || activePresetID != nil {
                 activeTimerSection
+                    .padding(.bottom, 16)
+            } else {
+                adHocTimerSection
                     .padding(.bottom, 16)
             }
 
@@ -158,6 +166,65 @@ struct TimerView: View {
                 }
             }
         }
+    }
+
+    // MARK: - Ad-Hoc Timer Section
+
+    private var adHocTimerSection: some View {
+        VStack(spacing: 24) {
+            TimePickerView(hours: $adHocHours, minutes: $adHocMinutes, seconds: $adHocSeconds)
+                .padding(.top, 16)
+
+            HStack {
+                // Cancel Button (Disabled if 0 like iOS, but here we can just reset or do nothing)
+                Button {
+                    adHocHours = 0
+                    adHocMinutes = 1
+                    adHocSeconds = 0
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(Color(.systemGray5))
+                            .frame(width: 80, height: 80)
+                        Circle()
+                            .stroke(Color(.systemBackground), lineWidth: 4)
+                            .frame(width: 76, height: 76)
+                        Text(String(localized: "Cancel"))
+                            .font(.system(size: 16))
+                            .foregroundStyle(.primary)
+                    }
+                }
+
+                Spacer()
+
+                // Start Button
+                Button {
+                    let total = (adHocHours * 3600) + (adHocMinutes * 60) + adHocSeconds
+                    guard total > 0 else { return }
+                    activePresetID = nil
+                    totalSeconds = total
+                    remainingSeconds = total
+                    isRunning = true
+                    isFinished = false
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(Color.green.opacity(0.2))
+                            .frame(width: 80, height: 80)
+                        Circle()
+                            .stroke(Color(.systemBackground), lineWidth: 4)
+                            .frame(width: 76, height: 76)
+                        Text(String(localized: "Start"))
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(.green)
+                    }
+                }
+            }
+            .padding(.horizontal, 32)
+            .padding(.bottom, 16)
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color(.systemBackground))
     }
 
     // MARK: - Active Timer
@@ -263,9 +330,7 @@ struct TimerView: View {
                     }
 
                     Button {
-                        guard let preset = timerManager.presets.first(where: { $0.id == activePresetID }) else { return }
-                        remainingSeconds = preset.totalSeconds
-                        totalSeconds = preset.totalSeconds
+                        remainingSeconds = totalSeconds
                         isRunning = false
                         isFinished = false
                     } label: {
@@ -397,10 +462,11 @@ struct TimerPresetSheet: View {
     let onSave: (String, Int) -> Void
 
     @State private var name: String = ""
+    @State private var hours: Int = 0
     @State private var minutes: Int = 5
     @State private var seconds: Int = 0
 
-    private var totalSeconds: Int { minutes * 60 + seconds }
+    private var totalSeconds: Int { (hours * 3600) + (minutes * 60) + seconds }
 
     var body: some View {
         NavigationStack {
@@ -410,8 +476,7 @@ struct TimerPresetSheet: View {
                 }
 
                 Section(String(localized: "Duration")) {
-                    Stepper("\(minutes) " + String(localized: "min"), value: $minutes, in: 0...99)
-                    Stepper("\(seconds) " + String(localized: "sec"), value: $seconds, in: 0...59, step: 5)
+                    TimePickerView(hours: $hours, minutes: $minutes, seconds: $seconds)
                 }
 
                 Section {
@@ -442,7 +507,8 @@ struct TimerPresetSheet: View {
             .onAppear {
                 if let p = preset {
                     name = p.name
-                    minutes = p.totalSeconds / 60
+                    hours = p.totalSeconds / 3600
+                    minutes = (p.totalSeconds % 3600) / 60
                     seconds = p.totalSeconds % 60
                 }
             }
@@ -562,5 +628,39 @@ struct TimerPresetCardView: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(isActive ? Color.blue.opacity(0.4) : Color(.systemGray5), lineWidth: 1)
         )
+    }
+}
+
+// MARK: - TimePickerView
+
+struct TimePickerView: View {
+    @Binding var hours: Int
+    @Binding var minutes: Int
+    @Binding var seconds: Int
+
+    var body: some View {
+        HStack(spacing: 0) {
+            pickerColumn(selection: $hours, range: 0..<24, label: String(localized: "hours"))
+            pickerColumn(selection: $minutes, range: 0..<60, label: String(localized: "min"))
+            pickerColumn(selection: $seconds, range: 0..<60, label: String(localized: "sec"))
+        }
+        .frame(height: 180)
+        .clipped()
+    }
+
+    private func pickerColumn(selection: Binding<Int>, range: Range<Int>, label: String) -> some View {
+        HStack(spacing: 0) {
+            Picker(label, selection: selection) {
+                ForEach(range, id: \.self) { val in
+                    Text("\(val)").tag(val)
+                }
+            }
+            .pickerStyle(.wheel)
+            .labelsHidden()
+
+            Text(label)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(.secondary)
+        }
     }
 }
