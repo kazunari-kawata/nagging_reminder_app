@@ -146,6 +146,16 @@ struct AdFreeView: View {
         }
         .disabled(purchaseManager.isPurchasing)
         .animation(.easeInOut(duration: 0.2), value: purchaseManager.isPurchasing)
+
+        // Legal Links
+        HStack(spacing: 16) {
+          Link(String(localized: "legal.terms"), destination: URL(string: "https://www.notion.so/Baddger-Terms-of-Use-324c3d5339c68038b246d6371a38d638?source=copy_link")!)
+          Text("|").foregroundStyle(.secondary)
+          Link(String(localized: "legal.privacy"), destination: URL(string: "https://www.notion.so/Baddger-Privacy-Policy-324c3d5339c68015b58efba98d39ddaa?source=copy_link")!)
+        }
+        .font(.caption)
+        .foregroundStyle(.secondary)
+        .padding(.top, 16)
       }
 
       Spacer().frame(height: 48)
