@@ -151,6 +151,8 @@ final class TaskManager {
     updated.repeatSchedule = schedule
     updated.nagIntervalMinutes = nagIntervalMinutes
     updated.dueDate = dueDate
+    updated.isCompleted = false
+    updated.lastCompletedDate = nil
     let ids = buildAndScheduleNotifications(for: updated)
     updated.pendingNotificationIDs = ids
     tasks[index] = updated  // single atomic replacement — triggers one UI update
@@ -234,7 +236,7 @@ final class TaskManager {
 
   private func makeContent(for task: TaskItem) -> UNMutableNotificationContent {
     let content = UNMutableNotificationContent()
-    content.title = "Nagging Reminder"
+    content.title = "Baddger"
     content.body = task.name
     content.sound = .default
     content.categoryIdentifier = "TASK_REMINDER"

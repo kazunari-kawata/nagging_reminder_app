@@ -359,6 +359,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "nagging-reminder-app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Baddger;
 				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-3940256099942544~1458002511";
 				INFOPLIST_KEY_SKAdNetworkItems = "{\n    SKAdNetworkIdentifier = \"cstr6suwn9.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"4fzdc2r5t5.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"2fnua5014p.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"ydx93a7ass.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"5l3tvu7p5u.skadnetwork\";\n}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -394,6 +395,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "nagging-reminder-app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Baddger;
 				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-6204247576058151~5229570784";
 				INFOPLIST_KEY_SKAdNetworkItems = "{\n    SKAdNetworkIdentifier = \"cstr6suwn9.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"4fzdc2r5t5.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"2fnua5014p.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"ydx93a7ass.skadnetwork\";\n} {\n    SKAdNetworkIdentifier = \"5l3tvu7p5u.skadnetwork\";\n}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

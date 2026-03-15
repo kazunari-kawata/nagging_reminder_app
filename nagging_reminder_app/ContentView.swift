@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 // MARK: - ContentView
 
@@ -16,6 +17,9 @@ struct ContentView: View {
   @State private var editingTask: TaskItem?
   @State private var selectedTab = 0
   @State private var showAdFreePromo = false
+  @State private var currentTime = Date()
+
+  private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
 
   var body: some View {
     ZStack {
@@ -28,9 +32,9 @@ struct ContentView: View {
           TimerView()
             .environment(timerManager)
         }
-        if !purchaseManager.isAdFree {
-          BannerAdContainer()
-        }
+        // if !purchaseManager.isAdFree {
+        //   BannerAdContainer()
+        // }
         bottomTabBar
       }
     }
@@ -68,8 +72,12 @@ struct ContentView: View {
     }
     .onChange(of: scenePhase) { _, newPhase in
       if newPhase == .active {
+        currentTime = Date()
         taskManager.performMidnightResetIfNeeded()
       }
+    }
+    .onReceive(timer) { _ in
+      currentTime = Date()
     }
     .preferredColorScheme(settings.theme.colorScheme)
   }
@@ -141,8 +149,8 @@ struct ContentView: View {
 
   private func isOverdue(_ task: TaskItem) -> Bool {
     guard let tod = task.repeatSchedule.timeOfDay else { return false }
-    let taskTime = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: Date())!
-    return Date() > taskTime
+    let taskTime = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: currentTime)!
+    return currentTime > taskTime
   }
 
   private var overdueTasksToday: [TaskItem] {
@@ -172,8 +180,8 @@ struct ContentView: View {
 
   /// Tasks with next occurrence 2–7 days from now, sorted by date.
   private var thisWeekTasks: [TaskItem] {
-    let start = cal.date(byAdding: .day, value: 2, to: cal.startOfDay(for: Date()))!
-    let end = cal.date(byAdding: .day, value: 8, to: cal.startOfDay(for: Date()))!
+    let start = cal.date(byAdding: .day, value: 2, to: cal.startOfDay(for: currentTime))!
+    let end = cal.date(byAdding: .day, value: 8, to: cal.startOfDay(for: currentTime))!
     return notTodayTasks.filter { task in
       guard let next = taskManager.nextOccurrenceDate(for: task) else { return false }
       return next >= start && next < end
@@ -185,7 +193,7 @@ struct ContentView: View {
 
   /// Tasks 8+ days away (sorted) + completed-today tasks.
   private var laterTasks: [TaskItem] {
-    let cutoff = cal.date(byAdding: .day, value: 8, to: cal.startOfDay(for: Date()))!
+    let cutoff = cal.date(byAdding: .day, value: 8, to: cal.startOfDay(for: currentTime))!
     let completedToday = taskManager.tasks.filter {
       taskManager.isApplicableToday($0) && $0.isCompleted
     }

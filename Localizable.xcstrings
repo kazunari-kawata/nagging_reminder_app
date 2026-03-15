@@ -68,6 +68,7 @@
       }
     },
     "%lld sec": {
+      "extractionState": "stale",
       "localizations": {
         "en": {
           "stringUnit": {
@@ -232,6 +233,7 @@
       }
     },
     "Add": {
+      "extractionState": "stale",
       "localizations": {
         "en": {
           "stringUnit": {
@@ -381,160 +383,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "8월"
-          }
-        }
-      }
-    },
-    "ONCE": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ONCE"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1回"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1회"
-          }
-        }
-      }
-    },
-    "DAILY": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DAILY"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "毎日"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "매일"
-          }
-        }
-      }
-    },
-    "WKDAYS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "WKDAYS"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "平日"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "평일"
-          }
-        }
-      }
-    },
-    "CUSTOM": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CUSTOM"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "カスタム"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "커스텀"
-          }
-        }
-      }
-    },
-    "WEEKLY": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "WEEKLY"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "毎週"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "매주"
-          }
-        }
-      }
-    },
-    "MONTHLY": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MONTHLY"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "毎月"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "매월"
-          }
-        }
-      }
-    },
-    "YEARLY": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "YEARLY"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "毎年"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "매년"
           }
         }
       }
@@ -693,6 +541,28 @@
         }
       }
     },
+    "CUSTOM": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CUSTOM"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "커스텀"
+          }
+        }
+      }
+    },
     "Custom Days": {
       "localizations": {
         "en": {
@@ -721,6 +591,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Daily"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎日"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "매일"
+          }
+        }
+      }
+    },
+    "DAILY": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DAILY"
           }
         },
         "ja": {
@@ -1034,13 +926,13 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "期間"
+            "value": "時間"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "기간"
+            "value": "타이머 길이"
           }
         }
       }
@@ -1063,6 +955,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "편집"
+          }
+        }
+      }
+    },
+    "Edit Timer": {
+      "comment": "The title of a view that allows editing an existing timer preset.",
+      "isCommentAutoGenerated": true,
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイマーを編集"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "타이머 편집"
           }
         }
       }
@@ -1819,6 +1729,23 @@
         }
       }
     },
+    "min": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "분"
+          }
+        }
+      }
+    },
     "Minutes": {
       "localizations": {
         "en": {
@@ -1974,6 +1901,28 @@
         }
       }
     },
+    "MONTHLY": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MONTHLY"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎月"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "매월"
+          }
+        }
+      }
+    },
     "Name (e.g. Coffee, Exercise)": {
       "localizations": {
         "en": {
@@ -1985,7 +1934,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "名前（例：コーヒー、エクササイズ）"
+            "value": "名前 (例: ストレッチ)"
           }
         },
         "ko": {
@@ -2051,7 +2000,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "タイマーがまだありません"
+            "value": "タイマーがありません"
           }
         },
         "ko": {
@@ -2190,6 +2139,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "1회만"
+          }
+        }
+      }
+    },
+    "ONCE": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ONCE"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1回"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1회"
           }
         }
       }
@@ -2425,7 +2396,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "繰り返す"
+            "value": "再開"
           }
         },
         "ko": {
@@ -2543,6 +2514,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "스케줄"
+          }
+        }
+      }
+    },
+    "sec": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "秒"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "초"
           }
         }
       }
@@ -2890,7 +2878,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "+ をタップしてプリセットタイマーを作成"
+            "value": "+を押してタイマーを作成"
           }
         },
         "ko": {
@@ -3366,12 +3354,78 @@
         }
       }
     },
+    "WEEKLY": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WEEKLY"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎週"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "매주"
+          }
+        }
+      }
+    },
+    "WKDAYS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WKDAYS"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平日"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "평일"
+          }
+        }
+      }
+    },
     "Yearly": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Yearly"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎年"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "매년"
+          }
+        }
+      }
+    },
+    "YEARLY": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YEARLY"
           }
         },
         "ja": {
@@ -3409,7 +3463,24 @@
           }
         }
       }
+    },
+    "Stop": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停止"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "정지"
+          }
+        }
+      }
     }
   },
-  "version": "1.0"
+  "version": "1.1"
 }
