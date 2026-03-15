@@ -8,13 +8,13 @@ enum ScheduleTypeSelection: String, CaseIterable, Identifiable {
 
   var displayName: String {
     switch self {
-    case .once: return "Once"
-    case .daily: return "Daily"
-    case .weekdays: return "Weekdays (Mon–Fri)"
-    case .customWeekdays: return "Custom Days"
-    case .weekly: return "Weekly"
-    case .monthly: return "Monthly"
-    case .yearly: return "Yearly"
+    case .once: return String(localized: "Once")
+    case .daily: return String(localized: "Daily")
+    case .weekdays: return String(localized: "Weekdays (Mon–Fri)")
+    case .customWeekdays: return String(localized: "Custom Days")
+    case .weekly: return String(localized: "Weekly")
+    case .monthly: return String(localized: "Monthly")
+    case .yearly: return String(localized: "Yearly")
     }
   }
 }
@@ -174,8 +174,8 @@ struct TaskFormView: View {
           }
         }
 
-        // Nag Interval — hour + minute wheel pickers
-        Section("Nag interval") {
+        // Alert frequency— hour + minute wheel pickers
+        Section("Alert frequency") {
           HStack(spacing: 0) {
             Picker("Hours", selection: $nagIntervalHours) {
               ForEach(0...8, id: \.self) { h in
@@ -199,7 +199,10 @@ struct TaskFormView: View {
         }
 
       }
-      .navigationTitle(isEditing ? "Edit Task" : "Add Task")
+      .navigationTitle(
+        isEditing
+          ? LocalizedStringResource("form.edit.task") : LocalizedStringResource("form.add.task")
+      )
       .navigationBarTitleDisplayMode(.inline)
       .scrollDismissesKeyboard(.interactively)
       .toolbar {
@@ -304,17 +307,33 @@ struct TaskFormView: View {
   }
 
   private func weekdayName(_ weekday: Int) -> String {
-    let names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    guard weekday >= 1 && weekday <= 7 else { return "" }
-    return names[weekday - 1]
+    let names: [Int: String] = [
+      1: String(localized: "Sunday"),
+      2: String(localized: "Monday"),
+      3: String(localized: "Tuesday"),
+      4: String(localized: "Wednesday"),
+      5: String(localized: "Thursday"),
+      6: String(localized: "Friday"),
+      7: String(localized: "Saturday"),
+    ]
+    return names[weekday] ?? ""
   }
 
   private func monthName(_ month: Int) -> String {
-    let names = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December",
+    let names: [Int: String] = [
+      1: String(localized: "January"),
+      2: String(localized: "February"),
+      3: String(localized: "March"),
+      4: String(localized: "April"),
+      5: String(localized: "May"),
+      6: String(localized: "June"),
+      7: String(localized: "July"),
+      8: String(localized: "August"),
+      9: String(localized: "September"),
+      10: String(localized: "October"),
+      11: String(localized: "November"),
+      12: String(localized: "December"),
     ]
-    guard month >= 1 && month <= 12 else { return "" }
-    return names[month - 1]
+    return names[month] ?? ""
   }
 }

@@ -82,6 +82,12 @@ struct TimerView: View {
         VStack(spacing: 0) {
             // Header
             HStack {
+                Image("HeaderIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 44, height: 44)
+                    .clipShape(Circle())
+                    .padding(.trailing, 6)
                 Text("Timers")
                     .font(.largeTitle.bold())
                     .tracking(-0.5)

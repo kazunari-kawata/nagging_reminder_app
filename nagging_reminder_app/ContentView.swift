@@ -8,13 +8,14 @@ struct ContentView: View {
   @Environment(TimerManager.self) private var timerManager
   @Environment(NotificationDelegate.self) private var notificationDelegate
   @Environment(InterstitialAdManager.self) private var interstitialAdManager
+  @Environment(PurchaseManager.self) private var purchaseManager
   @Environment(\.scenePhase) private var scenePhase
 
   @State private var showAddTask = false
   @State private var showSettings = false
   @State private var editingTask: TaskItem?
-  @State private var tappedTask: TaskItem?
   @State private var selectedTab = 0
+  @State private var showAdFreePromo = false
 
   var body: some View {
     ZStack {
@@ -27,7 +28,9 @@ struct ContentView: View {
           TimerView()
             .environment(timerManager)
         }
-        BannerAdContainer()
+        if !purchaseManager.isAdFree {
+          BannerAdContainer()
+        }
         bottomTabBar
       }
     }
@@ -40,19 +43,27 @@ struct ContentView: View {
       SettingsView()
         .environment(settings)
         .environment(taskManager)
+        .environment(purchaseManager)
     }
     .sheet(item: $editingTask) { task in
       TaskFormView(mode: .edit(task))
         .environment(taskManager)
         .environment(settings)
     }
-    .sheet(item: $tappedTask) { task in
-      NotificationActionView(task: task)
-        .environment(taskManager)
+    .sheet(isPresented: $showAdFreePromo) {
+      AdFreeView()
+        .environment(purchaseManager)
+        .environment(settings)
+    }
+    .onChange(of: interstitialAdManager.shouldShowAdFreePrompt) { _, newValue in
+      if newValue && !purchaseManager.isAdFree {
+        showAdFreePromo = true
+        interstitialAdManager.shouldShowAdFreePrompt = false
+      }
     }
     .onChange(of: notificationDelegate.tappedTaskID) { _, newID in
       guard let id = newID else { return }
-      tappedTask = taskManager.tasks.first { $0.id == id }
+      editingTask = taskManager.tasks.first { $0.id == id }
       notificationDelegate.tappedTaskID = nil
     }
     .onChange(of: scenePhase) { _, newPhase in
@@ -77,7 +88,13 @@ struct ContentView: View {
   private var headerSection: some View {
     VStack(spacing: 0) {
       HStack {
-        Text("Tasks")
+        Image("HeaderIcon")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 44, height: 44)
+          .clipShape(Circle())
+          .padding(.trailing, 6)
+        Text(LocalizedStringResource("tab.tasks"))
           .font(.largeTitle.bold())
           .tracking(-0.5)
         Spacer()
@@ -102,7 +119,7 @@ struct ContentView: View {
         HStack(spacing: 10) {
           Image(systemName: "plus.circle.fill")
             .font(.system(size: 20))
-          Text("Add Task")
+          Text(LocalizedStringResource("button.add.task"))
             .font(.system(size: 16, weight: .semibold))
           Spacer()
         }
@@ -188,7 +205,7 @@ struct ContentView: View {
 
         // OVERDUE
         if !overdueTasksToday.isEmpty {
-          sectionHeader("OVERDUE")
+          sectionHeader(String(localized: "OVERDUE"))
           ForEach(overdueTasksToday) { task in
             taskCard(task, badge: task.repeatSchedule.shortLabel)
           }
@@ -196,9 +213,9 @@ struct ContentView: View {
 
         // TODAY
         if !upcomingTasksToday.isEmpty || overdueTasksToday.isEmpty {
-          sectionHeader("TODAY").padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
+          sectionHeader(String(localized: "TODAY")).padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
           if upcomingTasksToday.isEmpty {
-            Text("All done for today!")
+            Text(LocalizedStringResource("message.all.done"))
               .font(.subheadline)
               .foregroundStyle(.secondary)
               .frame(maxWidth: .infinity, alignment: .leading)
@@ -213,15 +230,15 @@ struct ContentView: View {
 
         // TOMORROW
         if !tomorrowTasks.isEmpty {
-          sectionHeader("TOMORROW").padding(.top, 8)
+          sectionHeader(String(localized: "TOMORROW")).padding(.top, 8)
           ForEach(tomorrowTasks) { task in
-            taskCard(task, badge: "TOMORROW")
+            taskCard(task, badge: String(localized: "TOMORROW"))
           }
         }
 
         // THIS WEEK
         if !thisWeekTasks.isEmpty {
-          sectionHeader("THIS WEEK").padding(.top, 8)
+          sectionHeader(String(localized: "THIS WEEK")).padding(.top, 8)
           ForEach(thisWeekTasks) { task in
             taskCard(task, badge: dateLabel(for: task))
           }
@@ -229,9 +246,10 @@ struct ContentView: View {
 
         // LATER
         if !laterTasks.isEmpty {
-          sectionHeader("LATER").padding(.top, 8)
+          sectionHeader(String(localized: "LATER")).padding(.top, 8)
           ForEach(laterTasks) { task in
-            taskCard(task, badge: task.isCompleted ? "DONE" : dateLabel(for: task))
+            taskCard(
+              task, badge: task.isCompleted ? String(localized: "DONE") : dateLabel(for: task))
           }
         }
       }
@@ -247,7 +265,7 @@ struct ContentView: View {
       badgeLabel: badge,
       onComplete: {
         taskManager.completeTask(task)
-        interstitialAdManager.showIfReady()
+        if !purchaseManager.isAdFree { interstitialAdManager.showIfReady() }
       },
       onDelete: { taskManager.deleteTask(id: task.id) },
       onEdit: { editingTask = task }
@@ -281,16 +299,19 @@ struct ContentView: View {
   private var bottomTabBar: some View {
     HStack {
       Spacer()
-      tabBarItem(icon: "list.bullet.rectangle", label: "Tasks", index: 0, filled: true)
+      tabBarItem(
+        icon: "list.bullet.rectangle", label: String(localized: "tab.tasks"), index: 0, filled: true
+      )
       Spacer()
-      tabBarItem(icon: "timer", label: "Timer", index: 1)
+      tabBarItem(icon: "timer", label: String(localized: "tab.timer"), index: 1)
       Spacer()
     }
     .padding(.horizontal, 32)
-    .padding(.top, 8)
-    .padding(.bottom, 8)
+    .padding(.top, 24)
     .background(
-      Color(.systemBackground).opacity(0.8)
+      Color(.systemBackground)
+        .ignoresSafeArea()
+        .opacity(0.8)
         .background(.ultraThinMaterial)
     )
   }
@@ -310,75 +331,6 @@ struct ContentView: View {
       .foregroundStyle(selectedTab == index ? .blue : Color(.systemGray))
     }
     .buttonStyle(.plain)
-  }
-}
-
-// MARK: - NotificationActionView
-
-private struct NotificationActionView: View {
-  @Environment(TaskManager.self) private var taskManager
-  @Environment(InterstitialAdManager.self) private var interstitialAdManager
-  @Environment(\.dismiss) private var dismiss
-  let task: TaskItem
-
-  var body: some View {
-    VStack(spacing: 32) {
-      Spacer()
-
-      VStack(spacing: 12) {
-        Image(systemName: "bell.badge.fill")
-          .font(.system(size: 52))
-          .foregroundStyle(.orange)
-        Text(task.name)
-          .font(.title2.bold())
-          .multilineTextAlignment(.center)
-          .padding(.horizontal)
-      }
-
-      VStack(spacing: 12) {
-        Button {
-          taskManager.completeTask(task)
-          interstitialAdManager.showIfReady()
-          dismiss()
-        } label: {
-          Label("完了にする", systemImage: "checkmark.circle.fill")
-            .font(.headline)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.green)
-            .foregroundStyle(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
-        }
-
-        Button {
-          taskManager.snoozeTask(
-            id: task.id,
-            duration: TimeInterval(task.nagIntervalMinutes * 60))
-          dismiss()
-        } label: {
-          Label(
-            "スヌーズ（\(task.nagIntervalMinutes)分後）",
-            systemImage: "clock.arrow.circlepath"
-          )
-          .font(.headline)
-          .frame(maxWidth: .infinity)
-          .padding()
-          .background(Color.blue)
-          .foregroundStyle(.white)
-          .clipShape(RoundedRectangle(cornerRadius: 14))
-        }
-
-        Button("後で") { dismiss() }
-          .font(.subheadline)
-          .foregroundStyle(.secondary)
-          .padding(.top, 4)
-      }
-      .padding(.horizontal, 32)
-
-      Spacer()
-    }
-    .presentationDetents([.medium])
-    .presentationDragIndicator(.visible)
   }
 }
 
@@ -409,7 +361,7 @@ struct TaskCardView: View {
         fmt.timeStyle = .short
         return fmt.string(from: due)
       }
-      return "One-time"
+      return String(localized: "One-time")
     }
     return task.repeatSchedule.detailedLabel
   }

@@ -4,14 +4,15 @@ import SwiftUI
 @Observable
 final class InterstitialAdManager: NSObject {
   #if DEBUG
-    private let adUnitID = "ca-app-pub-3940256099942544/4411468910"  // Google公式テスト用インタースティシャルID
+    private let adUnitID = "ca-app-pub-3940256099942544/4411468910"  // Google official test interstitial ID
   #else
     private let adUnitID = "ca-app-pub-6204247576058151/4096927871"
   #endif
-  private let intervalSeconds: TimeInterval = 2 * 60 * 60  // 2時間
+  private let intervalSeconds: TimeInterval = 2 * 60 * 60  // 2 hours
 
   private var interstitialAd: InterstitialAd?
   private(set) var isAdReady = false
+  var shouldShowAdFreePrompt = false
 
   /// Last time an interstitial was shown (persisted across app launches).
   private var lastShownDate: Date? {
@@ -81,6 +82,7 @@ extension InterstitialAdManager: FullScreenContentDelegate {
       print("[AdMob] Interstitial dismissed")
       lastShownDate = Date()
       isAdReady = false
+      shouldShowAdFreePrompt = true
       loadAd()  // preload next ad
     }
   }

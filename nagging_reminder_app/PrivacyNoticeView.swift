@@ -8,9 +8,9 @@ struct PrivacyNoticeView: View {
       ScrollView {
         VStack(alignment: .leading, spacing: 24) {
           VStack(alignment: .leading, spacing: 8) {
-            Text("プライバシーポリシー")
+            Text(LocalizedStringResource("privacy.title"))
               .font(.largeTitle.bold())
-            Text("このアプリをご利用いただく前に、以下のプライバシーに関する事項をお読みください。")
+            Text(LocalizedStringResource("privacy.description"))
               .font(.subheadline)
               .foregroundStyle(.secondary)
           }
@@ -57,7 +57,7 @@ struct PrivacyNoticeView: View {
         Button {
           settings.privacyNoticeAccepted = true
         } label: {
-          Text("同意して始める")
+          Text(LocalizedStringResource("privacy.agree"))
             .font(.headline)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 16)

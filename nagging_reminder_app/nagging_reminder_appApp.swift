@@ -9,6 +9,7 @@ struct nagging_reminder_appApp: App {
   @State private var timerManager = TimerManager()
   @State private var notificationDelegate = NotificationDelegate()
   @State private var interstitialAdManager = InterstitialAdManager()
+  @State private var purchaseManager = PurchaseManager()
 
   var body: some Scene {
     WindowGroup {
@@ -18,6 +19,7 @@ struct nagging_reminder_appApp: App {
         .environment(timerManager)
         .environment(notificationDelegate)
         .environment(interstitialAdManager)
+        .environment(purchaseManager)
         .preferredColorScheme(settings.theme.colorScheme)
         .task {
           // 1. AdMob 初期化

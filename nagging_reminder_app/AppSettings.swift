@@ -15,9 +15,9 @@ enum AppTheme: String, Codable, CaseIterable {
 
   var displayName: String {
     switch self {
-    case .auto: return "Auto"
-    case .light: return "Light"
-    case .dark: return "Dark"
+    case .auto: return String(localized: "Auto")
+    case .light: return String(localized: "Light")
+    case .dark: return String(localized: "Dark")
     }
   }
 }
@@ -29,9 +29,9 @@ enum WeekStart: String, Codable, CaseIterable {
 
   var displayName: String {
     switch self {
-    case .sunday: return "Sunday"
-    case .monday: return "Monday"
-    case .saturday: return "Saturday"
+    case .sunday: return String(localized: "Sunday")
+    case .monday: return String(localized: "Monday")
+    case .saturday: return String(localized: "Saturday")
     }
   }
 }

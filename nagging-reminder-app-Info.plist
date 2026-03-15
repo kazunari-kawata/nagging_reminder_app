@@ -4,5 +4,7 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6204247576058151~5229570784</string>
+	<key>ADFREE_PRODUCT_ID</key>
+	<string>no_ads</string>
 </dict>
 </plist>
