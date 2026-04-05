@@ -34,7 +34,7 @@ final class InterstitialAdManager: NSObject {
 
   override init() {
     super.init()
-    loadAd()
+    // loadAd() is called after MobileAds.shared.start() completes (see App entry point)
   }
 
   // MARK: - Load
