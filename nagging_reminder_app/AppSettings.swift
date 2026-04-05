@@ -49,6 +49,21 @@ enum WeekStart: String, Codable, CaseIterable {
     didSet { UserDefaults.standard.set(privacyNoticeAccepted, forKey: "privacyNoticeAccepted") }
   }
 
+  // MARK: - Review Prompt Tracking
+
+  var completedTaskCount: Int = 0 {
+    didSet { UserDefaults.standard.set(completedTaskCount, forKey: "completedTaskCount") }
+  }
+  var appLaunchCount: Int = 0 {
+    didSet { UserDefaults.standard.set(appLaunchCount, forKey: "appLaunchCount") }
+  }
+  var lastReviewRequestDate: Date? {
+    didSet { UserDefaults.standard.set(lastReviewRequestDate, forKey: "lastReviewRequestDate") }
+  }
+  var reviewRequestCount: Int = 0 {
+    didSet { UserDefaults.standard.set(reviewRequestCount, forKey: "reviewRequestCount") }
+  }
+
   init() {
     if let raw = UserDefaults.standard.string(forKey: "appTheme"),
       let saved = AppTheme(rawValue: raw)
@@ -61,5 +76,9 @@ enum WeekStart: String, Codable, CaseIterable {
       weekStart = saved
     }
     privacyNoticeAccepted = UserDefaults.standard.bool(forKey: "privacyNoticeAccepted")
+    completedTaskCount = UserDefaults.standard.integer(forKey: "completedTaskCount")
+    appLaunchCount = UserDefaults.standard.integer(forKey: "appLaunchCount")
+    lastReviewRequestDate = UserDefaults.standard.object(forKey: "lastReviewRequestDate") as? Date
+    reviewRequestCount = UserDefaults.standard.integer(forKey: "reviewRequestCount")
   }
 }
