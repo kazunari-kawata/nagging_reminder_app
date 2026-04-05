@@ -1,0 +1,64 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/HistoryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "History",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear all history?",
+        "location": {
+          "startingColumn": 13,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear All",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear All",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "No history yet",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 133
+        }
+      },
+      {
+        "comment": "",
+        "key": "Completed one-time tasks and\ndeleted tasks will appear here.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 136
+        }
+      }
+    ]
+  },
+  "version": 1
+}

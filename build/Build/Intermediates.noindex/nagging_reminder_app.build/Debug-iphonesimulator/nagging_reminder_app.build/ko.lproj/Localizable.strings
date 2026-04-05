@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld</key>
+	<string>%lld</string>
+	<key>%lld hr</key>
+	<string>%lld시간</string>
+	<key>%lld min</key>
+	<string>%lld분</string>
+	<key>%lld sec</key>
+	<string>%lld초</string>
+	<key>%lld文字以内にしてください</key>
+	<string>%lld자 이내로 입력해주세요</string>
+	<key>Add</key>
+	<string>추가</string>
+	<key>Alert frequency</key>
+	<string>알림 빈도</string>
+	<key>Appearance</key>
+	<string>화면 설정</string>
+	<key>Apr</key>
+	<string>4월</string>
+	<key>April</key>
+	<string>4월</string>
+	<key>Aug</key>
+	<string>8월</string>
+	<key>August</key>
+	<string>8월</string>
+	<key>Auto</key>
+	<string>자동</string>
+	<key>CUSTOM</key>
+	<string>커스텀</string>
+	<key>Calendar</key>
+	<string>캘린더</string>
+	<key>Cancel</key>
+	<string>취소</string>
+	<key>Clear All</key>
+	<string>모두 지우기</string>
+	<key>Clear all history?</key>
+	<string>모든 기록을 지우시겠습니까?</string>
+	<key>Completed one-time tasks and
+deleted tasks will appear here.</key>
+	<string>완료된 일회성 할 일과
+삭제된 할 일이 여기에 표시됩니다.</string>
+	<key>Custom Days</key>
+	<string>커스텀</string>
+	<key>DAILY</key>
+	<string>매일</string>
+	<key>DONE</key>
+	<string>완료</string>
+	<key>Daily</key>
+	<string>매일</string>
+	<key>Dark</key>
+	<string>다크</string>
+	<key>Data</key>
+	<string>데이터</string>
+	<key>Day</key>
+	<string>일</string>
+	<key>Day %lld</key>
+	<string>%lld일</string>
+	<key>Day of month</key>
+	<string>매월 특정 일</string>
+	<key>Dec</key>
+	<string>12월</string>
+	<key>December</key>
+	<string>12월</string>
+	<key>Delete</key>
+	<string>삭제</string>
+	<key>Deleted</key>
+	<string>삭제됨</string>
+	<key>Done</key>
+	<string>완료</string>
+	<key>Done!</key>
+	<string>완료!</string>
+	<key>Due date</key>
+	<string>기한</string>
+	<key>Duration</key>
+	<string>타이머 길이</string>
+	<key>Edit</key>
+	<string>편집</string>
+	<key>Edit Timer</key>
+	<string>타이머 편집</string>
+	<key>Every %@</key>
+	<string>매주 %@</string>
+	<key>FRI</key>
+	<string>금</string>
+	<key>Feb</key>
+	<string>2월</string>
+	<key>February</key>
+	<string>2월</string>
+	<key>Fr</key>
+	<string>금</string>
+	<key>Friday</key>
+	<string>금요일</string>
+	<key>History</key>
+	<string>기록</string>
+	<key>Hours</key>
+	<string>시간</string>
+	<key>Jan</key>
+	<string>1월</string>
+	<key>January</key>
+	<string>1월</string>
+	<key>Jul</key>
+	<string>7월</string>
+	<key>July</key>
+	<string>7월</string>
+	<key>Jun</key>
+	<string>6월</string>
+	<key>June</key>
+	<string>6월</string>
+	<key>LATER</key>
+	<string>이후</string>
+	<key>Light</key>
+	<string>라이트</string>
+	<key>MON</key>
+	<string>월</string>
+	<key>MONTHLY</key>
+	<string>매월</string>
+	<key>Mar</key>
+	<string>3월</string>
+	<key>March</key>
+	<string>3월</string>
+	<key>Mark Complete</key>
+	<string>완료로 표시</string>
+	<key>May</key>
+	<string>5월</string>
+	<key>Minutes</key>
+	<string>분</string>
+	<key>Mo</key>
+	<string>월</string>
+	<key>Monday</key>
+	<string>월요일</string>
+	<key>Month</key>
+	<string>월</string>
+	<key>Monthly</key>
+	<string>매월</string>
+	<key>Mon–Fri</key>
+	<string>월~금</string>
+	<key>Name (e.g. Coffee, Exercise)</key>
+	<string>이름 (예: 커피, 운동)</string>
+	<key>New Timer</key>
+	<string>새 타이머</string>
+	<key>No history yet</key>
+	<string>아직 기록이 없습니다</string>
+	<key>No timers yet</key>
+	<string>아직 타이머가 없습니다</string>
+	<key>Nov</key>
+	<string>11월</string>
+	<key>November</key>
+	<string>11월</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>ONCE</key>
+	<string>1회</string>
+	<key>OVERDUE</key>
+	<string>기한 초과</string>
+	<key>Oct</key>
+	<string>10월</string>
+	<key>October</key>
+	<string>10월</string>
+	<key>Once</key>
+	<string>1회만</string>
+	<key>One-time</key>
+	<string>1회만</string>
+	<key>PRESETS</key>
+	<string>프리셋</string>
+	<key>Repeat</key>
+	<string>반복</string>
+	<key>SAT</key>
+	<string>토</string>
+	<key>SUN</key>
+	<string>일</string>
+	<key>Sa</key>
+	<string>토</string>
+	<key>Saturday</key>
+	<string>토요일</string>
+	<key>Save</key>
+	<string>저장</string>
+	<key>Schedule</key>
+	<string>스케줄</string>
+	<key>Sep</key>
+	<string>9월</string>
+	<key>September</key>
+	<string>9월</string>
+	<key>Set due date</key>
+	<string>기한 설정</string>
+	<key>Stop</key>
+	<string>정지</string>
+	<key>Su</key>
+	<string>일</string>
+	<key>Sunday</key>
+	<string>일요일</string>
+	<key>THIS WEEK</key>
+	<string>이번 주</string>
+	<key>THU</key>
+	<string>목</string>
+	<key>TODAY</key>
+	<string>오늘</string>
+	<key>TOMORROW</key>
+	<string>내일</string>
+	<key>TUE</key>
+	<string>화</string>
+	<key>Tap + to create a preset timer</key>
+	<string>+ 를 탭하여 프리셋 타이머 추가</string>
+	<key>Task name</key>
+	<string>할 일 이름</string>
+	<key>Th</key>
+	<string>목</string>
+	<key>Theme</key>
+	<string>테마</string>
+	<key>Thursday</key>
+	<string>목요일</string>
+	<key>Time</key>
+	<string>시간</string>
+	<key>Timers</key>
+	<string>타이머</string>
+	<key>Total</key>
+	<string>합계</string>
+	<key>Tu</key>
+	<string>화</string>
+	<key>Tuesday</key>
+	<string>화요일</string>
+	<key>Upgrade</key>
+	<string>업그레이드</string>
+	<key>WED</key>
+	<string>수</string>
+	<key>WEEKLY</key>
+	<string>매주</string>
+	<key>WKDAYS</key>
+	<string>평일</string>
+	<key>We</key>
+	<string>수</string>
+	<key>Wednesday</key>
+	<string>수요일</string>
+	<key>Week starts</key>
+	<string>주의 시작 요일</string>
+	<key>Weekdays (Mon–Fri)</key>
+	<string>평일 (월~금)</string>
+	<key>Weekly</key>
+	<string>매주</string>
+	<key>YEARLY</key>
+	<string>매년</string>
+	<key>Yearly</key>
+	<string>매년</string>
+	<key>ad.free.all.hidden</key>
+	<string>앱 내 모든 광고가 숨겨집니다.</string>
+	<key>ad.free.plan</key>
+	<string>광고 제거 플랜</string>
+	<key>ad.free.plan.purchased</key>
+	<string>광고 제거 플랜
+구매 완료되었습니다</string>
+	<key>ad.remove</key>
+	<string>광고 없이 사용하기</string>
+	<key>ad.remove.description</key>
+	<string>한 번 구매하면 모든 광고가 영구적으로 숨겨집니다.</string>
+	<key>button.add.task</key>
+	<string>할 일 추가</string>
+	<key>demo.task.exercise</key>
+	<string>아침 운동</string>
+	<key>demo.task.medicine</key>
+	<string>약 복용 💊</string>
+	<key>demo.task.once</key>
+	<string>이 카드를 오른쪽으로 스와이프 → 하여 완료해보세요!</string>
+	<key>error.product.invalid</key>
+	<string>상품 정보 설정에 문제가 있습니다.</string>
+	<key>error.product.notloaded</key>
+	<string>상품 정보가 아직 로드되지 않았습니다.</string>
+	<key>error.purchase.cancelled</key>
+	<string>구매가 취소되었습니다.</string>
+	<key>error.purchase.failed</key>
+	<string>구매에 실패했습니다: %@</string>
+	<key>error.purchase.failed %@</key>
+	<string>구매에 실패했습니다: %@</string>
+	<key>error.purchase.pending</key>
+	<string>구매 승인 대기 중입니다. 보호자의 승인 후에 유효해집니다.</string>
+	<key>error.restore.failed</key>
+	<string>구매 복원에 실패했습니다: %@</string>
+	<key>error.restore.failed %@</key>
+	<string>복원에 실패했습니다: %@</string>
+	<key>error.suggestion.restart</key>
+	<string>앱을 다시 시작한 후 다시 시도해 주세요.</string>
+	<key>error.suggestion.retry</key>
+	<string>잠시 후 다시 시도해 주세요.</string>
+	<key>error.verification.failed</key>
+	<string>구매 검증에 실패했습니다.</string>
+	<key>form.add.task</key>
+	<string>할 일 추가</string>
+	<key>form.edit.task</key>
+	<string>할 일 편집</string>
+	<key>hours</key>
+	<string>시간</string>
+	<key>legal.privacy</key>
+	<string>개인정보 처리방침</string>
+	<key>legal.terms</key>
+	<string>이용약관</string>
+	<key>message.all.done</key>
+	<string>오늘의 할 일은 모두 완료되었습니다!</string>
+	<key>min</key>
+	<string>분</string>
+	<key>onboarding.button.next</key>
+	<string>다음</string>
+	<key>onboarding.button.skip</key>
+	<string>건너뛰기</string>
+	<key>onboarding.button.start</key>
+	<string>시작하기</string>
+	<key>onboarding.step1.description</key>
+	<string>홈 화면 상단의 "+ 할 일 추가" 버튼을 탭하세요. 이름, 시간, 반복 일정을 설정하면 Baddger가 완료할 때까지 끈질기게 알림을 보냅니다.</string>
+	<key>onboarding.step1.title</key>
+	<string>할 일 추가하기</string>
+	<key>onboarding.step2.description</key>
+	<string>할 일을 완료했다면 카드를 살짝 왼쪽으로 스와이프하세요. 카드가 초록색으로 바뀌면 손가락을 놓으면 완료 처리되고 알림이 멈춥니다.</string>
+	<key>onboarding.step2.title</key>
+	<string>짧게 왼쪽 스와이프 → 완료</string>
+	<key>onboarding.step3.description</key>
+	<string>할 일을 삭제하려면 카드를 왼쪽으로 크게 스와이프하세요(카드 너비의 약 70% 이상). 빨간색으로 바뀌면 손가락을 놓으면 완전히 삭제됩니다.</string>
+	<key>onboarding.step3.title</key>
+	<string>크게 왼쪽 스와이프 ← 삭제</string>
+	<key>privacy.agree</key>
+	<string>동의하고 시작하기</string>
+	<key>privacy.description</key>
+	<string>이 앱을 이용하기 전에, 아래의 개인정보 취급 방침을 확인해 주세요.</string>
+	<key>privacy.title</key>
+	<string>개인정보 처리방침</string>
+	<key>purchase.button</key>
+	<string>구매하기</string>
+	<key>purchase.in.progress</key>
+	<string>구매 중...</string>
+	<key>purchase.loading</key>
+	<string>불러오는 중...</string>
+	<key>purchase.restore</key>
+	<string>구매 복원하기</string>
+	<key>sec</key>
+	<string>초</string>
+	<key>settings.delete.all</key>
+	<string>모든 데이터 삭제하기</string>
+	<key>settings.delete.confirmed</key>
+	<string>모든 데이터를 삭제했습니다.</string>
+	<key>settings.delete.warning</key>
+	<string>할 일과 기록이 모두 삭제됩니다. 이 작업은 되돌릴 수 없습니다.</string>
+	<key>settings.history</key>
+	<string>기록</string>
+	<key>settings.purchased</key>
+	<string>구매 완료</string>
+	<key>settings.title</key>
+	<string>설정</string>
+	<key>settings.upgrade</key>
+	<string>업그레이드</string>
+	<key>tab.tasks</key>
+	<string>할 일</string>
+	<key>tab.timer</key>
+	<string>타이머</string>
+	<key>完了</key>
+	<string>완료</string>
+</dict>
+</plist>

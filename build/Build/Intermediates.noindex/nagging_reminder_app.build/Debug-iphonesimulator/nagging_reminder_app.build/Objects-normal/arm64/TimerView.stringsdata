@@ -1,0 +1,168 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TimerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Timers",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 192
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 217
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done!",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 243
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stop",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 263
+        }
+      },
+      {
+        "comment": "",
+        "key": "Repeat",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 283
+        }
+      },
+      {
+        "comment": "",
+        "key": "PRESETS",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 384
+        }
+      },
+      {
+        "comment": "",
+        "key": "No timers yet",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 445
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap + to create a preset timer",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 448
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Timer",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 493
+        }
+      },
+      {
+        "comment": "",
+        "key": "Edit Timer",
+        "location": {
+          "startingColumn": 97,
+          "startingLine": 493
+        }
+      },
+      {
+        "comment": "",
+        "key": "Duration",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 478
+        }
+      },
+      {
+        "comment": "",
+        "key": "Name (e.g. Coffee, Exercise)",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 475
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 484
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 497
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 500
+        }
+      },
+      {
+        "comment": "",
+        "key": "hours",
+        "location": {
+          "startingColumn": 85,
+          "startingLine": 643
+        }
+      },
+      {
+        "comment": "",
+        "key": "min",
+        "location": {
+          "startingColumn": 87,
+          "startingLine": 644
+        }
+      },
+      {
+        "comment": "",
+        "key": "sec",
+        "location": {
+          "startingColumn": 87,
+          "startingLine": 645
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 655
+        }
+      }
+    ]
+  },
+  "version": 1
+}

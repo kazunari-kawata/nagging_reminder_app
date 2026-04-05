@@ -1,0 +1,80 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/OnboardingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "onboarding.step1.title",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.step1.description",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.step2.title",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.step2.description",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.step3.title",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.step3.description",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.button.next",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.button.skip",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "onboarding.button.start",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 92
+        }
+      }
+    ]
+  },
+  "version": 1
+}

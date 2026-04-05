@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld</key>
+	<string>%lld</string>
+	<key>%lld hr</key>
+	<string>%lld 時間</string>
+	<key>%lld min</key>
+	<string>%lld 分</string>
+	<key>%lld sec</key>
+	<string>%lld秒</string>
+	<key>%lld文字以内にしてください</key>
+	<string>%lld文字以内にしてください</string>
+	<key>Add</key>
+	<string>追加</string>
+	<key>Alert frequency</key>
+	<string>アラート頻度</string>
+	<key>Appearance</key>
+	<string>外観</string>
+	<key>Apr</key>
+	<string>4月</string>
+	<key>April</key>
+	<string>4月</string>
+	<key>Aug</key>
+	<string>8月</string>
+	<key>August</key>
+	<string>8月</string>
+	<key>Auto</key>
+	<string>自動</string>
+	<key>CUSTOM</key>
+	<string>カスタム</string>
+	<key>Calendar</key>
+	<string>カレンダー</string>
+	<key>Cancel</key>
+	<string>キャンセル</string>
+	<key>Clear All</key>
+	<string>すべてクリア</string>
+	<key>Clear all history?</key>
+	<string>すべての履歴をクリアしますか？</string>
+	<key>Completed one-time tasks and
+deleted tasks will appear here.</key>
+	<string>完了した1回限りのタスクと
+削除されたタスクがここに表示されます。</string>
+	<key>Custom Days</key>
+	<string>カスタム</string>
+	<key>DAILY</key>
+	<string>毎日</string>
+	<key>DONE</key>
+	<string>完了</string>
+	<key>Daily</key>
+	<string>毎日</string>
+	<key>Dark</key>
+	<string>ダーク</string>
+	<key>Data</key>
+	<string>データ</string>
+	<key>Day</key>
+	<string>日</string>
+	<key>Day %lld</key>
+	<string>%lld日</string>
+	<key>Day of month</key>
+	<string>月の日付</string>
+	<key>Dec</key>
+	<string>12月</string>
+	<key>December</key>
+	<string>12月</string>
+	<key>Delete</key>
+	<string>削除</string>
+	<key>Deleted</key>
+	<string>削除済み</string>
+	<key>Done</key>
+	<string>完了</string>
+	<key>Done!</key>
+	<string>完了！</string>
+	<key>Due date</key>
+	<string>期限</string>
+	<key>Duration</key>
+	<string>時間</string>
+	<key>Edit</key>
+	<string>編集</string>
+	<key>Edit Timer</key>
+	<string>タイマーを編集</string>
+	<key>Every %@</key>
+	<string>毎週%@</string>
+	<key>FRI</key>
+	<string>金</string>
+	<key>Feb</key>
+	<string>2月</string>
+	<key>February</key>
+	<string>2月</string>
+	<key>Fr</key>
+	<string>金</string>
+	<key>Friday</key>
+	<string>金曜日</string>
+	<key>History</key>
+	<string>履歴</string>
+	<key>Hours</key>
+	<string>時間</string>
+	<key>Jan</key>
+	<string>1月</string>
+	<key>January</key>
+	<string>1月</string>
+	<key>Jul</key>
+	<string>7月</string>
+	<key>July</key>
+	<string>7月</string>
+	<key>Jun</key>
+	<string>6月</string>
+	<key>June</key>
+	<string>6月</string>
+	<key>LATER</key>
+	<string>今後</string>
+	<key>Light</key>
+	<string>ライト</string>
+	<key>MON</key>
+	<string>月</string>
+	<key>MONTHLY</key>
+	<string>毎月</string>
+	<key>Mar</key>
+	<string>3月</string>
+	<key>March</key>
+	<string>3月</string>
+	<key>Mark Complete</key>
+	<string>完了としてマーク</string>
+	<key>May</key>
+	<string>5月</string>
+	<key>Minutes</key>
+	<string>分</string>
+	<key>Mo</key>
+	<string>月</string>
+	<key>Monday</key>
+	<string>月曜日</string>
+	<key>Month</key>
+	<string>月</string>
+	<key>Monthly</key>
+	<string>毎月</string>
+	<key>Mon–Fri</key>
+	<string>月～金</string>
+	<key>Name (e.g. Coffee, Exercise)</key>
+	<string>名前 (例: ストレッチ)</string>
+	<key>New Timer</key>
+	<string>新規タイマー</string>
+	<key>No history yet</key>
+	<string>履歴がまだありません</string>
+	<key>No timers yet</key>
+	<string>タイマーがありません</string>
+	<key>Nov</key>
+	<string>11月</string>
+	<key>November</key>
+	<string>11月</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>ONCE</key>
+	<string>1回</string>
+	<key>OVERDUE</key>
+	<string>期限切れ</string>
+	<key>Oct</key>
+	<string>10月</string>
+	<key>October</key>
+	<string>10月</string>
+	<key>Once</key>
+	<string>1回のみ</string>
+	<key>One-time</key>
+	<string>1回のみ</string>
+	<key>PRESETS</key>
+	<string>プリセット</string>
+	<key>Repeat</key>
+	<string>再開</string>
+	<key>SAT</key>
+	<string>土</string>
+	<key>SUN</key>
+	<string>日</string>
+	<key>Sa</key>
+	<string>土</string>
+	<key>Saturday</key>
+	<string>土曜日</string>
+	<key>Save</key>
+	<string>保存</string>
+	<key>Schedule</key>
+	<string>スケジュール</string>
+	<key>Sep</key>
+	<string>9月</string>
+	<key>September</key>
+	<string>9月</string>
+	<key>Set due date</key>
+	<string>期限を設定</string>
+	<key>Stop</key>
+	<string>停止</string>
+	<key>Su</key>
+	<string>日</string>
+	<key>Sunday</key>
+	<string>日曜日</string>
+	<key>THIS WEEK</key>
+	<string>今週</string>
+	<key>THU</key>
+	<string>木</string>
+	<key>TODAY</key>
+	<string>今日</string>
+	<key>TOMORROW</key>
+	<string>明日</string>
+	<key>TUE</key>
+	<string>火</string>
+	<key>Tap + to create a preset timer</key>
+	<string>+を押してタイマーを作成</string>
+	<key>Task name</key>
+	<string>タスク名</string>
+	<key>Th</key>
+	<string>木</string>
+	<key>Theme</key>
+	<string>テーマ</string>
+	<key>Thursday</key>
+	<string>木曜日</string>
+	<key>Time</key>
+	<string>時刻</string>
+	<key>Timers</key>
+	<string>タイマー</string>
+	<key>Total</key>
+	<string>合計</string>
+	<key>Tu</key>
+	<string>火</string>
+	<key>Tuesday</key>
+	<string>火曜日</string>
+	<key>Upgrade</key>
+	<string>アップグレード</string>
+	<key>WED</key>
+	<string>水</string>
+	<key>WEEKLY</key>
+	<string>毎週</string>
+	<key>WKDAYS</key>
+	<string>平日</string>
+	<key>We</key>
+	<string>水</string>
+	<key>Wednesday</key>
+	<string>水曜日</string>
+	<key>Week starts</key>
+	<string>週の開始曜日</string>
+	<key>Weekdays (Mon–Fri)</key>
+	<string>平日（月～金）</string>
+	<key>Weekly</key>
+	<string>毎週</string>
+	<key>YEARLY</key>
+	<string>毎年</string>
+	<key>Yearly</key>
+	<string>毎年</string>
+	<key>ad.free.all.hidden</key>
+	<string>アプリ内の広告はすべて非表示になっています。</string>
+	<key>ad.free.plan</key>
+	<string>広告なしプラン</string>
+	<key>ad.free.plan.purchased</key>
+	<string>広告なしプラン
+購入済みです</string>
+	<key>ad.remove</key>
+	<string>広告なしで使う</string>
+	<key>ad.remove.description</key>
+	<string>一度購入するとすべての広告が永久に非表示になります。</string>
+	<key>button.add.task</key>
+	<string>タスクを追加</string>
+	<key>demo.task.exercise</key>
+	<string>朝の運動</string>
+	<key>demo.task.medicine</key>
+	<string>薬を飲む 💊</string>
+	<key>demo.task.once</key>
+	<string>このカードを右スワイプ → で完了にしてみよう！</string>
+	<key>error.product.invalid</key>
+	<string>商品情報の設定に問題があります。</string>
+	<key>error.product.notloaded</key>
+	<string>商品情報がまだ読み込まれていません。</string>
+	<key>error.purchase.cancelled</key>
+	<string>購入がキャンセルされました。</string>
+	<key>error.purchase.failed</key>
+	<string>購入に失敗しました: %@</string>
+	<key>error.purchase.failed %@</key>
+	<string>購入に失敗しました: %@</string>
+	<key>error.purchase.pending</key>
+	<string>購入は承認待ちです。保護者の承認後に有効になります。</string>
+	<key>error.restore.failed</key>
+	<string>購入の復元に失敗しました: %@</string>
+	<key>error.restore.failed %@</key>
+	<string>復元に失敗しました: %@</string>
+	<key>error.suggestion.restart</key>
+	<string>アプリを再起動してお試しください。</string>
+	<key>error.suggestion.retry</key>
+	<string>しばらくしてからもう一度お試しください。</string>
+	<key>error.verification.failed</key>
+	<string>購入の検証に失敗しました。</string>
+	<key>form.add.task</key>
+	<string>タスクを追加</string>
+	<key>form.edit.task</key>
+	<string>タスクを編集</string>
+	<key>hours</key>
+	<string>時間</string>
+	<key>legal.privacy</key>
+	<string>プライバシーポリシー</string>
+	<key>legal.terms</key>
+	<string>利用規約</string>
+	<key>message.all.done</key>
+	<string>今日のタスクはすべて完了です！</string>
+	<key>min</key>
+	<string>分</string>
+	<key>onboarding.button.next</key>
+	<string>次へ</string>
+	<key>onboarding.button.skip</key>
+	<string>スキップ</string>
+	<key>onboarding.button.start</key>
+	<string>さっそく始める</string>
+	<key>onboarding.step1.description</key>
+	<string>ホーム画面の「+ タスクを追加」ボタンをタップ。名前・時間・繰り返し設定をしたら、あとはBaddgerが完了するまでしつこく通知します。</string>
+	<key>onboarding.step1.title</key>
+	<string>タスクを追加しよう</string>
+	<key>onboarding.step2.description</key>
+	<string>タスクが終わったら、カードを少し左にスワイプ。カードが緑になったら指を離すと完了になり、通知が止まります。</string>
+	<key>onboarding.step2.title</key>
+	<string>少し左スワイプ → 完了</string>
+	<key>onboarding.step3.description</key>
+	<string>タスクを削除したいときは、カードを大きく左にスワイプ（カードの幅の約7割以上）。赤くなったら離すと完全に削除されます。</string>
+	<key>onboarding.step3.title</key>
+	<string>大きく左スワイプ ← 削除</string>
+	<key>privacy.agree</key>
+	<string>同意して始める</string>
+	<key>privacy.description</key>
+	<string>このアプリをご利用いただく前に、以下のプライバシーに関する事項をお読みください。</string>
+	<key>privacy.title</key>
+	<string>プライバシーポリシー</string>
+	<key>purchase.button</key>
+	<string>購入する</string>
+	<key>purchase.in.progress</key>
+	<string>購入中...</string>
+	<key>purchase.loading</key>
+	<string>読み込み中...</string>
+	<key>purchase.restore</key>
+	<string>購入を復元する</string>
+	<key>sec</key>
+	<string>秒</string>
+	<key>settings.delete.all</key>
+	<string>全データを削除する</string>
+	<key>settings.delete.confirmed</key>
+	<string>すべてのデータを削除しました。</string>
+	<key>settings.delete.warning</key>
+	<string>タスクと履歴がすべて削除されます。この操作は取り消せません。</string>
+	<key>settings.history</key>
+	<string>履歴</string>
+	<key>settings.purchased</key>
+	<string>購入済み</string>
+	<key>settings.title</key>
+	<string>設定</string>
+	<key>settings.upgrade</key>
+	<string>アップグレード</string>
+	<key>tab.tasks</key>
+	<string>タスク</string>
+	<key>tab.timer</key>
+	<string>タイマー</string>
+	<key>完了</key>
+	<string>完了</string>
+</dict>
+</plist>

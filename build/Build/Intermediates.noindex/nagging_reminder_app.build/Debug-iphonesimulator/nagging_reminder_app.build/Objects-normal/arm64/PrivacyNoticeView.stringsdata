@@ -1,0 +1,32 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/PrivacyNoticeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "privacy.title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 11
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.description",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 13
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.agree",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 60
+        }
+      }
+    ]
+  },
+  "version": 1
+}

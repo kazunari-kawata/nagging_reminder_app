@@ -143,6 +143,38 @@ final class TaskManager {
     tasks.append(task)
   }
 
+  /// Inserts sample tasks the first time the user opens the app after onboarding.
+  func insertDemoTasksIfNeeded() {
+    guard !UserDefaults.standard.bool(forKey: "demoTasksInserted") else { return }
+    UserDefaults.standard.set(true, forKey: "demoTasksInserted")
+
+    let now = Calendar.current.date(byAdding: .minute, value: 5, to: Date()) ?? Date()
+    let demoTasks: [(name: String, schedule: RepeatSchedule)] = [
+      (
+        String(localized: "demo.task.medicine"),
+        .daily(time: TimeOfDay(hour: 8, minute: 0))
+      ),
+      (
+        String(localized: "demo.task.exercise"),
+        .weekly(weekday: 2, time: TimeOfDay(hour: 7, minute: 30))
+      ),
+      (
+        String(localized: "demo.task.once"),
+        .once
+      ),
+    ]
+    _ = now  // suppress warning; dueDate used for once task
+    for (name, schedule) in demoTasks {
+      let due: Date? = {
+        if case .once = schedule {
+          return Calendar.current.date(byAdding: .hour, value: 1, to: Date())
+        }
+        return nil
+      }()
+      addTask(name: name, schedule: schedule, nagIntervalMinutes: 30, dueDate: due)
+    }
+  }
+
   func updateTask(
     _ task: TaskItem, name: String, schedule: RepeatSchedule, nagIntervalMinutes: Int,
     dueDate: Date?

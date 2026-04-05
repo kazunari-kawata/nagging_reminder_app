@@ -1,0 +1,32 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskManager.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "demo.task.medicine",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 154
+        }
+      },
+      {
+        "comment": "",
+        "key": "demo.task.exercise",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "demo.task.once",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 162
+        }
+      }
+    ]
+  },
+  "version": 1
+}

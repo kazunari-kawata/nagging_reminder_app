@@ -48,6 +48,9 @@ enum WeekStart: String, Codable, CaseIterable {
   var privacyNoticeAccepted: Bool = false {
     didSet { UserDefaults.standard.set(privacyNoticeAccepted, forKey: "privacyNoticeAccepted") }
   }
+  var tutorialCompleted: Bool = false {
+    didSet { UserDefaults.standard.set(tutorialCompleted, forKey: "tutorialCompleted") }
+  }
 
   // MARK: - Review Prompt Tracking
 
@@ -76,6 +79,7 @@ enum WeekStart: String, Codable, CaseIterable {
       weekStart = saved
     }
     privacyNoticeAccepted = UserDefaults.standard.bool(forKey: "privacyNoticeAccepted")
+    tutorialCompleted = UserDefaults.standard.bool(forKey: "tutorialCompleted")
     completedTaskCount = UserDefaults.standard.integer(forKey: "completedTaskCount")
     appLaunchCount = UserDefaults.standard.integer(forKey: "appLaunchCount")
     lastReviewRequestDate = UserDefaults.standard.object(forKey: "lastReviewRequestDate") as? Date

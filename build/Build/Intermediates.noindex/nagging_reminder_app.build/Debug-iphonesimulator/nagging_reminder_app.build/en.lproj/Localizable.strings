@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld</key>
+	<string>%lld</string>
+	<key>%lld hr</key>
+	<string>%lld hr</string>
+	<key>%lld min</key>
+	<string>%lld min</string>
+	<key>%lld sec</key>
+	<string>%lld sec</string>
+	<key>%lld文字以内にしてください</key>
+	<string>Please keep it within %lld characters</string>
+	<key>Add</key>
+	<string>Add</string>
+	<key>Alert frequency</key>
+	<string>Alert frequency</string>
+	<key>Appearance</key>
+	<string>Appearance</string>
+	<key>Apr</key>
+	<string>Apr</string>
+	<key>April</key>
+	<string>April</string>
+	<key>Aug</key>
+	<string>Aug</string>
+	<key>August</key>
+	<string>August</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>CUSTOM</key>
+	<string>CUSTOM</string>
+	<key>Calendar</key>
+	<string>Calendar</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Clear All</key>
+	<string>Clear All</string>
+	<key>Clear all history?</key>
+	<string>Clear all history?</string>
+	<key>Completed one-time tasks and
+deleted tasks will appear here.</key>
+	<string>Completed one-time tasks and
+deleted tasks will appear here.</string>
+	<key>Custom Days</key>
+	<string>Custom Days</string>
+	<key>DAILY</key>
+	<string>DAILY</string>
+	<key>DONE</key>
+	<string>DONE</string>
+	<key>Daily</key>
+	<string>Daily</string>
+	<key>Dark</key>
+	<string>Dark</string>
+	<key>Data</key>
+	<string>Data</string>
+	<key>Day</key>
+	<string>Day</string>
+	<key>Day %lld</key>
+	<string>Day %lld</string>
+	<key>Day of month</key>
+	<string>Day of month</string>
+	<key>Dec</key>
+	<string>Dec</string>
+	<key>December</key>
+	<string>December</string>
+	<key>Delete</key>
+	<string>Delete</string>
+	<key>Deleted</key>
+	<string>Deleted</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>Done!</key>
+	<string>Done!</string>
+	<key>Due date</key>
+	<string>Due date</string>
+	<key>Duration</key>
+	<string>Duration</string>
+	<key>Edit</key>
+	<string>Edit</string>
+	<key>Every %@</key>
+	<string>Every %@</string>
+	<key>FRI</key>
+	<string>FRI</string>
+	<key>Feb</key>
+	<string>Feb</string>
+	<key>February</key>
+	<string>February</string>
+	<key>Fr</key>
+	<string>Fr</string>
+	<key>Friday</key>
+	<string>Friday</string>
+	<key>History</key>
+	<string>History</string>
+	<key>Hours</key>
+	<string>Hours</string>
+	<key>Jan</key>
+	<string>Jan</string>
+	<key>January</key>
+	<string>January</string>
+	<key>Jul</key>
+	<string>Jul</string>
+	<key>July</key>
+	<string>July</string>
+	<key>Jun</key>
+	<string>Jun</string>
+	<key>June</key>
+	<string>June</string>
+	<key>LATER</key>
+	<string>LATER</string>
+	<key>Light</key>
+	<string>Light</string>
+	<key>MON</key>
+	<string>MON</string>
+	<key>MONTHLY</key>
+	<string>MONTHLY</string>
+	<key>Mar</key>
+	<string>Mar</string>
+	<key>March</key>
+	<string>March</string>
+	<key>Mark Complete</key>
+	<string>Mark Complete</string>
+	<key>May</key>
+	<string>May</string>
+	<key>Minutes</key>
+	<string>Minutes</string>
+	<key>Mo</key>
+	<string>Mo</string>
+	<key>Monday</key>
+	<string>Monday</string>
+	<key>Month</key>
+	<string>Month</string>
+	<key>Monthly</key>
+	<string>Monthly</string>
+	<key>Mon–Fri</key>
+	<string>Mon–Fri</string>
+	<key>Name (e.g. Coffee, Exercise)</key>
+	<string>Name (e.g. Coffee, Exercise)</string>
+	<key>New Timer</key>
+	<string>New Timer</string>
+	<key>No history yet</key>
+	<string>No history yet</string>
+	<key>No timers yet</key>
+	<string>No timers yet</string>
+	<key>Nov</key>
+	<string>Nov</string>
+	<key>November</key>
+	<string>November</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>ONCE</key>
+	<string>ONCE</string>
+	<key>OVERDUE</key>
+	<string>OVERDUE</string>
+	<key>Oct</key>
+	<string>Oct</string>
+	<key>October</key>
+	<string>October</string>
+	<key>Once</key>
+	<string>Once</string>
+	<key>One-time</key>
+	<string>One-time</string>
+	<key>PRESETS</key>
+	<string>PRESETS</string>
+	<key>Repeat</key>
+	<string>Repeat</string>
+	<key>SAT</key>
+	<string>SAT</string>
+	<key>SUN</key>
+	<string>SUN</string>
+	<key>Sa</key>
+	<string>Sa</string>
+	<key>Saturday</key>
+	<string>Saturday</string>
+	<key>Save</key>
+	<string>Save</string>
+	<key>Schedule</key>
+	<string>Schedule</string>
+	<key>Sep</key>
+	<string>Sep</string>
+	<key>September</key>
+	<string>September</string>
+	<key>Set due date</key>
+	<string>Set due date</string>
+	<key>Stop</key>
+	<string>Stop</string>
+	<key>Su</key>
+	<string>Su</string>
+	<key>Sunday</key>
+	<string>Sunday</string>
+	<key>THIS WEEK</key>
+	<string>THIS WEEK</string>
+	<key>THU</key>
+	<string>THU</string>
+	<key>TODAY</key>
+	<string>TODAY</string>
+	<key>TOMORROW</key>
+	<string>TOMORROW</string>
+	<key>TUE</key>
+	<string>TUE</string>
+	<key>Tap + to create a preset timer</key>
+	<string>Tap + to create a preset timer</string>
+	<key>Task name</key>
+	<string>Task name</string>
+	<key>Th</key>
+	<string>Th</string>
+	<key>Theme</key>
+	<string>Theme</string>
+	<key>Thursday</key>
+	<string>Thursday</string>
+	<key>Time</key>
+	<string>Time</string>
+	<key>Timers</key>
+	<string>Timers</string>
+	<key>Total</key>
+	<string>Total</string>
+	<key>Tu</key>
+	<string>Tu</string>
+	<key>Tuesday</key>
+	<string>Tuesday</string>
+	<key>Upgrade</key>
+	<string>Upgrade</string>
+	<key>WED</key>
+	<string>WED</string>
+	<key>WEEKLY</key>
+	<string>WEEKLY</string>
+	<key>WKDAYS</key>
+	<string>WKDAYS</string>
+	<key>We</key>
+	<string>We</string>
+	<key>Wednesday</key>
+	<string>Wednesday</string>
+	<key>Week starts</key>
+	<string>Week starts</string>
+	<key>Weekdays (Mon–Fri)</key>
+	<string>Weekdays (Mon–Fri)</string>
+	<key>Weekly</key>
+	<string>Weekly</string>
+	<key>YEARLY</key>
+	<string>YEARLY</string>
+	<key>Yearly</key>
+	<string>Yearly</string>
+	<key>ad.free.all.hidden</key>
+	<string>All in-app ads are hidden.</string>
+	<key>ad.free.plan</key>
+	<string>Ad-Free Plan</string>
+	<key>ad.free.plan.purchased</key>
+	<string>Ad-Free Plan
+Purchased</string>
+	<key>ad.remove</key>
+	<string>Remove Ads</string>
+	<key>ad.remove.description</key>
+	<string>Once purchased, all ads will be hidden forever.</string>
+	<key>button.add.task</key>
+	<string>Add Task</string>
+	<key>demo.task.exercise</key>
+	<string>Morning Exercise</string>
+	<key>demo.task.medicine</key>
+	<string>Take Medicine 💊</string>
+	<key>demo.task.once</key>
+	<string>Try swiping this card → to mark Done!</string>
+	<key>error.product.invalid</key>
+	<string>There is a problem with the product configuration.</string>
+	<key>error.product.notloaded</key>
+	<string>Product information is still loading.</string>
+	<key>error.purchase.cancelled</key>
+	<string>Purchase was cancelled.</string>
+	<key>error.purchase.failed</key>
+	<string>Purchase failed: %@</string>
+	<key>error.purchase.failed %@</key>
+	<string>Purchase failed: %@</string>
+	<key>error.purchase.pending</key>
+	<string>Purchase is awaiting approval. It will become active after parental approval.</string>
+	<key>error.restore.failed</key>
+	<string>Failed to restore purchase: %@</string>
+	<key>error.restore.failed %@</key>
+	<string>Restore failed: %@</string>
+	<key>error.suggestion.restart</key>
+	<string>Try restarting the app.</string>
+	<key>error.suggestion.retry</key>
+	<string>Please try again later.</string>
+	<key>error.verification.failed</key>
+	<string>Failed to verify the purchase.</string>
+	<key>form.add.task</key>
+	<string>Add Task</string>
+	<key>form.edit.task</key>
+	<string>Edit Task</string>
+	<key>hours</key>
+	<string>hours</string>
+	<key>legal.privacy</key>
+	<string>Privacy Policy</string>
+	<key>legal.terms</key>
+	<string>Terms of Use</string>
+	<key>message.all.done</key>
+	<string>All done for today!</string>
+	<key>min</key>
+	<string>min</string>
+	<key>onboarding.button.next</key>
+	<string>Next</string>
+	<key>onboarding.button.skip</key>
+	<string>Skip</string>
+	<key>onboarding.button.start</key>
+	<string>Get Started</string>
+	<key>onboarding.step1.description</key>
+	<string>Tap the "+ Add Task" button at the top of the home screen. Set a name, time, and repeat schedule — Baddger will keep nagging you until it's done.</string>
+	<key>onboarding.step1.title</key>
+	<string>Add a Task</string>
+	<key>onboarding.step2.description</key>
+	<string>Finished a task? Swipe the card a little to the left. When the card turns green, release to mark it as Done and stop the nagging.</string>
+	<key>onboarding.step2.title</key>
+	<string>Short Left Swipe → Done</string>
+	<key>onboarding.step3.description</key>
+	<string>To delete a task, swipe it far to the left (past 70% of the card). When the card turns red, release to delete it completely.</string>
+	<key>onboarding.step3.title</key>
+	<string>Long Left Swipe ← Delete</string>
+	<key>privacy.agree</key>
+	<string>Agree and Start</string>
+	<key>privacy.description</key>
+	<string>Please read the following privacy matters before using this app.</string>
+	<key>privacy.title</key>
+	<string>Privacy Policy</string>
+	<key>purchase.button</key>
+	<string>Purchase</string>
+	<key>purchase.in.progress</key>
+	<string>Purchasing...</string>
+	<key>purchase.loading</key>
+	<string>Loading...</string>
+	<key>purchase.restore</key>
+	<string>Restore Purchases</string>
+	<key>sec</key>
+	<string>sec</string>
+	<key>settings.delete.all</key>
+	<string>Delete All Data</string>
+	<key>settings.delete.confirmed</key>
+	<string>All data has been deleted.</string>
+	<key>settings.delete.warning</key>
+	<string>All tasks and history will be deleted. This action cannot be undone.</string>
+	<key>settings.history</key>
+	<string>History</string>
+	<key>settings.purchased</key>
+	<string>Purchased</string>
+	<key>settings.title</key>
+	<string>Settings</string>
+	<key>settings.upgrade</key>
+	<string>Upgrade</string>
+	<key>tab.tasks</key>
+	<string>Tasks</string>
+	<key>tab.timer</key>
+	<string>Timer</string>
+	<key>完了</key>
+	<string>Done</string>
+</dict>
+</plist>
