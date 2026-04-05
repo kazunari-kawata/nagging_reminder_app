@@ -1,0 +1,56 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/DerivedSources/GeneratedStringSymbols_Localizable.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Stop",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "hours",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "legal.privacy",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "legal.terms",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "min",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "sec",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 60
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -19,33 +19,32 @@ struct PrivacyNoticeView: View {
 
           privacyItem(
             symbol: "iphone",
-            title: "データの保存場所",
-            body: "タスクや履歴データはお使いの端末内にのみ保存されます。外部サーバーへの送信は行いません。"
+            title: "privacy.item.storage.title",
+            body: "privacy.item.storage.body"
           )
 
           privacyItem(
             symbol: "network.slash",
-            title: "外部への送信",
-            body: "個人を特定できる情報を収集・送信することはありません。"
+            title: "privacy.item.external.title",
+            body: "privacy.item.external.body"
           )
 
           privacyItem(
             symbol: "bell.badge",
-            title: "通知",
-            body: "タスクのリマインダーとして、設定した日時に通知を送信します。通知の許可はいつでもシステム設定から変更できます。"
+            title: "privacy.item.notification.title",
+            body: "privacy.item.notification.body"
           )
 
           privacyItem(
             symbol: "dollarsign.circle",
-            title: "広告",
-            body:
-              "このアプリはGoogle AdMobを使用して広告を表示することがあります。AdMobは端末の広告IDを使用する場合があります。詳細はGoogleのプライバシーポリシーをご参照ください。"
+            title: "privacy.item.ads.title",
+            body: "privacy.item.ads.body"
           )
 
           privacyItem(
             symbol: "trash",
-            title: "データの削除",
-            body: "設定画面から、アプリに保存されているすべてのデータをいつでも削除できます。"
+            title: "privacy.item.deletion.title",
+            body: "privacy.item.deletion.body"
           )
         }
         .padding(.horizontal, 24)
@@ -72,7 +71,9 @@ struct PrivacyNoticeView: View {
     .background(Color(.systemGroupedBackground))
   }
 
-  private func privacyItem(symbol: String, title: String, body: String) -> some View {
+  private func privacyItem(
+    symbol: String, title: LocalizedStringResource, body: LocalizedStringResource
+  ) -> some View {
     HStack(alignment: .top, spacing: 16) {
       Image(systemName: symbol)
         .font(.title2)

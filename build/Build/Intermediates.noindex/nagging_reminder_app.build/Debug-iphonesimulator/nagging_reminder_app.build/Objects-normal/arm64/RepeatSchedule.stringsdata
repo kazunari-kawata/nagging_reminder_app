@@ -1,0 +1,288 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/RepeatSchedule.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "ONCE",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "DAILY",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "WKDAYS",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "CUSTOM",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "WEEKLY",
+        "location": {
+          "startingColumn": 74,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "MONTHLY",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "YEARLY",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Su",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mo",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tu",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "We",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "Th",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fr",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sa",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sunday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tuesday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "Wednesday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Thursday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Friday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saturday",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "Jan",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Feb",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mar",
+        "location": {
+          "startingColumn": 77,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Apr",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "May",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Jun",
+        "location": {
+          "startingColumn": 77,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Jul",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Aug",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sep",
+        "location": {
+          "startingColumn": 77,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Oct",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Nov",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dec",
+        "location": {
+          "startingColumn": 77,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "One-time",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mon–Fri",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 73
+        }
+      }
+    ]
+  },
+  "version": 1
+}

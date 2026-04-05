@@ -1,0 +1,56 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/AppSettings.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Auto",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "Light",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dark",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sunday",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monday",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saturday",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 34
+        }
+      }
+    ]
+  },
+  "version": 1
+}

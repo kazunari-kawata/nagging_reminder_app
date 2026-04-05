@@ -1,5 +1,5 @@
-import SwiftUI
 import Combine
+import SwiftUI
 
 // MARK: - ContentView
 
@@ -32,9 +32,9 @@ struct ContentView: View {
           TimerView()
             .environment(timerManager)
         }
-        if !purchaseManager.isAdFree {
-          BannerAdContainer()
-        }
+        // if !purchaseManager.isAdFree {
+        //   BannerAdContainer()
+        // }
         bottomTabBar
       }
     }
@@ -149,7 +149,8 @@ struct ContentView: View {
 
   private func isOverdue(_ task: TaskItem) -> Bool {
     guard let tod = task.repeatSchedule.timeOfDay else { return false }
-    let taskTime = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: currentTime)!
+    let taskTime = cal.date(
+      bySettingHour: tod.hour, minute: tod.minute, second: 0, of: currentTime)!
     return currentTime > taskTime
   }
 
@@ -509,4 +510,7 @@ struct TaskCardView: View {
     .environment(TaskManager())
     .environment(AppSettings())
     .environment(TimerManager())
+    .environment(NotificationDelegate())
+    .environment(InterstitialAdManager())
+    .environment(PurchaseManager())
 }

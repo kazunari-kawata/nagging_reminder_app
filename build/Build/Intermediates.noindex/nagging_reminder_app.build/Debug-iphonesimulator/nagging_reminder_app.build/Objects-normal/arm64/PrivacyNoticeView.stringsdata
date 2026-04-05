@@ -1,0 +1,112 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/PrivacyNoticeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "privacy.item.storage.title",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 22
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.storage.body",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.external.title",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.external.body",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.notification.title",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.notification.body",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.ads.title",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.ads.body",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.deletion.title",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.item.deletion.body",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 11
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.description",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 13
+        }
+      },
+      {
+        "comment": "",
+        "key": "privacy.agree",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 59
+        }
+      }
+    ]
+  },
+  "version": 1
+}

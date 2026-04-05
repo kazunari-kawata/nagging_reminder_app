@@ -1,0 +1,11 @@
+Target dependency graph (5 targets)
+Target 'nagging_reminder_app' in project 'nagging_reminder_app'
+➜ Explicit dependency on target 'GoogleMobileAds' in project 'GoogleMobileAds'
+Target 'GoogleMobileAds' in project 'GoogleMobileAds'
+➜ Explicit dependency on target 'GoogleMobileAdsTarget' in project 'GoogleMobileAds'
+➜ Explicit dependency on target 'GoogleUserMessagingPlatform' in project 'GoogleUserMessagingPlatform'
+Target 'GoogleMobileAdsTarget' in project 'GoogleMobileAds'
+➜ Explicit dependency on target 'GoogleUserMessagingPlatform' in project 'GoogleUserMessagingPlatform'
+Target 'GoogleUserMessagingPlatform' in project 'GoogleUserMessagingPlatform'
+➜ Explicit dependency on target 'UserMessagingPlatformTarget' in project 'GoogleUserMessagingPlatform'
+Target 'UserMessagingPlatformTarget' in project 'GoogleUserMessagingPlatform' (no dependencies)

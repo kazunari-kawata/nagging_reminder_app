@@ -9,6 +9,8 @@ final class InterstitialAdManager: NSObject {
     private let adUnitID = "ca-app-pub-6204247576058151/4096927871"
   #endif
   private let intervalSeconds: TimeInterval = 10 * 60  // 10 minutes
+  private let gracePeriodDays: TimeInterval = 7 * 24 * 60 * 60  // 7 days
+  private let minCompletedTasks: Int = 3
 
   private var interstitialAd: InterstitialAd?
   private(set) var isAdReady = false
@@ -18,6 +20,16 @@ final class InterstitialAdManager: NSObject {
   private var lastShownDate: Date? {
     get { UserDefaults.standard.object(forKey: "interstitialLastShown") as? Date }
     set { UserDefaults.standard.set(newValue, forKey: "interstitialLastShown") }
+  }
+
+  /// Date of first app launch. Set once and never overwritten.
+  private var firstLaunchDate: Date {
+    if let saved = UserDefaults.standard.object(forKey: "firstLaunchDate") as? Date {
+      return saved
+    }
+    let now = Date()
+    UserDefaults.standard.set(now, forKey: "firstLaunchDate")
+    return now
   }
 
   override init() {
@@ -44,8 +56,15 @@ final class InterstitialAdManager: NSObject {
 
   // MARK: - Show
 
-  /// Returns true if the 2-hour cooldown has elapsed.
+  /// Returns true when the grace period has passed, enough tasks have been completed,
+  /// and the per-session cooldown has elapsed.
   var canShow: Bool {
+    // Grace period: hide ads for the first 7 days after install
+    guard Date().timeIntervalSince(firstLaunchDate) >= gracePeriodDays else { return false }
+    // Engagement gate: require at least 3 completed tasks
+    let completedCount = UserDefaults.standard.integer(forKey: "completedTaskCount")
+    guard completedCount >= minCompletedTasks else { return false }
+    // Cooldown: respect the per-session interval
     guard let last = lastShownDate else { return true }
     return Date().timeIntervalSince(last) >= intervalSeconds
   }
