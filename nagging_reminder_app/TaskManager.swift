@@ -17,6 +17,9 @@ final class TaskManager {
     didSet { saveHistory() }
   }
 
+  /// Called after a task is completed so the app layer can trigger a review prompt.
+  var onTaskCompleted: (() -> Void)?
+
   init() {
     load()
     loadHistory()
@@ -186,6 +189,8 @@ final class TaskManager {
       archive(tasks[index], reason: .completed)
       tasks.remove(at: index)
     }
+
+    onTaskCompleted?()
   }
 
   // MARK: - Midnight Reset

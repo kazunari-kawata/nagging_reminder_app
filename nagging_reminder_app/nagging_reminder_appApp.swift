@@ -10,6 +10,7 @@ struct nagging_reminder_appApp: App {
   @State private var notificationDelegate = NotificationDelegate()
   @State private var interstitialAdManager = InterstitialAdManager()
   @State private var purchaseManager = PurchaseManager()
+  @State private var reviewManager = ReviewManager()
 
   var body: some Scene {
     WindowGroup {
@@ -32,6 +33,13 @@ struct nagging_reminder_appApp: App {
           notificationDelegate.taskManager = taskManager
           UNUserNotificationCenter.current().delegate = notificationDelegate
           taskManager.requestNotificationPermission()
+
+          // 4. レビュー促進セットアップ
+          reviewManager.recordLaunch(settings: settings)
+          taskManager.onTaskCompleted = { [settings, reviewManager] in
+            settings.completedTaskCount += 1
+            reviewManager.requestReviewIfAppropriate(settings: settings)
+          }
         }.fullScreenCover(
           isPresented: .init(
             get: { !settings.privacyNoticeAccepted },
