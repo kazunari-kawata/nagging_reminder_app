@@ -53,7 +53,7 @@
           "CLANG_COVERAGE_MAPPING" : "YES",
           "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/ProfileData",
           "COLOR_DIAGNOSTICS" : "YES",
-          "diagnostic_message_length" : "84",
+          "diagnostic_message_length" : "66",
           "ENABLE_PREVIEWS" : "NO",
           "ENABLE_XOJIT_PREVIEWS" : "YES",
           "ONLY_ACTIVE_ARCH" : "YES",

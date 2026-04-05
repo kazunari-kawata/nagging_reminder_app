@@ -4,162 +4,194 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "preset.timer.hiit",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.timer.coffee.break",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.timer.study",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.timer.stretch",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
         "key": "Timers",
         "location": {
-          "startingColumn": 40,
-          "startingLine": 106
+          "startingColumn": 32,
+          "startingLine": 120
         }
       },
       {
         "comment": "",
         "key": "Cancel",
         "location": {
-          "startingColumn": 48,
-          "startingLine": 192
+          "startingColumn": 36,
+          "startingLine": 206
         }
       },
       {
         "comment": "",
         "key": "Start",
         "location": {
-          "startingColumn": 48,
-          "startingLine": 217
+          "startingColumn": 36,
+          "startingLine": 231
         }
       },
       {
         "comment": "",
         "key": "Done!",
         "location": {
-          "startingColumn": 48,
-          "startingLine": 243
+          "startingColumn": 36,
+          "startingLine": 257
         }
       },
       {
         "comment": "",
         "key": "Stop",
         "location": {
-          "startingColumn": 56,
-          "startingLine": 263
+          "startingColumn": 40,
+          "startingLine": 277
         }
       },
       {
         "comment": "",
         "key": "Repeat",
         "location": {
-          "startingColumn": 56,
-          "startingLine": 283
+          "startingColumn": 40,
+          "startingLine": 297
         }
       },
       {
         "comment": "",
         "key": "PRESETS",
         "location": {
-          "startingColumn": 44,
-          "startingLine": 384
+          "startingColumn": 34,
+          "startingLine": 399
         }
       },
       {
         "comment": "",
         "key": "No timers yet",
         "location": {
-          "startingColumn": 36,
-          "startingLine": 445
+          "startingColumn": 30,
+          "startingLine": 460
         }
       },
       {
         "comment": "",
         "key": "Tap + to create a preset timer",
         "location": {
-          "startingColumn": 36,
-          "startingLine": 448
+          "startingColumn": 30,
+          "startingLine": 463
         }
       },
       {
         "comment": "",
         "key": "New Timer",
         "location": {
-          "startingColumn": 64,
-          "startingLine": 493
+          "startingColumn": 43,
+          "startingLine": 513
         }
       },
       {
         "comment": "",
         "key": "Edit Timer",
         "location": {
-          "startingColumn": 97,
-          "startingLine": 493
+          "startingColumn": 76,
+          "startingLine": 513
         }
       },
       {
         "comment": "",
         "key": "Duration",
         "location": {
-          "startingColumn": 43,
-          "startingLine": 478
+          "startingColumn": 35,
+          "startingLine": 493
         }
       },
       {
         "comment": "",
         "key": "Name (e.g. Coffee, Exercise)",
         "location": {
-          "startingColumn": 49,
-          "startingLine": 475
+          "startingColumn": 39,
+          "startingLine": 490
         }
       },
       {
         "comment": "",
         "key": "Total",
         "location": {
-          "startingColumn": 48,
-          "startingLine": 484
+          "startingColumn": 36,
+          "startingLine": 499
         }
       },
       {
         "comment": "",
         "key": "Cancel",
         "location": {
-          "startingColumn": 46,
-          "startingLine": 497
+          "startingColumn": 36,
+          "startingLine": 518
         }
       },
       {
         "comment": "",
         "key": "Save",
         "location": {
-          "startingColumn": 46,
-          "startingLine": 500
+          "startingColumn": 36,
+          "startingLine": 521
         }
       },
       {
         "comment": "",
         "key": "hours",
         "location": {
-          "startingColumn": 85,
-          "startingLine": 643
+          "startingColumn": 79,
+          "startingLine": 664
         }
       },
       {
         "comment": "",
         "key": "min",
         "location": {
-          "startingColumn": 87,
-          "startingLine": 644
+          "startingColumn": 81,
+          "startingLine": 665
         }
       },
       {
         "comment": "",
         "key": "sec",
         "location": {
-          "startingColumn": 87,
-          "startingLine": 645
+          "startingColumn": 81,
+          "startingLine": 666
         }
       },
       {
         "comment": "",
         "key": "%lld",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 655
+          "startingColumn": 16,
+          "startingLine": 677
         }
       }
     ]

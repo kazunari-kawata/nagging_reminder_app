@@ -6,7 +6,7 @@
 	<integer>12</integer>
 	<key>logs</key>
 	<dict>
-		<key>601BFEE3-68C3-476D-A437-6C0FBB2F3148</key>
+		<key>66ABC818-B072-4E96-9960-C64BD27A0F79</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>601BFEE3-68C3-476D-A437-6C0FBB2F3148.xcactivitylog</string>
+			<string>66ABC818-B072-4E96-9960-C64BD27A0F79.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>797063355.97992098</real>
+			<real>797064726.12241602</real>
 			<key>timeStoppedRecording</key>
-			<real>797063364.03218997</real>
+			<real>797064738.22634804</real>
 			<key>title</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>601BFEE3-68C3-476D-A437-6C0FBB2F3148</string>
+			<string>66ABC818-B072-4E96-9960-C64BD27A0F79</string>
 		</dict>
-		<key>BA6A6F6D-A913-4B0C-954E-7AE3DF807A03</key>
+		<key>E9F2289B-84AB-47EA-9940-E3B5258821B2</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>BA6A6F6D-A913-4B0C-954E-7AE3DF807A03.xcactivitylog</string>
+			<string>E9F2289B-84AB-47EA-9940-E3B5258821B2.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,55 +82,13 @@
 			<key>signature</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>797063079.69710505</real>
+			<real>797068132.25623703</real>
 			<key>timeStoppedRecording</key>
-			<real>797063091.39170694</real>
+			<real>797068135.51296902</real>
 			<key>title</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>BA6A6F6D-A913-4B0C-954E-7AE3DF807A03</string>
-		</dict>
-		<key>FDB41D89-1EF6-4EB9-9E97-5D9159DE6C26</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>FDB41D89-1EF6-4EB9-9E97-5D9159DE6C26.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>nagging_reminder_app project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>nagging_reminder_app</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>797063290.64876795</real>
-			<key>timeStoppedRecording</key>
-			<real>797063300.478755</real>
-			<key>title</key>
-			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>FDB41D89-1EF6-4EB9-9E97-5D9159DE6C26</string>
+			<string>E9F2289B-84AB-47EA-9940-E3B5258821B2</string>
 		</dict>
 	</dict>
 </dict>

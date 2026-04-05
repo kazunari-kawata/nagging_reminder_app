@@ -4,15 +4,15 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "demo.task.medicine",
+        "key": "preset.task.exercise",
         "location": {
           "startingColumn": 27,
-          "startingLine": 154
+          "startingLine": 153
         }
       },
       {
         "comment": "",
-        "key": "demo.task.exercise",
+        "key": "preset.task.drink.water",
         "location": {
           "startingColumn": 27,
           "startingLine": 158
@@ -20,10 +20,26 @@
       },
       {
         "comment": "",
-        "key": "demo.task.once",
+        "key": "preset.task.vitamin",
         "location": {
           "startingColumn": 27,
-          "startingLine": 162
+          "startingLine": 163
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.reply.emails",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 168
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.call.parents",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 173
         }
       }
     ]

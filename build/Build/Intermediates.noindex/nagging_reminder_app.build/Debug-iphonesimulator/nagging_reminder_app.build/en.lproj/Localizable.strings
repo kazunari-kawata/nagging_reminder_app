@@ -313,10 +313,48 @@ Purchased</string>
 	<string>To delete a task, swipe it far to the left (past 70% of the card). When the card turns red, release to delete it completely.</string>
 	<key>onboarding.step3.title</key>
 	<string>Long Left Swipe ← Delete</string>
+	<key>preset.task.call.parents</key>
+	<string>Call my parents for wedding anniversary</string>
+	<key>preset.task.drink.water</key>
+	<string>Drink water</string>
+	<key>preset.task.exercise</key>
+	<string>Do exercise!!</string>
+	<key>preset.task.reply.emails</key>
+	<string>Reply to pending emails</string>
+	<key>preset.task.vitamin</key>
+	<string>Take Vitamin/Medication</string>
+	<key>preset.timer.coffee.break</key>
+	<string>Coffee Break</string>
+	<key>preset.timer.hiit</key>
+	<string>HIIT</string>
+	<key>preset.timer.stretch</key>
+	<string>Stretch</string>
+	<key>preset.timer.study</key>
+	<string>Study</string>
 	<key>privacy.agree</key>
 	<string>Agree and Start</string>
 	<key>privacy.description</key>
 	<string>Please read the following privacy matters before using this app.</string>
+	<key>privacy.item.ads.body</key>
+	<string>This app may display ads using Google AdMob. AdMob may use your device's advertising ID. Please refer to Google's Privacy Policy for details.</string>
+	<key>privacy.item.ads.title</key>
+	<string>Ads</string>
+	<key>privacy.item.deletion.body</key>
+	<string>You can delete all data stored in the app at any time from the Settings screen.</string>
+	<key>privacy.item.deletion.title</key>
+	<string>Deleting Data</string>
+	<key>privacy.item.external.body</key>
+	<string>We do not collect or transmit any personally identifiable information.</string>
+	<key>privacy.item.external.title</key>
+	<string>External Transmission</string>
+	<key>privacy.item.notification.body</key>
+	<string>Notifications are sent at the scheduled time as task reminders. You can change notification permissions at any time in System Settings.</string>
+	<key>privacy.item.notification.title</key>
+	<string>Notifications</string>
+	<key>privacy.item.storage.body</key>
+	<string>Tasks and history are stored only on your device. No data is sent to external servers.</string>
+	<key>privacy.item.storage.title</key>
+	<string>Data Storage</string>
 	<key>privacy.title</key>
 	<string>Privacy Policy</string>
 	<key>purchase.button</key>

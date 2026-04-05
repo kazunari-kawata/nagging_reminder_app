@@ -315,10 +315,48 @@ deleted tasks will appear here.</key>
 	<string>タスクを削除したいときは、カードを大きく左にスワイプ（カードの幅の約7割以上）。赤くなったら離すと完全に削除されます。</string>
 	<key>onboarding.step3.title</key>
 	<string>大きく左スワイプ ← 削除</string>
+	<key>preset.task.call.parents</key>
+	<string>結婚記念日に親に電話する</string>
+	<key>preset.task.drink.water</key>
+	<string>水を飲む</string>
+	<key>preset.task.exercise</key>
+	<string>運動する!!</string>
+	<key>preset.task.reply.emails</key>
+	<string>未返信メールへの返信</string>
+	<key>preset.task.vitamin</key>
+	<string>ビタミン/薬を飲む</string>
+	<key>preset.timer.coffee.break</key>
+	<string>コーヒーブレイク</string>
+	<key>preset.timer.hiit</key>
+	<string>HIIT</string>
+	<key>preset.timer.stretch</key>
+	<string>ストレッチ</string>
+	<key>preset.timer.study</key>
+	<string>勉強</string>
 	<key>privacy.agree</key>
 	<string>同意して始める</string>
 	<key>privacy.description</key>
 	<string>このアプリをご利用いただく前に、以下のプライバシーに関する事項をお読みください。</string>
+	<key>privacy.item.ads.body</key>
+	<string>このアプリはGoogle AdMobを使用して広告を表示することがあります。AdMobは端末の広告IDを使用する場合があります。詳細はGoogleのプライバシーポリシーをご参照ください。</string>
+	<key>privacy.item.ads.title</key>
+	<string>広告</string>
+	<key>privacy.item.deletion.body</key>
+	<string>設定画面から、アプリに保存されているすべてのデータをいつでも削除できます。</string>
+	<key>privacy.item.deletion.title</key>
+	<string>データの削除</string>
+	<key>privacy.item.external.body</key>
+	<string>個人を特定できる情報を収集・送信することはありません。</string>
+	<key>privacy.item.external.title</key>
+	<string>外部への送信</string>
+	<key>privacy.item.notification.body</key>
+	<string>タスクのリマインダーとして、設定した日時に通知を送信します。通知の許可はいつでもシステム設定から変更できます。</string>
+	<key>privacy.item.notification.title</key>
+	<string>通知</string>
+	<key>privacy.item.storage.body</key>
+	<string>タスクや履歴データはお使いの端末内にのみ保存されます。外部サーバーへの送信は行いません。</string>
+	<key>privacy.item.storage.title</key>
+	<string>データの保存場所</string>
 	<key>privacy.title</key>
 	<string>プライバシーポリシー</string>
 	<key>purchase.button</key>

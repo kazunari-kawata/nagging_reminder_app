@@ -143,35 +143,40 @@ final class TaskManager {
     tasks.append(task)
   }
 
-  /// Inserts sample tasks the first time the user opens the app after onboarding.
+  /// Inserts preset tasks the first time the user opens the app after onboarding.
   func insertDemoTasksIfNeeded() {
     guard !UserDefaults.standard.bool(forKey: "demoTasksInserted") else { return }
     UserDefaults.standard.set(true, forKey: "demoTasksInserted")
 
-    let now = Calendar.current.date(byAdding: .minute, value: 5, to: Date()) ?? Date()
-    let demoTasks: [(name: String, schedule: RepeatSchedule)] = [
+    let presetTasks: [(name: String, schedule: RepeatSchedule, nag: Int)] = [
       (
-        String(localized: "demo.task.medicine"),
-        .daily(time: TimeOfDay(hour: 8, minute: 0))
+        String(localized: "preset.task.exercise"),
+        .daily(time: TimeOfDay(hour: 9, minute: 0)),
+        30
       ),
       (
-        String(localized: "demo.task.exercise"),
-        .weekly(weekday: 2, time: TimeOfDay(hour: 7, minute: 30))
+        String(localized: "preset.task.drink.water"),
+        .daily(time: TimeOfDay(hour: 13, minute: 0)),
+        30
       ),
       (
-        String(localized: "demo.task.once"),
-        .once
+        String(localized: "preset.task.vitamin"),
+        .daily(time: TimeOfDay(hour: 10, minute: 0)),
+        30
+      ),
+      (
+        String(localized: "preset.task.reply.emails"),
+        .weekly(weekday: 3, time: TimeOfDay(hour: 11, minute: 30)),
+        30
+      ),
+      (
+        String(localized: "preset.task.call.parents"),
+        .yearly(month: 5, day: 10, time: TimeOfDay(hour: 10, minute: 0)),
+        60
       ),
     ]
-    _ = now  // suppress warning; dueDate used for once task
-    for (name, schedule) in demoTasks {
-      let due: Date? = {
-        if case .once = schedule {
-          return Calendar.current.date(byAdding: .hour, value: 1, to: Date())
-        }
-        return nil
-      }()
-      addTask(name: name, schedule: schedule, nagIntervalMinutes: 30, dueDate: due)
+    for (name, schedule, nag) in presetTasks {
+      addTask(name: name, schedule: schedule, nagIntervalMinutes: nag, dueDate: nil)
     }
   }
 

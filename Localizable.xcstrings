@@ -2454,6 +2454,123 @@
         }
       }
     },
+    "preset.task.call.parents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Call my parents for wedding anniversary" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "結婚記念日に親に電話する" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "결혼기념일에 부모님께 전화하기" }
+        }
+      }
+    },
+    "preset.task.drink.water" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Drink water" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "水を飲む" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "물 마시기" }
+        }
+      }
+    },
+    "preset.task.exercise" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Do exercise!!" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "運動する!!" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "운동하기!!" }
+        }
+      }
+    },
+    "preset.task.reply.emails" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Reply to pending emails" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "未返信メールへの返信" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "미답장 이메일 회신하기" }
+        }
+      }
+    },
+    "preset.task.vitamin" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Take Vitamin/Medication" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "ビタミン/薬を飲む" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "비타민/약 복용" }
+        }
+      }
+    },
+    "preset.timer.coffee.break" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Coffee Break" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "コーヒーブレイク" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "커피 브레이크" }
+        }
+      }
+    },
+    "preset.timer.hiit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
+        }
+      }
+    },
+    "preset.timer.stretch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Stretch" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "ストレッチ" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "스트레칭" }
+        }
+      }
+    },
+    "preset.timer.study" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "Study" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "勉強" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "공부" }
+        }
+      }
+    },
     "privacy.agree" : {
       "localizations" : {
         "en" : {
