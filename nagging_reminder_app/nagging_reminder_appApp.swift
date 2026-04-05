@@ -23,28 +23,26 @@ struct nagging_reminder_appApp: App {
         .environment(purchaseManager)
         .preferredColorScheme(settings.theme.colorScheme)
         .task {
-          // 1. AdMob 初期化
-          await MobileAds.shared.start()
-
-          // 2. テストデバイス設定（今はまだIDが分からないのでコメントアウトしておく）
-          // GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = [ "ここに後でIDを入れる" ]
-
-          // 3. 通知設定
+          // 1. 通知設定（UI描画をブロックしないよう先に実行）
           notificationDelegate.taskManager = taskManager
           UNUserNotificationCenter.current().delegate = notificationDelegate
           taskManager.requestNotificationPermission()
 
-          // 4. レビュー促進セットアップ
+          // 2. レビュー促進セットアップ
           reviewManager.recordLaunch(settings: settings)
           taskManager.onTaskCompleted = { [settings, reviewManager] in
             settings.completedTaskCount += 1
             reviewManager.requestReviewIfAppropriate(settings: settings)
           }
 
-          // 5. デモタスク挿入（初回のみ）
+          // 3. デモタスク挿入（初回のみ）
           if settings.tutorialCompleted {
             taskManager.insertDemoTasksIfNeeded()
           }
+
+          // 4. AdMob 初期化（メインスレッドをブロックしないよう非同期で実行）
+          await MobileAds.shared.start()
+          interstitialAdManager.loadAd()
         }.fullScreenCover(
           isPresented: .init(
             get: { !settings.privacyNoticeAccepted },

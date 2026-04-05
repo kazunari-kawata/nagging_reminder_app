@@ -831,6 +831,75 @@
         }
       }
     },
+    "demo.task.exercise" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morning Exercise"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "朝の運動"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아침 운동"
+          }
+        }
+      }
+    },
+    "demo.task.medicine" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take Medicine 💊"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薬を飲む 💊"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "약 복용 💊"
+          }
+        }
+      }
+    },
+    "demo.task.once" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try swiping this card → to mark Done!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このカードを右スワイプ → で完了にしてみよう！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 카드를 오른쪽으로 스와이프 → 하여 완료해보세요!"
+          }
+        }
+      }
+    },
     "Done" : {
       "localizations" : {
         "en" : {
@@ -2188,6 +2257,204 @@
         }
       }
     },
+    "onboarding.button.next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次へ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다음"
+          }
+        }
+      }
+    },
+    "onboarding.button.skip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキップ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "건너뛰기"
+          }
+        }
+      }
+    },
+    "onboarding.button.start" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "さっそく始める"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시작하기"
+          }
+        }
+      }
+    },
+    "onboarding.step1.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the \"+ Add Task\" button at the top of the home screen. Set a name, time, and repeat schedule — Baddger will keep nagging you until it's done."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面の「+ タスクを追加」ボタンをタップ。名前・時間・繰り返し設定をしたら、あとはBaddgerが完了するまでしつこく通知します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "홈 화면 상단의 \"+ 할 일 추가\" 버튼을 탭하세요. 이름, 시간, 반복 일정을 설정하면 Baddger가 완료할 때까지 끈질기게 알림을 보냅니다."
+          }
+        }
+      }
+    },
+    "onboarding.step1.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a Task"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タスクを追加しよう"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일 추가하기"
+          }
+        }
+      }
+    },
+    "onboarding.step2.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finished a task? Swipe the card a little to the left. When the card turns green, release to mark it as Done and stop the nagging."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タスクが終わったら、カードを少し左にスワイプ。カードが緑になったら指を離すと完了になり、通知が止まります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일을 완료했다면 카드를 살짝 왼쪽으로 스와이프하세요. 카드가 초록색으로 바뀌면 손가락을 놓으면 완료 처리되고 알림이 멈춥니다."
+          }
+        }
+      }
+    },
+    "onboarding.step2.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Short Left Swipe → Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "少し左スワイプ → 完了"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "짧게 왼쪽 스와이프 → 완료"
+          }
+        }
+      }
+    },
+    "onboarding.step3.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To delete a task, swipe it far to the left (past 70% of the card). When the card turns red, release to delete it completely."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タスクを削除したいときは、カードを大きく左にスワイプ（カードの幅の約7割以上）。赤くなったら離すと完全に削除されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일을 삭제하려면 카드를 왼쪽으로 크게 스와이프하세요(카드 너비의 약 70% 이상). 빨간색으로 바뀌면 손가락을 놓으면 완전히 삭제됩니다."
+          }
+        }
+      }
+    },
+    "onboarding.step3.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long Left Swipe ← Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きく左スワイプ ← 削除"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "크게 왼쪽 스와이프 ← 삭제"
+          }
+        }
+      }
+    },
     "Once" : {
       "localizations" : {
         "en" : {
@@ -2276,6 +2543,204 @@
         }
       }
     },
+    "preset.task.call.parents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call my parents for wedding anniversary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "結婚記念日に親に電話する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "결혼기념일에 부모님께 전화하기"
+          }
+        }
+      }
+    },
+    "preset.task.drink.water" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drink water"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "水を飲む"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "물 마시기"
+          }
+        }
+      }
+    },
+    "preset.task.exercise" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do exercise!!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "運動する!!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "운동하기!!"
+          }
+        }
+      }
+    },
+    "preset.task.reply.emails" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reply to pending emails"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未返信メールへの返信"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미답장 이메일 회신하기"
+          }
+        }
+      }
+    },
+    "preset.task.vitamin" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take Vitamin/Medication"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビタミン/薬を飲む"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "비타민/약 복용"
+          }
+        }
+      }
+    },
+    "preset.timer.coffee.break" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coffee Break"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コーヒーブレイク"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "커피 브레이크"
+          }
+        }
+      }
+    },
+    "preset.timer.hiit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIIT"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIIT"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIIT"
+          }
+        }
+      }
+    },
+    "preset.timer.stretch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stretch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ストレッチ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스트레칭"
+          }
+        }
+      }
+    },
+    "preset.timer.study" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Study"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勉強"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "공부"
+          }
+        }
+      }
+    },
     "PRESETS" : {
       "localizations" : {
         "en" : {
@@ -2295,279 +2760,6 @@
             "state" : "translated",
             "value" : "프리셋"
           }
-        }
-      }
-    },
-    "demo.task.exercise" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Morning Exercise" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "朝の運動" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "아침 운동" }
-        }
-      }
-    },
-    "demo.task.medicine" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Take Medicine 💊" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "薬を飲む 💊" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "약 복용 💊" }
-        }
-      }
-    },
-    "demo.task.once" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Try swiping this card → to mark Done!" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "このカードを右スワイプ → で完了にしてみよう！" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "이 카드를 오른쪽으로 스와이프 → 하여 완료해보세요!" }
-        }
-      }
-    },
-    "onboarding.button.next" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Next" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "次へ" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "다음" }
-        }
-      }
-    },
-    "onboarding.button.skip" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Skip" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "スキップ" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "건너뛰기" }
-        }
-      }
-    },
-    "onboarding.button.start" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Get Started" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "さっそく始める" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "시작하기" }
-        }
-      }
-    },
-    "onboarding.step1.description" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Tap the \"+ Add Task\" button at the top of the home screen. Set a name, time, and repeat schedule — Baddger will keep nagging you until it's done." }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "ホーム画面の「+ タスクを追加」ボタンをタップ。名前・時間・繰り返し設定をしたら、あとはBaddgerが完了するまでしつこく通知します。" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "홈 화면 상단의 \"+ 할 일 추가\" 버튼을 탭하세요. 이름, 시간, 반복 일정을 설정하면 Baddger가 완료할 때까지 끈질기게 알림을 보냅니다." }
-        }
-      }
-    },
-    "onboarding.step1.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Add a Task" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "タスクを追加しよう" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "할 일 추가하기" }
-        }
-      }
-    },
-    "onboarding.step2.description" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Finished a task? Swipe the card a little to the left. When the card turns green, release to mark it as Done and stop the nagging." }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "タスクが終わったら、カードを少し左にスワイプ。カードが緑になったら指を離すと完了になり、通知が止まります。" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "할 일을 완료했다면 카드를 살짝 왼쪽으로 스와이프하세요. 카드가 초록색으로 바뀌면 손가락을 놓으면 완료 처리되고 알림이 멈춥니다." }
-        }
-      }
-    },
-    "onboarding.step2.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Short Left Swipe → Done" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "少し左スワイプ → 完了" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "짧게 왼쪽 스와이프 → 완료" }
-        }
-      }
-    },
-    "onboarding.step3.description" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "To delete a task, swipe it far to the left (past 70% of the card). When the card turns red, release to delete it completely." }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "タスクを削除したいときは、カードを大きく左にスワイプ（カードの幅の約7割以上）。赤くなったら離すと完全に削除されます。" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "할 일을 삭제하려면 카드를 왼쪽으로 크게 스와이프하세요(카드 너비의 약 70% 이상). 빨간색으로 바뀌면 손가락을 놓으면 완전히 삭제됩니다." }
-        }
-      }
-    },
-    "onboarding.step3.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Long Left Swipe ← Delete" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "大きく左スワイプ ← 削除" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "크게 왼쪽 스와이프 ← 삭제" }
-        }
-      }
-    },
-    "preset.task.call.parents" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Call my parents for wedding anniversary" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "結婚記念日に親に電話する" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "결혼기념일에 부모님께 전화하기" }
-        }
-      }
-    },
-    "preset.task.drink.water" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Drink water" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "水を飲む" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "물 마시기" }
-        }
-      }
-    },
-    "preset.task.exercise" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Do exercise!!" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "運動する!!" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "운동하기!!" }
-        }
-      }
-    },
-    "preset.task.reply.emails" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Reply to pending emails" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "未返信メールへの返信" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "미답장 이메일 회신하기" }
-        }
-      }
-    },
-    "preset.task.vitamin" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Take Vitamin/Medication" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "ビタミン/薬を飲む" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "비타민/약 복용" }
-        }
-      }
-    },
-    "preset.timer.coffee.break" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Coffee Break" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "コーヒーブレイク" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "커피 브레이크" }
-        }
-      }
-    },
-    "preset.timer.hiit" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "HIIT" }
-        }
-      }
-    },
-    "preset.timer.stretch" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Stretch" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "ストレッチ" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "스트레칭" }
-        }
-      }
-    },
-    "preset.timer.study" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : { "state" : "translated", "value" : "Study" }
-        },
-        "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "勉強" }
-        },
-        "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "공부" }
         }
       }
     },
