@@ -4,10 +4,10 @@ en-US,Subtitle,Baddger you till you finish,Daily Reminder & Habit Tracker,30,30,
 en-US,Keywords,"reminder,nag,nagging,adhd,todo,task,manager,habit,tracker,alarm,persistent,snooze,medication,pill","nag,adhd,todo,alarm,snooze,medication,pill,productivity,schedule,routine,repeat,alert,chore,planner",99,100,task/reminder/daily/habit/tracker はTitle/Subtitleに含まれるため除外
 en-US,Promotional Text,"Never say ""I'll do it later"" again. Baddger persistently alerts you until you tap ""Done"". Your ultimate app for medication, chores, and daily routines!","Never say ""I'll do it later"" again. Baddger nags you until you finish—perfect for ADHD, medication reminders & daily routines. Try it free today!",145,170,審査不要。季節・キャンペーンに合わせて随時更新可
 ja,Name (Title),Baddger: No Task Left Behind,Baddger: リマインダー＆タスク管理,21,30,日本語キーワードをタイトルに組み込む
-ja,Subtitle,（未設定）,ADHD・服薬・習慣のしつこいアラーム,19,30,★最重要変更。ADHD/服薬/習慣/アラームを追加
-ja,Keywords,（未設定）,"TODO,やること,スヌーズ,繰り返し,リスト,通知,薬,スケジュール,チェックリスト,生産性,日課,忘れ防止,毎日,タイマー,プランナー,締め切り,アラート,定期,集中,達成,習慣化",92,100,Title/Subtitleにある語（リマインダー/タスク/ADHD/服薬/習慣/アラーム）は除外済
+ja,Subtitle,（未設定）,ADHD・服薬・先延ばし・習慣アラーム,19,30,★最重要変更。ADHD/服薬/先延ばし/習慣/アラームを追加。「のしつこい」→「先延ばし・」で検索キーワード強化
+ja,Keywords,（未設定）,"TODO,やること,スヌーズ,繰り返し,リスト,通知,薬,スケジュール,チェックリスト,生産性,日課,忘れ防止,毎日,タイマー,プランナー,締め切り,アラート,定期,集中,達成,習慣化",92,100,Title/Subtitleにある語（リマインダー/タスク/ADHD/服薬/先延ばし/習慣/アラーム）は除外済
 ja,Promotional Text,（未設定）,先延ばしにさよなら！Baddgerは「完了」を押すまでしつこく通知。服薬・習慣・毎日のタスク管理を完全サポートします。,59,170,審査不要。随時更新可
 ko,Name (Title),Baddger: No Task Left Behind,Baddger: 리마인더 & 할일 관리,21,30,한국어 검색 키워드를 타이틀에 추가
-ko,Subtitle,（未設定）,ADHD·복약·습관 끈질긴 알림,17,30,★最重要変更。ADHD/복약/습관/알림を追加
-ko,Keywords,（未設定）,"TODO,스누즈,반복,체크리스트,플래너,생산성,스케줄,타이머,알람,잊지않기,미루기,매일,집중,루틴,달성,목표,계획,알약,기억,일상,효율,강박,메모,습관화,알림앱",89,100,Title/Subtitleにある語（리마인더/할일/관리/ADHD/복약/습관/알림）は除外済
+ko,Subtitle,（未設定）,ADHD·복약·습관·미루기 끈질긴 알림,21,30,★最重要変更。ADHD/복약/습관/미루기/알림を追加。17→21字に拡張（13字余りを有効活用）
+ko,Keywords,（未設定）,"TODO,스누즈,반복,체크리스트,플래너,생산성,스케줄,타이머,알람,잊지않기,매일,집중,루틴,달성,목표,계획,알약,기억,일상,효율,강박,메모,습관화,알림앱,잔소리",89,100,Title/Subtitleにある語（리마인더/할일/관리/ADHD/복약/습관/미루기/알림）は除外済。미루기→잔소리に置換（브랜드キーワード追加）
 ko,Promotional Text,（未設定）,미루기는 이제 그만! Baddger가 완료할 때까지 끈질기게 알림. 복약·습관·일상 루틴 관리에 최적. 지금 무료로 사용해보세요!,72,170,審査不要。随時更新可

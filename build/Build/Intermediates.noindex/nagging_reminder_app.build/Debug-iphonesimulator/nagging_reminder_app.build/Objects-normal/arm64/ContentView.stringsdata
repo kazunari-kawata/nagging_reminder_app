@@ -1,0 +1,136 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "tab.tasks",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "button.add.task",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "OVERDUE",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 217
+        }
+      },
+      {
+        "comment": "",
+        "key": "TODAY",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 225
+        }
+      },
+      {
+        "comment": "",
+        "key": "TOMORROW",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 242
+        }
+      },
+      {
+        "comment": "",
+        "key": "THIS WEEK",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 250
+        }
+      },
+      {
+        "comment": "",
+        "key": "LATER",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 258
+        }
+      },
+      {
+        "comment": "",
+        "key": "message.all.done",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 227
+        }
+      },
+      {
+        "comment": "",
+        "key": "TOMORROW",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 244
+        }
+      },
+      {
+        "comment": "",
+        "key": "DONE",
+        "location": {
+          "startingColumn": 65,
+          "startingLine": 261
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab.tasks",
+        "location": {
+          "startingColumn": 65,
+          "startingLine": 312
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab.timer",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 315
+        }
+      },
+      {
+        "comment": "",
+        "key": "One-time",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 373
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mark Complete",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 443
+        }
+      },
+      {
+        "comment": "",
+        "key": "Edit",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 449
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 454
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,112 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/AdFreeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "ad.free.plan",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad.free.plan.purchased",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad.free.all.hidden",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad.remove",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad.remove.description",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "purchase.button",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "purchase.loading",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "purchase.in.progress",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "purchase.restore",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "legal.terms",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 152
+        }
+      },
+      {
+        "comment": "",
+        "key": "|",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "legal.privacy",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 154
+        }
+      }
+    ]
+  },
+  "version": 1
+}

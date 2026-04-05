@@ -1,0 +1,408 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskFormView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Once",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 11
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 12
+        }
+      },
+      {
+        "comment": "",
+        "key": "Weekdays (Mon–Fri)",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 13
+        }
+      },
+      {
+        "comment": "",
+        "key": "Custom Days",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 14
+        }
+      },
+      {
+        "comment": "",
+        "key": "Weekly",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monthly",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 16
+        }
+      },
+      {
+        "comment": "",
+        "key": "Yearly",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "form.edit.task",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 204
+        }
+      },
+      {
+        "comment": "",
+        "key": "form.add.task",
+        "location": {
+          "startingColumn": 81,
+          "startingLine": 204
+        }
+      },
+      {
+        "comment": "",
+        "key": "Schedule",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert frequency",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld文字以内にしてください",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Task name",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld/%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "Repeat",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "Day",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Day of month",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Month",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 152
+        }
+      },
+      {
+        "comment": "",
+        "key": "Day",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 157
+        }
+      },
+      {
+        "comment": "",
+        "key": "Time",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 165
+        }
+      },
+      {
+        "comment": "",
+        "key": "Set due date",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 169
+        }
+      },
+      {
+        "comment": "",
+        "key": "Due date",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 172
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sunday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 311
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 312
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tuesday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 313
+        }
+      },
+      {
+        "comment": "",
+        "key": "Wednesday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 314
+        }
+      },
+      {
+        "comment": "",
+        "key": "Thursday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 315
+        }
+      },
+      {
+        "comment": "",
+        "key": "Friday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 316
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saturday",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 317
+        }
+      },
+      {
+        "comment": "",
+        "key": "Day %lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "January",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 324
+        }
+      },
+      {
+        "comment": "",
+        "key": "February",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 325
+        }
+      },
+      {
+        "comment": "",
+        "key": "March",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 326
+        }
+      },
+      {
+        "comment": "",
+        "key": "April",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 327
+        }
+      },
+      {
+        "comment": "",
+        "key": "May",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 328
+        }
+      },
+      {
+        "comment": "",
+        "key": "June",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 329
+        }
+      },
+      {
+        "comment": "",
+        "key": "July",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 330
+        }
+      },
+      {
+        "comment": "",
+        "key": "August",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 331
+        }
+      },
+      {
+        "comment": "",
+        "key": "September",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 332
+        }
+      },
+      {
+        "comment": "",
+        "key": "October",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 333
+        }
+      },
+      {
+        "comment": "",
+        "key": "November",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 334
+        }
+      },
+      {
+        "comment": "",
+        "key": "December",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 335
+        }
+      },
+      {
+        "comment": "",
+        "key": "Day %lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hours",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "Minutes",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 189
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld hr",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 182
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld min",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 191
+        }
+      },
+      {
+        "comment": "",
+        "key": "完了",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 210
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 216
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 219
+        }
+      }
+    ]
+  },
+  "version": 1
+}

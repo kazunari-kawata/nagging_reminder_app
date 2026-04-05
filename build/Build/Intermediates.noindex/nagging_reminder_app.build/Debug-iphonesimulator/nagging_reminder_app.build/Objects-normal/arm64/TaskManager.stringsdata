@@ -1,0 +1,48 @@
+{
+  "source": "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskManager.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "preset.task.exercise",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.drink.water",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.vitamin",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 163
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.reply.emails",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 168
+        }
+      },
+      {
+        "comment": "",
+        "key": "preset.task.call.parents",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 173
+        }
+      }
+    ]
+  },
+  "version": 1
+}

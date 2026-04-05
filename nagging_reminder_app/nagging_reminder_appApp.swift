@@ -40,6 +40,11 @@ struct nagging_reminder_appApp: App {
             settings.completedTaskCount += 1
             reviewManager.requestReviewIfAppropriate(settings: settings)
           }
+
+          // 5. デモタスク挿入（初回のみ）
+          if settings.tutorialCompleted {
+            taskManager.insertDemoTasksIfNeeded()
+          }
         }.fullScreenCover(
           isPresented: .init(
             get: { !settings.privacyNoticeAccepted },
@@ -48,6 +53,18 @@ struct nagging_reminder_appApp: App {
         ) {
           PrivacyNoticeView()
             .environment(settings)
+        }
+        .fullScreenCover(
+          isPresented: .init(
+            get: { settings.privacyNoticeAccepted && !settings.tutorialCompleted },
+            set: { _ in }
+          )
+        ) {
+          OnboardingView()
+            .environment(settings)
+            .onDisappear {
+              taskManager.insertDemoTasksIfNeeded()
+            }
         }
     }
   }

@@ -143,6 +143,43 @@ final class TaskManager {
     tasks.append(task)
   }
 
+  /// Inserts preset tasks the first time the user opens the app after onboarding.
+  func insertDemoTasksIfNeeded() {
+    guard !UserDefaults.standard.bool(forKey: "demoTasksInserted") else { return }
+    UserDefaults.standard.set(true, forKey: "demoTasksInserted")
+
+    let presetTasks: [(name: String, schedule: RepeatSchedule, nag: Int)] = [
+      (
+        String(localized: "preset.task.exercise"),
+        .daily(time: TimeOfDay(hour: 9, minute: 0)),
+        30
+      ),
+      (
+        String(localized: "preset.task.drink.water"),
+        .daily(time: TimeOfDay(hour: 13, minute: 0)),
+        30
+      ),
+      (
+        String(localized: "preset.task.vitamin"),
+        .daily(time: TimeOfDay(hour: 10, minute: 0)),
+        30
+      ),
+      (
+        String(localized: "preset.task.reply.emails"),
+        .weekly(weekday: 3, time: TimeOfDay(hour: 11, minute: 30)),
+        30
+      ),
+      (
+        String(localized: "preset.task.call.parents"),
+        .yearly(month: 5, day: 10, time: TimeOfDay(hour: 10, minute: 0)),
+        60
+      ),
+    ]
+    for (name, schedule, nag) in presetTasks {
+      addTask(name: name, schedule: schedule, nagIntervalMinutes: nag, dueDate: nil)
+    }
+  }
+
   func updateTask(
     _ task: TaskItem, name: String, schedule: RepeatSchedule, nagIntervalMinutes: Int,
     dueDate: Date?

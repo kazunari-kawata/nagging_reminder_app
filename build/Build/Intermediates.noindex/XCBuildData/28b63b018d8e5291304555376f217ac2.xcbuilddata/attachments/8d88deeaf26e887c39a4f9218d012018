@@ -1,0 +1,219 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_app-primary.dia",
+    "emit-module-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_app-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_app-primary-emit-module.dia",
+    "pch" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_app-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_app-primary.swiftdeps"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/DerivedSources/GeneratedStringSymbols_Localizable.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/GeneratedStringSymbols_Localizable~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/AdFreeView+Preview.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView+Preview~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/AdFreeView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AdFreeView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/AppSettings.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/AppSettings~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/BannerAdView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/BannerAdView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/ContentView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/HistoryView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/InterstitialAdManager.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/InterstitialAdManager~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/OnboardingView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/OnboardingView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/PrivacyNoticeView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PrivacyNoticeView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/PurchaseManager.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManager~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/PurchaseManagerValidation.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/PurchaseManagerValidation~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/RepeatSchedule.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/RepeatSchedule~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/ReviewManager.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/ReviewManager~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/SettingsView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskFormView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskFormView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskItem.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskItem~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TaskManager.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TaskManager~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/TimerView.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/TimerView~partial.swiftmodule"
+  },
+  "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/nagging_reminder_appApp.swift" : {
+    "const-values" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.swiftconstvalues",
+    "dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.d",
+    "diagnostics" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.dia",
+    "index-unit-output-path" : "/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.o",
+    "llvm-bc" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.bc",
+    "object" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.o",
+    "swift-dependencies" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp.swiftdeps",
+    "swiftmodule" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/Build/Intermediates.noindex/nagging_reminder_app.build/Debug-iphonesimulator/nagging_reminder_app.build/Objects-normal/arm64/nagging_reminder_appApp~partial.swiftmodule"
+  }
+}

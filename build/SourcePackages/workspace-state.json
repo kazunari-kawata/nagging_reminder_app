@@ -1,0 +1,86 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-mobile-ads",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
+          "name" : "swift-package-manager-google-mobile-ads"
+        },
+        "path" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/SourcePackages/artifacts/swift-package-manager-google-mobile-ads/GoogleMobileAds/GoogleMobileAds.xcframework",
+        "source" : {
+          "checksum" : "eeabce466673257052bfad5c450b4fefee2e34b4ac479bede7ea50ca74085fc1",
+          "type" : "remote",
+          "url" : "https://dl.google.com/googleadmobadssdk/eeabce4666732570/googlemobileadsios-spm-13.1.0.zip"
+        },
+        "targetName" : "GoogleMobileAds"
+      },
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-user-messaging-platform",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+          "name" : "swift-package-manager-google-user-messaging-platform"
+        },
+        "path" : "/Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/build/SourcePackages/artifacts/swift-package-manager-google-user-messaging-platform/UserMessagingPlatform/UserMessagingPlatform.xcframework",
+        "source" : {
+          "checksum" : "90fe6bf3b0f4ce0d0199628c0871de58b6f673375148b98d52348aecc86db231",
+          "type" : "remote",
+          "url" : "https://dl.google.com/googleadmobadssdk/90fe6bf3b0f4ce0d/googleusermessagingplatformios-spm-3.1.0.zip"
+        },
+        "targetName" : "UserMessagingPlatform"
+      }
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-mobile-ads",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
+          "name" : "swift-package-manager-google-mobile-ads"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "4458cfaeb502801c779dbb7fbd0121d198628f52",
+            "version" : "13.1.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-package-manager-google-mobile-ads"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-user-messaging-platform",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+          "name" : "swift-package-manager-google-user-messaging-platform"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
+            "version" : "3.1.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-package-manager-google-user-messaging-platform"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

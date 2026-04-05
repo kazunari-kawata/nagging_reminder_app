@@ -30,7 +30,7 @@ final class ReviewManager {
         .first
     else { return }
 
-    SKStoreReviewController.requestReview(in: windowScene)
+    AppStore.requestReview(in: windowScene)
     settings.lastReviewRequestDate = Date()
     settings.reviewRequestCount += 1
   }
