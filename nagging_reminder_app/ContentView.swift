@@ -279,6 +279,7 @@ struct ContentView: View {
       onDelete: { taskManager.deleteTask(id: task.id) },
       onEdit: { editingTask = task }
     )
+    .id("\(task.id)_\(task.repeatSchedule.hashValue)_\(task.isCompleted)")
   }
 
   private func sectionHeader(_ title: String) -> some View {

@@ -1,6 +1,6 @@
 import Foundation
 
-struct TaskItem: Identifiable {
+struct TaskItem: Identifiable, Equatable {
   var id: UUID
   var name: String
   var repeatSchedule: RepeatSchedule

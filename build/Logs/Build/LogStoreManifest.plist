@@ -6,7 +6,7 @@
 	<integer>12</integer>
 	<key>logs</key>
 	<dict>
-		<key>66ABC818-B072-4E96-9960-C64BD27A0F79</key>
+		<key>77FE02BE-CDDD-4C37-B302-3E473CC76595</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>66ABC818-B072-4E96-9960-C64BD27A0F79.xcactivitylog</string>
+			<string>77FE02BE-CDDD-4C37-B302-3E473CC76595.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>797064726.12241602</real>
+			<real>797075592.85904896</real>
 			<key>timeStoppedRecording</key>
-			<real>797064738.22634804</real>
+			<real>797075595.11598206</real>
 			<key>title</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>66ABC818-B072-4E96-9960-C64BD27A0F79</string>
+			<string>77FE02BE-CDDD-4C37-B302-3E473CC76595</string>
 		</dict>
-		<key>E9F2289B-84AB-47EA-9940-E3B5258821B2</key>
+		<key>D8A04D39-9721-45DD-A9EF-A53C7D95633E</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>E9F2289B-84AB-47EA-9940-E3B5258821B2.xcactivitylog</string>
+			<string>D8A04D39-9721-45DD-A9EF-A53C7D95633E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,13 +82,13 @@
 			<key>signature</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>797068132.25623703</real>
+			<real>797079244.16014898</real>
 			<key>timeStoppedRecording</key>
-			<real>797068135.51296902</real>
+			<real>797079247.77913702</real>
 			<key>title</key>
 			<string>Building project nagging_reminder_app with scheme nagging_reminder_app and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>E9F2289B-84AB-47EA-9940-E3B5258821B2</string>
+			<string>D8A04D39-9721-45DD-A9EF-A53C7D95633E</string>
 		</dict>
 	</dict>
 </dict>
