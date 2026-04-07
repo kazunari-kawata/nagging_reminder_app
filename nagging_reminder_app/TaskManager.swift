@@ -115,13 +115,13 @@ final class TaskManager {
   private func registerNotificationCategories() {
     let snoozeAction = UNNotificationAction(
       identifier: "SNOOZE_1HR",
-      title: "Snooze",
+      title: String(localized: "notification.action.plus1hr"),
       options: []
     )
     let doneAction = UNNotificationAction(
       identifier: "DONE",
-      title: "Done",
-      options: []
+      title: String(localized: "notification.action.done"),
+      options: [.destructive]
     )
     let category = UNNotificationCategory(
       identifier: "TASK_REMINDER",
@@ -213,6 +213,22 @@ final class TaskManager {
     cancelNotifications(for: tasks[index])
     tasks.remove(at: index)
     rescheduleAllNotifications()
+  }
+
+  func restoreTask(_ task: TaskItem) {
+    var restored = task
+    restored.pendingNotificationIDs = []
+    tasks.append(restored)
+    let ids = buildAndScheduleNotifications(for: restored)
+    if let index = tasks.firstIndex(where: { $0.id == restored.id }) {
+      tasks[index].pendingNotificationIDs = ids
+    }
+    // Remove the matching deletion entry from history (most recent match)
+    if let histIdx = history.indices.reversed().first(where: {
+      history[$0].name == task.name
+    }) {
+      history.remove(at: histIdx)
+    }
   }
 
   func completeTask(_ task: TaskItem) {
@@ -574,13 +590,7 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     let uuid = uuidString.flatMap { UUID(uuidString: $0) }
 
     if response.actionIdentifier == "SNOOZE_1HR", let uuid {
-      let duration: TimeInterval
-      if let task = taskManager?.tasks.first(where: { $0.id == uuid }) {
-        duration = TimeInterval(task.nagIntervalMinutes * 60)
-      } else {
-        duration = 3600
-      }
-      taskManager?.snoozeTask(id: uuid, duration: duration)
+      taskManager?.snoozeTask(id: uuid, duration: 3600)
     } else if response.actionIdentifier == "DONE", let uuid,
       let task = taskManager?.tasks.first(where: { $0.id == uuid })
     {

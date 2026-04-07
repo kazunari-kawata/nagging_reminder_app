@@ -47,6 +47,20 @@
                   startingLineNumber = "38"
                   endingLineNumber = "38">
                </Location>
+               <Location
+                  uuid = "FEEA4943-41B1-4B20-A0AA-5D11146DA861 - 6898a1ab35d94ee1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of nagging_reminder_app.ContentView.tasksPageView : some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of nagging_reminder_app.ContentView.bottomTabBar : some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of nagging_reminder_app.ContentView.tasksPageView : some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of nagging_reminder_app.ContentView.bottomTabBar : some&gt;&gt;.0)&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.transition&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.Transition&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;)&gt; in nagging_reminder_app.ContentView.body.getter : some"
+                  moduleName = "nagging_reminder_app.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kawatakazunari/Projects/original-apps/nagging_reminder_app/nagging_reminder_app/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
