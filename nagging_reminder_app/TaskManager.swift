@@ -215,6 +215,22 @@ final class TaskManager {
     rescheduleAllNotifications()
   }
 
+  func restoreTask(_ task: TaskItem) {
+    var restored = task
+    restored.pendingNotificationIDs = []
+    tasks.append(restored)
+    let ids = buildAndScheduleNotifications(for: restored)
+    if let index = tasks.firstIndex(where: { $0.id == restored.id }) {
+      tasks[index].pendingNotificationIDs = ids
+    }
+    // Remove the matching deletion entry from history (most recent match)
+    if let histIdx = history.indices.reversed().first(where: {
+      history[$0].name == task.name
+    }) {
+      history.remove(at: histIdx)
+    }
+  }
+
   func completeTask(_ task: TaskItem) {
     guard let index = tasks.firstIndex(where: { $0.id == task.id }) else { return }
     cancelNotifications(for: tasks[index])

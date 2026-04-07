@@ -18,6 +18,9 @@ struct ContentView: View {
   @State private var selectedTab = 0
   @State private var showAdFreePromo = false
   @State private var currentTime = Date()
+  @State private var undoTask: TaskItem?
+  @State private var showUndo = false
+  @State private var undoWorkItem: DispatchWorkItem?
 
   private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
 
@@ -37,7 +40,15 @@ struct ContentView: View {
         // }
         bottomTabBar
       }
+
+      if showUndo {
+        undoSnackbar
+          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+          .padding(.bottom, 90)
+          .transition(.move(edge: .bottom).combined(with: .opacity))
+      }
     }
+    .animation(.spring(response: 0.35, dampingFraction: 0.8), value: showUndo)
     .sheet(isPresented: $showAddTask) {
       TaskFormView(mode: .add)
         .environment(taskManager)
@@ -249,8 +260,7 @@ struct ContentView: View {
         if !laterTasks.isEmpty {
           sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 8)
           ForEach(laterTasks) { task in
-            taskCard(
-              task, badge: task.isCompleted ? String(localized: "DONE") : dateLabel(for: task))
+            taskCard(task, badge: dateLabel(for: task))
           }
         }
       }
@@ -268,10 +278,47 @@ struct ContentView: View {
         taskManager.completeTask(task)
         if !purchaseManager.isAdFree { interstitialAdManager.showIfReady() }
       },
-      onDelete: { taskManager.deleteTask(id: task.id) },
+      onDelete: {
+        let snapshot = task
+        taskManager.deleteTask(id: task.id)
+        undoTask = snapshot
+        undoWorkItem?.cancel()
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showUndo = true }
+        let work = DispatchWorkItem {
+          withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showUndo = false }
+          undoTask = nil
+        }
+        undoWorkItem = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: work)
+      },
       onEdit: { editingTask = task }
     )
     .id("\(task.id)_\(task.repeatSchedule.hashValue)_\(task.isCompleted)")
+  }
+
+  private var undoSnackbar: some View {
+    HStack(spacing: 12) {
+      Text(undoTask?.name ?? "")
+        .font(.subheadline)
+        .foregroundStyle(Color(.label))
+        .lineLimit(1)
+      Spacer()
+      Button(String(localized: "task.delete.undo.button")) {
+        undoWorkItem?.cancel()
+        undoWorkItem = nil
+        if let task = undoTask { taskManager.restoreTask(task) }
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showUndo = false }
+        undoTask = nil
+      }
+      .font(.subheadline.weight(.semibold))
+      .foregroundStyle(.blue)
+    }
+    .padding(.horizontal, 20)
+    .padding(.vertical, 14)
+    .background(.regularMaterial)
+    .clipShape(RoundedRectangle(cornerRadius: 14))
+    .shadow(color: .black.opacity(0.12), radius: 8, y: 4)
+    .padding(.horizontal, 16)
   }
 
   private func sectionHeader(_ title: String, accent: Color? = nil) -> some View {
@@ -367,6 +414,7 @@ struct TaskCardView: View {
   @State private var cardWidth: CGFloat = 320
   @State private var triggeredLight = false
   @State private var triggeredHeavy = false
+  @State private var showDeleteConfirm = false
 
   /// 15% of card width — swipe past to mark complete.
   private var completeThreshold: CGFloat { cardWidth * 0.15 }
@@ -426,8 +474,8 @@ struct TaskCardView: View {
             .onEnded { value in
               let t = value.translation.width
               if t < -deleteThreshold {
-                withAnimation(.easeOut(duration: 0.25)) { dragOffset = -500 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { onDelete() }
+                withAnimation(.spring()) { dragOffset = 0 }
+                showDeleteConfirm = true
               } else if t < -completeThreshold {
                 withAnimation(.spring()) { dragOffset = 0 }
                 onComplete()
@@ -460,10 +508,17 @@ struct TaskCardView: View {
         Label("Edit", systemImage: "pencil")
       }
       Button(role: .destructive) {
-        onDelete()
+        showDeleteConfirm = true
       } label: {
         Label("Delete", systemImage: "trash")
       }
+    }
+    .alert(
+      String(localized: "task.delete.alert.title"),
+      isPresented: $showDeleteConfirm
+    ) {
+      Button(String(localized: "Delete"), role: .destructive) { onDelete() }
+      Button(String(localized: "Cancel"), role: .cancel) {}
     }
   }
 
@@ -473,11 +528,11 @@ struct TaskCardView: View {
       VStack(alignment: .leading, spacing: 3) {
         Text(task.name)
           .font(.system(size: 16, weight: .medium))
-          .foregroundStyle(task.isCompleted ? Color(.systemGray3) : Color(.label))
+          .foregroundStyle(Color(.label))
 
         Text(scheduleSubtitle)
           .font(.system(size: 12))
-          .foregroundStyle(task.isCompleted ? Color(.systemGray4) : Color(.systemGray))
+          .foregroundStyle(Color(.systemGray))
       }
 
       Spacer()
@@ -500,19 +555,14 @@ struct TaskCardView: View {
         .stroke(Color(.systemGray5), lineWidth: 1)
     )
     .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
-    .opacity(task.isCompleted ? 0.65 : 1.0)
   }
 
   private var badgeForeground: Color {
-    if badgeLabel == "DONE" { return Color.green }
-    if task.isCompleted { return Color(.systemGray) }
-    return task.repeatSchedule.isRepeating ? .blue : Color(.systemGray)
+    task.repeatSchedule.isRepeating ? .blue : Color(.systemGray)
   }
 
   private var badgeBackground: Color {
-    if badgeLabel == "DONE" { return Color.green.opacity(0.12) }
-    if task.isCompleted { return Color(.systemGray6) }
-    return task.repeatSchedule.isRepeating ? Color.blue.opacity(0.1) : Color(.systemGray6)
+    task.repeatSchedule.isRepeating ? Color.blue.opacity(0.1) : Color(.systemGray6)
   }
 }
 
