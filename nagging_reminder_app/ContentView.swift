@@ -222,7 +222,8 @@ struct ContentView: View {
 
         // TODAY
         if !upcomingTasksToday.isEmpty || overdueTasksToday.isEmpty {
-          sectionHeader(String(localized: "TODAY"), accent: .blue).padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
+          sectionHeader(String(localized: "TODAY"), accent: .blue).padding(
+            .top, overdueTasksToday.isEmpty ? 0 : 8)
           if upcomingTasksToday.isEmpty {
             Text(LocalizedStringResource("message.all.done"))
               .font(.subheadline)
@@ -291,9 +292,9 @@ struct ContentView: View {
         .padding(.horizontal, accent != nil ? 8 : 0)
         .padding(.vertical, accent != nil ? 3 : 0)
         .background(
-          accent.map { $0.opacity(0.12) }
+          RoundedRectangle(cornerRadius: 6)
+            .fill((accent ?? .clear).opacity(0.12))
         )
-        .clipShape(RoundedRectangle(cornerRadius: 6))
       Spacer()
     }
     .padding(.leading, 4)
