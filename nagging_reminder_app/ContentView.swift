@@ -294,14 +294,26 @@ struct ContentView: View {
     .padding(.bottom, 4)
   }
 
-  /// Badge label showing the next occurrence date (e.g. "WED 12 MAR").
+  /// Badge label showing the next occurrence date.
+  /// ja: "5月10日（日）", ko: "5월10일（일）", others: "WED 12 MAR"
   private func dateLabel(for task: TaskItem) -> String {
     guard let next = taskManager.nextOccurrenceDate(for: task) else {
       return task.repeatSchedule.shortLabel
     }
     let fmt = DateFormatter()
-    fmt.dateFormat = "EEE d MMM"
-    return fmt.string(from: next).uppercased()
+    let langCode = Locale.current.language.languageCode?.identifier ?? ""
+    switch langCode {
+    case "ja":
+      fmt.locale = Locale(identifier: "ja_JP")
+      fmt.dateFormat = "M月d日（E）"
+    case "ko":
+      fmt.locale = Locale(identifier: "ko_KR")
+      fmt.dateFormat = "M월d일（E）"
+    default:
+      fmt.dateFormat = "EEE d MMM"
+      return fmt.string(from: next).uppercased()
+    }
+    return fmt.string(from: next)
   }
 
   // MARK: - Bottom Tab Bar

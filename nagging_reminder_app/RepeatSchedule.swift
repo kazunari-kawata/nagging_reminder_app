@@ -25,7 +25,11 @@ enum RepeatSchedule: Hashable {
     case .weekdays: return String(localized: "WKDAYS")
     case .selectedWeekdays: return String(localized: "CUSTOM")
     case .weekly(let weekday, _):
-      let labels = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+      let labels = [
+        String(localized: "SUN"), String(localized: "MON"), String(localized: "TUE"),
+        String(localized: "WED"), String(localized: "THU"), String(localized: "FRI"),
+        String(localized: "SAT"),
+      ]
       guard weekday >= 1 && weekday <= 7 else { return String(localized: "WEEKLY") }
       return labels[weekday - 1]
     case .monthly: return String(localized: "MONTHLY")
@@ -36,9 +40,19 @@ enum RepeatSchedule: Hashable {
   /// Human-readable detail label shown in task cards (e.g. "Daily · 9:00 AM").
   var detailedLabel: String {
     func fmt(_ t: TimeOfDay) -> String {
-      let h = t.hour % 12 == 0 ? 12 : t.hour % 12
-      let suffix = t.hour < 12 ? "AM" : "PM"
-      return String(format: "%d:%02d %@", h, t.minute, suffix)
+      let langCode = Locale.current.language.languageCode?.identifier ?? ""
+      switch langCode {
+      case "ja":
+        return String(format: "%d:%02d", t.hour, t.minute)
+      case "ko":
+        let h = t.hour % 12 == 0 ? 12 : t.hour % 12
+        let suffix = t.hour < 12 ? "오전" : "오후"
+        return String(format: "%@ %d:%02d", suffix, h, t.minute)
+      default:
+        let h = t.hour % 12 == 0 ? 12 : t.hour % 12
+        let suffix = t.hour < 12 ? "AM" : "PM"
+        return String(format: "%d:%02d %@", h, t.minute, suffix)
+      }
     }
     let dayAbbr = [
       String(localized: "Su"),
@@ -68,7 +82,7 @@ enum RepeatSchedule: Hashable {
     case .once:
       return String(localized: "One-time")
     case .daily(let t):
-      return "Daily · \(fmt(t))"
+      return "\(String(localized: "Daily")) · \(fmt(t))"
     case .weekdays(let t):
       return String(localized: "Mon–Fri") + " · \(fmt(t))"
     case .selectedWeekdays(let days, let t):
@@ -79,12 +93,15 @@ enum RepeatSchedule: Hashable {
       return "\(names) · \(fmt(t))"
     case .weekly(let wd, let t):
       let name = (wd >= 1 && wd <= 7) ? dayFull[wd - 1] : "?"
-      return "Every \(name) · \(fmt(t))"
+      let everyName = String(format: String(localized: "Every %@"), name)
+      return "\(everyName) · \(fmt(t))"
     case .monthly(let d, let t):
-      return "Day \(d) · \(fmt(t))"
+      let monthlyStr = String(format: String(localized: "Every month %lld"), Int64(d))
+      return "\(monthlyStr) · \(fmt(t))"
     case .yearly(let m, let d, let t):
       let mName = (m >= 1 && m <= 12) ? months[m - 1] : "?"
-      return "\(mName) \(d) · \(fmt(t))"
+      let yearlyStr = String(format: String(localized: "Every year %@ %lld"), mName, Int64(d))
+      return "\(yearlyStr) · \(fmt(t))"
     }
   }
 
