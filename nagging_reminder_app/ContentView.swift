@@ -214,7 +214,7 @@ struct ContentView: View {
 
         // OVERDUE
         if !overdueTasksToday.isEmpty {
-          sectionHeader(String(localized: "OVERDUE"))
+          sectionHeader(String(localized: "OVERDUE"), accent: .red)
           ForEach(overdueTasksToday) { task in
             taskCard(task, badge: task.repeatSchedule.shortLabel)
           }
@@ -222,7 +222,7 @@ struct ContentView: View {
 
         // TODAY
         if !upcomingTasksToday.isEmpty || overdueTasksToday.isEmpty {
-          sectionHeader(String(localized: "TODAY")).padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
+          sectionHeader(String(localized: "TODAY"), accent: .blue).padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
           if upcomingTasksToday.isEmpty {
             Text(LocalizedStringResource("message.all.done"))
               .font(.subheadline)
@@ -255,7 +255,7 @@ struct ContentView: View {
 
         // LATER
         if !laterTasks.isEmpty {
-          sectionHeader(String(localized: "LATER")).padding(.top, 8)
+          sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 8)
           ForEach(laterTasks) { task in
             taskCard(
               task, badge: task.isCompleted ? String(localized: "DONE") : dateLabel(for: task))
@@ -282,12 +282,18 @@ struct ContentView: View {
     .id("\(task.id)_\(task.repeatSchedule.hashValue)_\(task.isCompleted)")
   }
 
-  private func sectionHeader(_ title: String) -> some View {
+  private func sectionHeader(_ title: String, accent: Color? = nil) -> some View {
     HStack {
       Text(title)
         .font(.system(size: 11, weight: .semibold))
-        .foregroundStyle(Color(.systemGray))
+        .foregroundStyle(accent ?? Color(.systemGray))
         .tracking(1)
+        .padding(.horizontal, accent != nil ? 8 : 0)
+        .padding(.vertical, accent != nil ? 3 : 0)
+        .background(
+          accent.map { $0.opacity(0.12) }
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 6))
       Spacer()
     }
     .padding(.leading, 4)

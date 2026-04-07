@@ -1471,7 +1471,6 @@
       }
     },
     "FRI" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1970,7 +1969,6 @@
       }
     },
     "MON" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3225,7 +3223,6 @@
       }
     },
     "SAT" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3595,7 +3592,6 @@
       }
     },
     "SUN" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3794,7 +3790,6 @@
       }
     },
     "THU" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3971,7 +3966,6 @@
       }
     },
     "TUE" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4060,7 +4054,6 @@
       }
     },
     "WED" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

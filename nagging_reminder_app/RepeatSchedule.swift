@@ -82,26 +82,26 @@ enum RepeatSchedule: Hashable {
     case .once:
       return String(localized: "One-time")
     case .daily(let t):
-      return "\(String(localized: "Daily")) · \(fmt(t))"
+      return "\(String(localized: "Daily")) \(fmt(t))"
     case .weekdays(let t):
-      return String(localized: "Mon–Fri") + " · \(fmt(t))"
+      return String(localized: "Mon–Fri") + " \(fmt(t))"
     case .selectedWeekdays(let days, let t):
       let names = days.sorted().compactMap { d -> String? in
         guard d >= 1 && d <= 7 else { return nil }
         return dayAbbr[d - 1]
       }.joined(separator: ", ")
-      return "\(names) · \(fmt(t))"
+      return "\(names) \(fmt(t))"
     case .weekly(let wd, let t):
       let name = (wd >= 1 && wd <= 7) ? dayFull[wd - 1] : "?"
       let everyName = String(format: String(localized: "Every %@"), name)
-      return "\(everyName) · \(fmt(t))"
+      return "\(everyName) \(fmt(t))"
     case .monthly(let d, let t):
       let monthlyStr = String(format: String(localized: "Every month %lld"), Int64(d))
-      return "\(monthlyStr) · \(fmt(t))"
+      return "\(monthlyStr) \(fmt(t))"
     case .yearly(let m, let d, let t):
       let mName = (m >= 1 && m <= 12) ? months[m - 1] : "?"
       let yearlyStr = String(format: String(localized: "Every year %@ %lld"), mName, Int64(d))
-      return "\(yearlyStr) · \(fmt(t))"
+      return "\(yearlyStr) \(fmt(t))"
     }
   }
 
