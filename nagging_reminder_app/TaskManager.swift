@@ -135,12 +135,12 @@ final class TaskManager {
   // MARK: - CRUD
 
   func addTask(name: String, schedule: RepeatSchedule, nagIntervalMinutes: Int, dueDate: Date?) {
-    var task = TaskItem(
+    let task = TaskItem(
       name: name, repeatSchedule: schedule, nagIntervalMinutes: nagIntervalMinutes, dueDate: dueDate
     )
-    let ids = buildAndScheduleNotifications(for: task)
-    task.pendingNotificationIDs = ids
     tasks.append(task)
+    // Reschedule all tasks so the iOS 64-notification budget is rebalanced across every task.
+    rescheduleAllNotifications()
   }
 
   /// Inserts preset tasks the first time the user opens the app after onboarding.
@@ -193,9 +193,9 @@ final class TaskManager {
     updated.dueDate = dueDate
     updated.isCompleted = false
     updated.lastCompletedDate = nil
-    let ids = buildAndScheduleNotifications(for: updated)
-    updated.pendingNotificationIDs = ids
     tasks[index] = updated  // single atomic replacement — triggers one UI update
+    // Reschedule all tasks so the iOS 64-notification budget is rebalanced.
+    rescheduleAllNotifications()
   }
 
   func deleteTask(at offsets: IndexSet) {
@@ -204,6 +204,7 @@ final class TaskManager {
       cancelNotifications(for: tasks[index])
     }
     tasks.remove(atOffsets: offsets)
+    rescheduleAllNotifications()
   }
 
   func deleteTask(id: UUID) {
@@ -211,6 +212,7 @@ final class TaskManager {
     archive(tasks[index], reason: .deleted)
     cancelNotifications(for: tasks[index])
     tasks.remove(at: index)
+    rescheduleAllNotifications()
   }
 
   func completeTask(_ task: TaskItem) {
@@ -304,8 +306,12 @@ final class TaskManager {
 
     func addNagChain(after baseDate: Date) {
       let intervalSeconds = TimeInterval(task.nagIntervalMinutes * 60)
-      // Schedule enough nags to cover at least 12 hours, capped at iOS limit of 60 per task
-      let maxNags = min(60, 720 / max(1, task.nagIntervalMinutes))
+      // iOS limits the app to 64 pending notifications in total.
+      // Reserve 1 slot per task for the repeating base trigger, then share
+      // the remaining budget evenly across all tasks as nag-chain entries.
+      let taskCount = max(1, tasks.count)
+      let nagBudget = max(1, (62 - taskCount) / taskCount)
+      let maxNags = min(nagBudget, min(60, 720 / max(1, task.nagIntervalMinutes)))
       for i in 1...maxNags {
         let nagDate = baseDate.addingTimeInterval(intervalSeconds * Double(i))
         guard nagDate > Date() else { continue }
