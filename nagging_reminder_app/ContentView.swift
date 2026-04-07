@@ -107,6 +107,16 @@ struct ContentView: View {
           .tracking(-0.5)
         Spacer()
         Button {
+          showAddTask = true
+        } label: {
+          Image(systemName: "plus")
+            .font(.system(size: 18, weight: .semibold))
+            .foregroundStyle(.blue)
+            .frame(width: 40, height: 40)
+            .background(Color.blue.opacity(0.1))
+            .clipShape(Circle())
+        }
+        Button {
           showSettings = true
         } label: {
           Image(systemName: "gearshape")
@@ -119,25 +129,6 @@ struct ContentView: View {
       }
       .padding(.horizontal, 24)
       .padding(.top, 12)
-      .padding(.bottom, 16)
-
-      Button {
-        showAddTask = true
-      } label: {
-        HStack(spacing: 10) {
-          Image(systemName: "plus.circle.fill")
-            .font(.system(size: 20))
-          Text(LocalizedStringResource("button.add.task"))
-            .font(.system(size: 16, weight: .semibold))
-          Spacer()
-        }
-        .foregroundStyle(.blue)
-        .padding(.horizontal, 20)
-        .padding(.vertical, 14)
-        .background(Color.blue.opacity(0.08))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-      }
-      .padding(.horizontal, 24)
       .padding(.bottom, 16)
     }
     .background(Color(.systemBackground))
@@ -214,7 +205,7 @@ struct ContentView: View {
 
         // OVERDUE
         if !overdueTasksToday.isEmpty {
-          sectionHeader(String(localized: "OVERDUE"))
+          sectionHeader(String(localized: "OVERDUE"), accent: .red)
           ForEach(overdueTasksToday) { task in
             taskCard(task, badge: task.repeatSchedule.shortLabel)
           }
@@ -222,7 +213,8 @@ struct ContentView: View {
 
         // TODAY
         if !upcomingTasksToday.isEmpty || overdueTasksToday.isEmpty {
-          sectionHeader(String(localized: "TODAY")).padding(.top, overdueTasksToday.isEmpty ? 0 : 8)
+          sectionHeader(String(localized: "TODAY"), accent: .blue).padding(
+            .top, overdueTasksToday.isEmpty ? 0 : 8)
           if upcomingTasksToday.isEmpty {
             Text(LocalizedStringResource("message.all.done"))
               .font(.subheadline)
@@ -255,7 +247,7 @@ struct ContentView: View {
 
         // LATER
         if !laterTasks.isEmpty {
-          sectionHeader(String(localized: "LATER")).padding(.top, 8)
+          sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 8)
           ForEach(laterTasks) { task in
             taskCard(
               task, badge: task.isCompleted ? String(localized: "DONE") : dateLabel(for: task))
@@ -282,26 +274,44 @@ struct ContentView: View {
     .id("\(task.id)_\(task.repeatSchedule.hashValue)_\(task.isCompleted)")
   }
 
-  private func sectionHeader(_ title: String) -> some View {
+  private func sectionHeader(_ title: String, accent: Color? = nil) -> some View {
     HStack {
       Text(title)
         .font(.system(size: 11, weight: .semibold))
-        .foregroundStyle(Color(.systemGray))
+        .foregroundStyle(accent ?? Color(.systemGray))
         .tracking(1)
+        .padding(.horizontal, accent != nil ? 8 : 0)
+        .padding(.vertical, accent != nil ? 3 : 0)
+        .background(
+          RoundedRectangle(cornerRadius: 6)
+            .fill((accent ?? .clear).opacity(0.12))
+        )
       Spacer()
     }
     .padding(.leading, 4)
     .padding(.bottom, 4)
   }
 
-  /// Badge label showing the next occurrence date (e.g. "WED 12 MAR").
+  /// Badge label showing the next occurrence date.
+  /// ja: "5月10日（日）", ko: "5월10일（일）", others: "WED 12 MAR"
   private func dateLabel(for task: TaskItem) -> String {
     guard let next = taskManager.nextOccurrenceDate(for: task) else {
       return task.repeatSchedule.shortLabel
     }
     let fmt = DateFormatter()
-    fmt.dateFormat = "EEE d MMM"
-    return fmt.string(from: next).uppercased()
+    let langCode = Locale.current.language.languageCode?.identifier ?? ""
+    switch langCode {
+    case "ja":
+      fmt.locale = Locale(identifier: "ja_JP")
+      fmt.dateFormat = "M月d日（E）"
+    case "ko":
+      fmt.locale = Locale(identifier: "ko_KR")
+      fmt.dateFormat = "M월d일（E）"
+    default:
+      fmt.dateFormat = "EEE d MMM"
+      return fmt.string(from: next).uppercased()
+    }
+    return fmt.string(from: next)
   }
 
   // MARK: - Bottom Tab Bar

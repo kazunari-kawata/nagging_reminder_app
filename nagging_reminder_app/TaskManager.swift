@@ -135,12 +135,12 @@ final class TaskManager {
   // MARK: - CRUD
 
   func addTask(name: String, schedule: RepeatSchedule, nagIntervalMinutes: Int, dueDate: Date?) {
-    var task = TaskItem(
+    let task = TaskItem(
       name: name, repeatSchedule: schedule, nagIntervalMinutes: nagIntervalMinutes, dueDate: dueDate
     )
-    let ids = buildAndScheduleNotifications(for: task)
-    task.pendingNotificationIDs = ids
     tasks.append(task)
+    // Reschedule all tasks so the iOS 64-notification budget is rebalanced across every task.
+    rescheduleAllNotifications()
   }
 
   /// Inserts preset tasks the first time the user opens the app after onboarding.
@@ -193,9 +193,9 @@ final class TaskManager {
     updated.dueDate = dueDate
     updated.isCompleted = false
     updated.lastCompletedDate = nil
-    let ids = buildAndScheduleNotifications(for: updated)
-    updated.pendingNotificationIDs = ids
     tasks[index] = updated  // single atomic replacement — triggers one UI update
+    // Reschedule all tasks so the iOS 64-notification budget is rebalanced.
+    rescheduleAllNotifications()
   }
 
   func deleteTask(at offsets: IndexSet) {
@@ -204,6 +204,7 @@ final class TaskManager {
       cancelNotifications(for: tasks[index])
     }
     tasks.remove(atOffsets: offsets)
+    rescheduleAllNotifications()
   }
 
   func deleteTask(id: UUID) {
@@ -211,6 +212,7 @@ final class TaskManager {
     archive(tasks[index], reason: .deleted)
     cancelNotifications(for: tasks[index])
     tasks.remove(at: index)
+    rescheduleAllNotifications()
   }
 
   func completeTask(_ task: TaskItem) {
@@ -276,13 +278,17 @@ final class TaskManager {
       .removePendingNotificationRequests(withIdentifiers: task.pendingNotificationIDs)
   }
 
-  private func makeContent(for task: TaskItem) -> UNMutableNotificationContent {
+  private func makeContent(for task: TaskItem, nagIndex: Int = 0) -> UNMutableNotificationContent {
     let content = UNMutableNotificationContent()
     content.title = "Baddger"
     content.body = task.name
     content.sound = .default
     content.categoryIdentifier = "TASK_REMINDER"
     content.userInfo = ["taskID": task.id.uuidString]
+    content.threadIdentifier = task.id.uuidString
+    if nagIndex > 0 {
+      content.subtitle = String(format: String(localized: "notification.nag.count"), nagIndex + 1)
+    }
     return content
   }
 
@@ -290,11 +296,10 @@ final class TaskManager {
   @discardableResult
   private func buildAndScheduleNotifications(for task: TaskItem) -> [String] {
     let center = UNUserNotificationCenter.current()
-    let content = makeContent(for: task)
     let base = task.id.uuidString
     var ids: [String] = []
 
-    func add(id: String, trigger: UNNotificationTrigger) {
+    func add(id: String, content: UNMutableNotificationContent, trigger: UNNotificationTrigger) {
       let req = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
       center.add(req) { error in
         if let error { print("[Notification] Failed to schedule \(id): \(error)") }
@@ -304,8 +309,12 @@ final class TaskManager {
 
     func addNagChain(after baseDate: Date) {
       let intervalSeconds = TimeInterval(task.nagIntervalMinutes * 60)
-      // Schedule enough nags to cover at least 12 hours, capped at iOS limit of 60 per task
-      let maxNags = min(60, 720 / max(1, task.nagIntervalMinutes))
+      // iOS limits the app to 64 pending notifications in total.
+      // Reserve 1 slot per task for the repeating base trigger, then share
+      // the remaining budget evenly across all tasks as nag-chain entries.
+      let taskCount = max(1, tasks.count)
+      let nagBudget = max(1, (62 - taskCount) / taskCount)
+      let maxNags = min(nagBudget, min(60, 720 / max(1, task.nagIntervalMinutes)))
       for i in 1...maxNags {
         let nagDate = baseDate.addingTimeInterval(intervalSeconds * Double(i))
         guard nagDate > Date() else { continue }
@@ -313,7 +322,7 @@ final class TaskManager {
           [.year, .month, .day, .hour, .minute], from: nagDate
         )
         let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
-        add(id: "\(base)_nag_\(i)", trigger: trigger)
+        add(id: "\(base)_nag_\(i)", content: makeContent(for: task, nagIndex: i), trigger: trigger)
       }
     }
 
@@ -326,11 +335,13 @@ final class TaskManager {
         )
         add(
           id: "\(base)_0",
+          content: makeContent(for: task),
           trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: false))
         addNagChain(after: due)
       } else if task.dueDate == nil {
         add(
           id: "\(base)_0",
+          content: makeContent(for: task),
           trigger: UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false))
       }
 
@@ -340,8 +351,9 @@ final class TaskManager {
       comps.minute = time.minute
       add(
         id: "\(base)_0",
+        content: makeContent(for: task),
         trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
 
     case .weekdays(let time):
       for weekday in 2...6 {
@@ -351,9 +363,10 @@ final class TaskManager {
         comps.minute = time.minute
         add(
           id: "\(base)_wd_\(weekday)",
+          content: makeContent(for: task),
           trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
       }
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
 
     case .selectedWeekdays(let weekdays, let time):
       for weekday in weekdays {
@@ -363,9 +376,10 @@ final class TaskManager {
         comps.minute = time.minute
         add(
           id: "\(base)_wd_\(weekday)",
+          content: makeContent(for: task),
           trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
       }
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
 
     case .weekly(let weekday, let time):
       var comps = DateComponents()
@@ -374,8 +388,9 @@ final class TaskManager {
       comps.minute = time.minute
       add(
         id: "\(base)_0",
+        content: makeContent(for: task),
         trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
 
     case .monthly(let day, let time):
       var comps = DateComponents()
@@ -384,8 +399,9 @@ final class TaskManager {
       comps.minute = time.minute
       add(
         id: "\(base)_0",
+        content: makeContent(for: task),
         trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
 
     case .yearly(let month, let day, let time):
       var comps = DateComponents()
@@ -395,11 +411,42 @@ final class TaskManager {
       comps.minute = time.minute
       add(
         id: "\(base)_0",
+        content: makeContent(for: task),
         trigger: UNCalendarNotificationTrigger(dateMatching: comps, repeats: true))
-      if let next = nextFireDate(for: task.repeatSchedule) { addNagChain(after: next) }
+      if let nagBase = nagChainBaseDate(for: task.repeatSchedule) { addNagChain(after: nagBase) }
     }
 
     return ids
+  }
+
+  /// nagチェーンの起点日時を返す。
+  /// スケジュールが当日に適用される場合は当日の時刻（過去でも可）を使い、
+  /// 他のタスク追加でrescheduleされても当日分のnagが失われないようにする。
+  private func nagChainBaseDate(for schedule: RepeatSchedule) -> Date? {
+    guard let tod = schedule.timeOfDay else { return nil }
+    let cal = Calendar.current
+    let now = Date()
+    let todayBase = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: now)!
+    switch schedule {
+    case .daily:
+      return todayBase
+    case .weekdays:
+      let wd = cal.component(.weekday, from: now)
+      return (wd >= 2 && wd <= 6) ? todayBase : nextFireDate(for: schedule)
+    case .selectedWeekdays(let weekdays, _):
+      let wd = cal.component(.weekday, from: now)
+      return weekdays.contains(wd) ? todayBase : nextFireDate(for: schedule)
+    case .weekly(let weekday, _):
+      return cal.component(.weekday, from: now) == weekday ? todayBase : nextFireDate(for: schedule)
+    case .monthly(let day, _):
+      return cal.component(.day, from: now) == day ? todayBase : nextFireDate(for: schedule)
+    case .yearly(let month, let day, _):
+      let m = cal.component(.month, from: now)
+      let d = cal.component(.day, from: now)
+      return (m == month && d == day) ? todayBase : nextFireDate(for: schedule)
+    case .once:
+      return nil
+    }
   }
 
   // MARK: - Public Helpers

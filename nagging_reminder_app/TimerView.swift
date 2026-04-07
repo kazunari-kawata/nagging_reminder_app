@@ -204,7 +204,7 @@ struct TimerView: View {
               .stroke(Color(.systemBackground), lineWidth: 4)
               .frame(width: 76, height: 76)
             Text(String(localized: "Cancel"))
-              .font(.system(size: 16))
+              .font(.system(size: 14))
               .foregroundStyle(.primary)
           }
         }
