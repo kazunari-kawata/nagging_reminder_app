@@ -415,6 +415,9 @@ struct TaskCardView: View {
   @State private var triggeredLight = false
   @State private var triggeredHeavy = false
   @State private var showDeleteConfirm = false
+  @State private var dragDirection: DragDirection = .undecided
+
+  private enum DragDirection { case undecided, horizontal, vertical }
 
   /// 15% of card width — swipe past to mark complete.
   private var completeThreshold: CGFloat { cardWidth * 0.15 }
@@ -451,10 +454,18 @@ struct TaskCardView: View {
 
       cardContent
         .offset(x: dragOffset)
-        .gesture(
-          DragGesture()
+        .simultaneousGesture(
+          DragGesture(minimumDistance: 20)
             .onChanged { value in
-              guard value.translation.width < 0 else { return }
+              // Lock direction on initial move
+              if dragDirection == .undecided {
+                if abs(value.translation.width) > abs(value.translation.height) {
+                  dragDirection = .horizontal
+                } else {
+                  dragDirection = .vertical
+                }
+              }
+              guard dragDirection == .horizontal, value.translation.width < 0 else { return }
               dragOffset = value.translation.width
 
               if dragOffset < -completeThreshold && !triggeredLight {
@@ -473,10 +484,10 @@ struct TaskCardView: View {
             }
             .onEnded { value in
               let t = value.translation.width
-              if t < -deleteThreshold {
+              if dragDirection == .horizontal && t < -deleteThreshold {
                 withAnimation(.spring()) { dragOffset = 0 }
                 showDeleteConfirm = true
-              } else if t < -completeThreshold {
+              } else if dragDirection == .horizontal && t < -completeThreshold {
                 withAnimation(.spring()) { dragOffset = 0 }
                 onComplete()
               } else {
@@ -484,6 +495,7 @@ struct TaskCardView: View {
               }
               triggeredLight = false
               triggeredHeavy = false
+              dragDirection = .undecided
             }
         )
         .onTapGesture { onEdit() }
