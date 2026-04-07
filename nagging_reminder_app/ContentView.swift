@@ -107,6 +107,16 @@ struct ContentView: View {
           .tracking(-0.5)
         Spacer()
         Button {
+          showAddTask = true
+        } label: {
+          Image(systemName: "plus")
+            .font(.system(size: 18, weight: .semibold))
+            .foregroundStyle(.blue)
+            .frame(width: 40, height: 40)
+            .background(Color.blue.opacity(0.1))
+            .clipShape(Circle())
+        }
+        Button {
           showSettings = true
         } label: {
           Image(systemName: "gearshape")
@@ -119,25 +129,6 @@ struct ContentView: View {
       }
       .padding(.horizontal, 24)
       .padding(.top, 12)
-      .padding(.bottom, 16)
-
-      Button {
-        showAddTask = true
-      } label: {
-        HStack(spacing: 10) {
-          Image(systemName: "plus.circle.fill")
-            .font(.system(size: 20))
-          Text(LocalizedStringResource("button.add.task"))
-            .font(.system(size: 16, weight: .semibold))
-          Spacer()
-        }
-        .foregroundStyle(.blue)
-        .padding(.horizontal, 20)
-        .padding(.vertical, 14)
-        .background(Color.blue.opacity(0.08))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-      }
-      .padding(.horizontal, 24)
       .padding(.bottom, 16)
     }
     .background(Color(.systemBackground))

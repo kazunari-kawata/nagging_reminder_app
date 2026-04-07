@@ -414,6 +414,7 @@
       }
     },
     "button.add.task" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
