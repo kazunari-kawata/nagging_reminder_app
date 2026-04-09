@@ -50,7 +50,7 @@ struct ContentView: View {
     }
     .animation(.spring(response: 0.35, dampingFraction: 0.8), value: showUndo)
     .sheet(isPresented: $showAddTask) {
-      TaskFormView(mode: .add)
+      TaskFormView()
         .environment(taskManager)
         .environment(settings)
     }
@@ -350,7 +350,7 @@ struct ContentView: View {
   private func sectionHeader(_ title: String, accent: Color? = nil) -> some View {
     HStack {
       Text(title)
-        .font(.system(size: 14, weight: .semibold))
+        .font(.system(size: 20, weight: .semibold))
         .foregroundStyle(accent ?? Color(.systemGray))
         .tracking(1)
         .padding(.horizontal, accent != nil ? 8 : 0)
@@ -546,14 +546,14 @@ struct TaskCardView: View {
   private var cardContent: some View {
     HStack(spacing: 12) {
       Text(task.name)
-        .font(.system(size: 15, weight: .medium))
+        .font(.system(size: 18, weight: .medium))
         .foregroundStyle(Color(.label))
         .lineLimit(1)
 
       Spacer()
 
       Text(scheduleSubtitle)
-        .font(.system(size: 12))
+        .font(.system(size: 14))
         .foregroundStyle(Color(.systemGray))
         .lineLimit(1)
     }
