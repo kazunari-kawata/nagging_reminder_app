@@ -291,7 +291,8 @@ struct ContentView: View {
         undoWorkItem = work
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: work)
       },
-      onEdit: { editingTask = task }
+      onEdit: { editingTask = task },
+      onDuplicate: { taskManager.duplicateTask(task) }
     )
     .id("\(task.id)_\(task.repeatSchedule.hashValue)_\(task.isCompleted)")
   }
@@ -409,6 +410,7 @@ struct TaskCardView: View {
   let onComplete: () -> Void
   let onDelete: () -> Void
   let onEdit: () -> Void
+  let onDuplicate: () -> Void
 
   @State private var dragOffset: CGFloat = 0
   @State private var cardWidth: CGFloat = 320
@@ -518,6 +520,11 @@ struct TaskCardView: View {
         onEdit()
       } label: {
         Label("Edit", systemImage: "pencil")
+      }
+      Button {
+        onDuplicate()
+      } label: {
+        Label(String(localized: "task.duplicate"), systemImage: "doc.on.doc")
       }
       Button(role: .destructive) {
         showDeleteConfirm = true

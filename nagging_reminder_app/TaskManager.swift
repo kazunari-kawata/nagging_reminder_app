@@ -143,6 +143,17 @@ final class TaskManager {
     rescheduleAllNotifications()
   }
 
+  func duplicateTask(_ task: TaskItem) {
+    let copy = TaskItem(
+      name: task.name,
+      repeatSchedule: task.repeatSchedule,
+      nagIntervalMinutes: task.nagIntervalMinutes,
+      dueDate: task.dueDate
+    )
+    tasks.append(copy)
+    rescheduleAllNotifications()
+  }
+
   /// Inserts preset tasks the first time the user opens the app after onboarding.
   func insertDemoTasksIfNeeded() {
     guard !UserDefaults.standard.bool(forKey: "demoTasksInserted") else { return }
