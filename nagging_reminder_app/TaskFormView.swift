@@ -47,6 +47,7 @@ struct TaskFormView: View {
   @State private var dueDate: Date = Date().addingTimeInterval(3600)
   @State private var nagIntervalHours: Int = 0
   @State private var nagIntervalMins: Int = 5
+  @FocusState private var isNameFieldFocused: Bool
 
   private var nagIntervalMinutes: Int { max(1, nagIntervalHours * 60 + nagIntervalMins) }
   private let taskNameLimit = 50
@@ -79,6 +80,7 @@ struct TaskFormView: View {
         // Task Name
         Section {
           TextField("Task name", text: $taskName)
+            .focused($isNameFieldFocused)
             .onChange(of: taskName) { _, new in
               if new.count > taskNameLimit {
                 taskName = String(new.prefix(taskNameLimit))
@@ -205,12 +207,7 @@ struct TaskFormView: View {
       )
       .navigationBarTitleDisplayMode(.inline)
       .scrollDismissesKeyboard(.interactively)
-      .simultaneousGesture(
-        TapGesture().onEnded {
-          UIApplication.shared.sendAction(
-            #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
-      )
+      .onChange(of: scheduleType) { _, _ in isNameFieldFocused = false }
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
           Button("Cancel") { dismiss() }

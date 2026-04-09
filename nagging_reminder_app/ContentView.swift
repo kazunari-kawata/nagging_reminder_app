@@ -168,9 +168,12 @@ struct ContentView: View {
     }
   }
 
-  /// Tasks NOT applicable today (excludes completed-today tasks).
+  /// Tasks NOT applicable today, plus completed repeating tasks (whose next occurrence is tomorrow or later).
   private var notTodayTasks: [TaskItem] {
-    taskManager.tasks.filter { !taskManager.isApplicableToday($0) }
+    taskManager.tasks.filter { task in
+      !taskManager.isApplicableToday(task)
+        || (task.isCompleted && task.repeatSchedule.isRepeating)
+    }
   }
 
   /// Tasks with next occurrence tomorrow.
@@ -194,20 +197,16 @@ struct ContentView: View {
     }
   }
 
-  /// Tasks 8+ days away (sorted) + completed-today tasks.
+  /// Tasks 8+ days away (sorted).
   private var laterTasks: [TaskItem] {
     let cutoff = cal.date(byAdding: .day, value: 8, to: cal.startOfDay(for: currentTime))!
-    let completedToday = taskManager.tasks.filter {
-      taskManager.isApplicableToday($0) && $0.isCompleted
-    }
-    let later = notTodayTasks.filter { task in
+    return notTodayTasks.filter { task in
       guard let next = taskManager.nextOccurrenceDate(for: task) else { return true }
       return next >= cutoff
     }.sorted {
       (taskManager.nextOccurrenceDate(for: $0) ?? .distantFuture)
         < (taskManager.nextOccurrenceDate(for: $1) ?? .distantFuture)
     }
-    return completedToday + later
   }
 
   private var taskListSection: some View {
