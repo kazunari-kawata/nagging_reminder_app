@@ -447,13 +447,15 @@ final class TaskManager {
   }
 
   /// nagチェーンの起点日時を返す。
-  /// スケジュールが当日に適用される場合は当日の時刻（過去でも可）を使い、
-  /// 他のタスク追加でrescheduleされても当日分のnagが失われないようにする。
+  /// 設定時刻が現在時刻より未来の場合は当日の時刻を返す。
+  /// 設定時刻が過去の場合は次回発火日時を返し、即時nagの発火を防ぐ。
   private func nagChainBaseDate(for schedule: RepeatSchedule) -> Date? {
     guard let tod = schedule.timeOfDay else { return nil }
     let cal = Calendar.current
     let now = Date()
     let todayBase = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: now)!
+    // 設定時刻が現在時刻を過ぎている場合は次回発火日時をベースにする
+    guard todayBase > now else { return nextFireDate(for: schedule) }
     switch schedule {
     case .daily:
       return todayBase
