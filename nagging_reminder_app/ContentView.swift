@@ -60,10 +60,25 @@ struct ContentView: View {
         .environment(taskManager)
         .environment(purchaseManager)
     }
-    .sheet(item: $editingTask) { task in
-      TaskFormView(mode: .edit(task))
-        .environment(taskManager)
-        .environment(settings)
+    .fullScreenCover(item: $editingTask) { task in
+      TaskQuickEditView(
+        task: task,
+        onDelete: {
+          let snapshot = task
+          taskManager.deleteTask(id: task.id)
+          undoTask = snapshot
+          undoWorkItem?.cancel()
+          withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showUndo = true }
+          let work = DispatchWorkItem {
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showUndo = false }
+            undoTask = nil
+          }
+          undoWorkItem = work
+          DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: work)
+        }
+      )
+      .environment(taskManager)
+      .presentationBackground(.clear)
     }
     .sheet(isPresented: $showAdFreePromo) {
       AdFreeView()
