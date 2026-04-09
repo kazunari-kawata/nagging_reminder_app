@@ -183,16 +183,21 @@ struct ContentView: View {
     return currentTime > taskTime
   }
 
+  private func timeMinutes(_ task: TaskItem) -> Int {
+    guard let tod = task.repeatSchedule.timeOfDay else { return Int.max }
+    return tod.hour * 60 + tod.minute
+  }
+
   private var overdueTasksToday: [TaskItem] {
     uniqueTasks.filter {
       taskManager.isApplicableToday($0) && !$0.isCompleted && isOverdue($0)
-    }
+    }.sorted { timeMinutes($0) < timeMinutes($1) }
   }
 
   private var upcomingTasksToday: [TaskItem] {
     uniqueTasks.filter {
       taskManager.isApplicableToday($0) && !$0.isCompleted && !isOverdue($0)
-    }
+    }.sorted { timeMinutes($0) < timeMinutes($1) }
   }
 
   /// Tasks NOT applicable today, plus completed repeating tasks (whose next occurrence is tomorrow or later).
@@ -208,7 +213,7 @@ struct ContentView: View {
     notTodayTasks.filter { task in
       guard let next = taskManager.nextOccurrenceDate(for: task) else { return false }
       return cal.isDateInTomorrow(next)
-    }
+    }.sorted { timeMinutes($0) < timeMinutes($1) }
   }
 
   /// Tasks with next occurrence 2–7 days from now, sorted by date.
@@ -284,7 +289,7 @@ struct ContentView: View {
 
         // LATER
         if !laterTasks.isEmpty {
-          sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 4)
+          sectionHeader(String(localized: "LATER")).padding(.top, 4)
           ForEach(laterTasks) { task in
             taskCard(task)
           }
