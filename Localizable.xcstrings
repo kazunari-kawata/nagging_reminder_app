@@ -2190,28 +2190,6 @@
         }
       }
     },
-    "notification.nag.count" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "× %lld"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld回目"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld번째"
-          }
-        }
-      }
-    },
     "notification.action.done" : {
       "localizations" : {
         "en" : {
@@ -2252,6 +2230,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "+1시간 후"
+          }
+        }
+      }
+    },
+    "notification.nag.count" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "× %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld回目"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld번째"
           }
         }
       }
@@ -4429,6 +4429,7 @@
       }
     },
     "完了" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

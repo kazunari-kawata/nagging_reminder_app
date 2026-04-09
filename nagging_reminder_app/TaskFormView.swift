@@ -205,13 +205,13 @@ struct TaskFormView: View {
       )
       .navigationBarTitleDisplayMode(.inline)
       .scrollDismissesKeyboard(.interactively)
-      .toolbar {
-        ToolbarItem(placement: .keyboard) {
-          Button("完了") {
-            UIApplication.shared.sendAction(
-              #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-          }
+      .simultaneousGesture(
+        TapGesture().onEnded {
+          UIApplication.shared.sendAction(
+            #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+      )
+      .toolbar {
         ToolbarItem(placement: .cancellationAction) {
           Button("Cancel") { dismiss() }
         }
