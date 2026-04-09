@@ -19,20 +19,11 @@ enum ScheduleTypeSelection: String, CaseIterable, Identifiable {
   }
 }
 
-// MARK: - TaskFormMode
-
-enum TaskFormMode {
-  case add
-  case edit(TaskItem)
-}
-
 // MARK: - TaskFormView
 
 struct TaskFormView: View {
   @Environment(TaskManager.self) private var taskManager
   @Environment(\.dismiss) private var dismiss
-
-  let mode: TaskFormMode
 
   // Form state
   @State private var taskName: String = ""
@@ -47,15 +38,11 @@ struct TaskFormView: View {
   @State private var dueDate: Date = Date().addingTimeInterval(3600)
   @State private var nagIntervalHours: Int = 0
   @State private var nagIntervalMins: Int = 5
+  @FocusState private var isNameFieldFocused: Bool
 
   private var nagIntervalMinutes: Int { max(1, nagIntervalHours * 60 + nagIntervalMins) }
   private let taskNameLimit = 50
   private var isOverLimit: Bool { taskName.count > taskNameLimit }
-
-  private var isEditing: Bool {
-    if case .edit = mode { return true }
-    return false
-  }
 
   // Derived time binding for DatePicker
   private var timeDateBinding: Binding<Date> {
@@ -79,6 +66,7 @@ struct TaskFormView: View {
         // Task Name
         Section {
           TextField("Task name", text: $taskName)
+            .focused($isNameFieldFocused)
             .onChange(of: taskName) { _, new in
               if new.count > taskNameLimit {
                 taskName = String(new.prefix(taskNameLimit))
@@ -199,19 +187,11 @@ struct TaskFormView: View {
         }
 
       }
-      .navigationTitle(
-        isEditing
-          ? LocalizedStringResource("form.edit.task") : LocalizedStringResource("form.add.task")
-      )
+      .navigationTitle(LocalizedStringResource("form.add.task"))
       .navigationBarTitleDisplayMode(.inline)
       .scrollDismissesKeyboard(.interactively)
+      .onChange(of: scheduleType) { _, _ in isNameFieldFocused = false }
       .toolbar {
-        ToolbarItem(placement: .keyboard) {
-          Button("完了") {
-            UIApplication.shared.sendAction(
-              #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-          }
-        }
         ToolbarItem(placement: .cancellationAction) {
           Button("Cancel") { dismiss() }
         }
@@ -224,57 +204,9 @@ struct TaskFormView: View {
         }
       }
     }
-    .onAppear {
-      populateIfEditing()
-    }
   }
 
   // MARK: - Helpers
-
-  private func populateIfEditing() {
-    guard case .edit(let task) = mode else { return }
-    taskName = task.name
-    nagIntervalHours = task.nagIntervalMinutes / 60
-    nagIntervalMins = task.nagIntervalMinutes % 60
-
-    switch task.repeatSchedule {
-    case .once:
-      scheduleType = .once
-      if let due = task.dueDate {
-        hasDueDate = true
-        dueDate = due
-      }
-    case .daily(let time):
-      scheduleType = .daily
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    case .weekdays(let time):
-      scheduleType = .weekdays
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    case .selectedWeekdays(let weekdays, let time):
-      scheduleType = .customWeekdays
-      selectedWeekdays = Set(weekdays)
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    case .weekly(let weekday, let time):
-      scheduleType = .weekly
-      selectedWeekday = weekday
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    case .monthly(let day, let time):
-      scheduleType = .monthly
-      selectedDay = day
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    case .yearly(let month, let day, let time):
-      scheduleType = .yearly
-      selectedMonth = month
-      selectedDay = day
-      selectedHour = time.hour
-      selectedMinute = time.minute
-    }
-  }
 
   private func buildSchedule() -> RepeatSchedule {
     let time = TimeOfDay(hour: selectedHour, minute: selectedMinute)
@@ -294,16 +226,8 @@ struct TaskFormView: View {
     let trimmedName = taskName.trimmingCharacters(in: .whitespaces)
     let schedule = buildSchedule()
     let due: Date? = (scheduleType == .once && hasDueDate) ? dueDate : nil
-
-    switch mode {
-    case .add:
-      taskManager.addTask(
-        name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes, dueDate: due)
-    case .edit(let task):
-      taskManager.updateTask(
-        task, name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes,
-        dueDate: due)
-    }
+    taskManager.addTask(
+      name: trimmedName, schedule: schedule, nagIntervalMinutes: nagIntervalMinutes, dueDate: due)
   }
 
   private func weekdayName(_ weekday: Int) -> String {
