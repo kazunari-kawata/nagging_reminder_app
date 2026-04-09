@@ -482,8 +482,13 @@ final class TaskManager {
 
   /// Returns the next scheduled fire date for a task (used by UI for section grouping).
   /// For `.once` tasks the due date is used as the next occurrence.
+  /// For completed repeating tasks, skip today so the next occurrence is tomorrow or later.
   func nextOccurrenceDate(for task: TaskItem) -> Date? {
     if case .once = task.repeatSchedule { return task.dueDate }
+    if task.isCompleted {
+      let endOfToday = Calendar.current.startOfDay(for: Date()).addingTimeInterval(24 * 3600 - 1)
+      return nextFireDate(for: task.repeatSchedule, after: endOfToday)
+    }
     return nextFireDate(for: task.repeatSchedule)
   }
 

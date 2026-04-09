@@ -149,6 +149,18 @@ struct ContentView: View {
 
   private let cal = Calendar.current
 
+  /// Deduplicated task list — keeps the first occurrence for each (name, schedule) pair.
+  private var uniqueTasks: [TaskItem] {
+    var seen = Set<Int>()
+    return taskManager.tasks.filter { task in
+      var hasher = Hasher()
+      hasher.combine(task.name)
+      hasher.combine(task.repeatSchedule)
+      let key = hasher.finalize()
+      return seen.insert(key).inserted
+    }
+  }
+
   private func isOverdue(_ task: TaskItem) -> Bool {
     guard let tod = task.repeatSchedule.timeOfDay else { return false }
     let taskTime = cal.date(
@@ -157,20 +169,20 @@ struct ContentView: View {
   }
 
   private var overdueTasksToday: [TaskItem] {
-    taskManager.tasks.filter {
+    uniqueTasks.filter {
       taskManager.isApplicableToday($0) && !$0.isCompleted && isOverdue($0)
     }
   }
 
   private var upcomingTasksToday: [TaskItem] {
-    taskManager.tasks.filter {
+    uniqueTasks.filter {
       taskManager.isApplicableToday($0) && !$0.isCompleted && !isOverdue($0)
     }
   }
 
   /// Tasks NOT applicable today, plus completed repeating tasks (whose next occurrence is tomorrow or later).
   private var notTodayTasks: [TaskItem] {
-    taskManager.tasks.filter { task in
+    uniqueTasks.filter { task in
       !taskManager.isApplicableToday(task)
         || (task.isCompleted && task.repeatSchedule.isRepeating)
     }
