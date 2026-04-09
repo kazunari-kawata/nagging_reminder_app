@@ -179,10 +179,10 @@ struct TaskQuickEditView: View {
   /// Dynamic max-height ratio based on which picker is open.
   private var maxHeightRatio: CGFloat {
     let base: CGFloat = 0.4
-    if showDatePicker { return base + 0.25 }       // graphical calendar is tall
-    if showTimePicker { return base + 0.12 }        // wheel picker ~150pt
-    if showNagEditor { return base + 0.10 }         // two wheels ~120pt
-    if showScheduleEditor { return base + 0.08 }    // menu picker row
+    if showDatePicker { return base + 0.25 }  // graphical calendar is tall
+    if showTimePicker { return base + 0.12 }  // wheel picker ~150pt
+    if showNagEditor { return base + 0.10 }  // two wheels ~120pt
+    if showScheduleEditor { return base + 0.08 }  // menu picker row
     return base
   }
 
