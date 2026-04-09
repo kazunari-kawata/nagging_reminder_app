@@ -8,6 +8,7 @@ struct TaskItem: Identifiable, Equatable {
   var dueDate: Date?
   var isCompleted: Bool
   var lastCompletedDate: Date?
+  var nextDateOverride: Date?  // manual override for next occurrence date
   var pendingNotificationIDs: [String]
 
   init(
@@ -18,6 +19,7 @@ struct TaskItem: Identifiable, Equatable {
     dueDate: Date? = nil,
     isCompleted: Bool = false,
     lastCompletedDate: Date? = nil,
+    nextDateOverride: Date? = nil,
     pendingNotificationIDs: [String] = []
   ) {
     self.id = id
@@ -27,6 +29,7 @@ struct TaskItem: Identifiable, Equatable {
     self.dueDate = dueDate
     self.isCompleted = isCompleted
     self.lastCompletedDate = lastCompletedDate
+    self.nextDateOverride = nextDateOverride
     self.pendingNotificationIDs = pendingNotificationIDs
   }
 }
@@ -38,7 +41,7 @@ extension TaskItem: Codable {
     case id, name, repeatSchedule
     case nagIntervalMinutes
     case nagInterval  // legacy key (NagInterval enum, stored as Int rawValue in minutes)
-    case dueDate, isCompleted, lastCompletedDate, pendingNotificationIDs
+    case dueDate, isCompleted, lastCompletedDate, nextDateOverride, pendingNotificationIDs
     case isDaily  // legacy key
   }
 
@@ -51,6 +54,7 @@ extension TaskItem: Codable {
     try c.encodeIfPresent(dueDate, forKey: .dueDate)
     try c.encode(isCompleted, forKey: .isCompleted)
     try c.encodeIfPresent(lastCompletedDate, forKey: .lastCompletedDate)
+    try c.encodeIfPresent(nextDateOverride, forKey: .nextDateOverride)
     try c.encode(pendingNotificationIDs, forKey: .pendingNotificationIDs)
   }
 
@@ -82,6 +86,7 @@ extension TaskItem: Codable {
     dueDate = try c.decodeIfPresent(Date.self, forKey: .dueDate)
     isCompleted = try c.decode(Bool.self, forKey: .isCompleted)
     lastCompletedDate = try c.decodeIfPresent(Date.self, forKey: .lastCompletedDate)
+    nextDateOverride = try c.decodeIfPresent(Date.self, forKey: .nextDateOverride)
     pendingNotificationIDs =
       try c.decodeIfPresent([String].self, forKey: .pendingNotificationIDs) ?? []
   }

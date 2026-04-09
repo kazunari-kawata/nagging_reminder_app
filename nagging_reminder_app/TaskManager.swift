@@ -143,6 +143,17 @@ final class TaskManager {
     rescheduleAllNotifications()
   }
 
+  func duplicateTask(_ task: TaskItem) {
+    let copy = TaskItem(
+      name: task.name,
+      repeatSchedule: task.repeatSchedule,
+      nagIntervalMinutes: task.nagIntervalMinutes,
+      dueDate: task.dueDate
+    )
+    tasks.append(copy)
+    rescheduleAllNotifications()
+  }
+
   /// Inserts preset tasks the first time the user opens the app after onboarding.
   func insertDemoTasksIfNeeded() {
     guard !UserDefaults.standard.bool(forKey: "demoTasksInserted") else { return }
@@ -193,6 +204,7 @@ final class TaskManager {
     updated.dueDate = dueDate
     updated.isCompleted = false
     updated.lastCompletedDate = nil
+    updated.nextDateOverride = nil
     tasks[index] = updated  // single atomic replacement — triggers one UI update
     // Reschedule all tasks so the iOS 64-notification budget is rebalanced.
     rescheduleAllNotifications()
@@ -239,6 +251,7 @@ final class TaskManager {
     if task.repeatSchedule.isRepeating {
       tasks[index].isCompleted = true
       tasks[index].lastCompletedDate = Date()
+      tasks[index].nextDateOverride = nil
     } else {
       // Non-repeating: archive to history, then remove
       archive(tasks[index], reason: .completed)
@@ -266,6 +279,7 @@ final class TaskManager {
       guard shouldReset else { continue }
       tasks[index].isCompleted = false
       tasks[index].lastCompletedDate = nil
+      tasks[index].nextDateOverride = nil
       let ids = buildAndScheduleNotifications(for: tasks[index])
       tasks[index].pendingNotificationIDs = ids
     }
@@ -294,7 +308,7 @@ final class TaskManager {
       .removePendingNotificationRequests(withIdentifiers: task.pendingNotificationIDs)
   }
 
-  private func makeContent(for task: TaskItem, nagIndex: Int = 0) -> UNMutableNotificationContent {
+  private func makeContent(for task: TaskItem) -> UNMutableNotificationContent {
     let content = UNMutableNotificationContent()
     content.title = "Baddger"
     content.body = task.name
@@ -302,9 +316,6 @@ final class TaskManager {
     content.categoryIdentifier = "TASK_REMINDER"
     content.userInfo = ["taskID": task.id.uuidString]
     content.threadIdentifier = task.id.uuidString
-    if nagIndex > 0 {
-      content.subtitle = String(format: String(localized: "notification.nag.count"), nagIndex + 1)
-    }
     return content
   }
 
@@ -338,7 +349,7 @@ final class TaskManager {
           [.year, .month, .day, .hour, .minute], from: nagDate
         )
         let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
-        add(id: "\(base)_nag_\(i)", content: makeContent(for: task, nagIndex: i), trigger: trigger)
+        add(id: "\(base)_nag_\(i)", content: makeContent(for: task), trigger: trigger)
       }
     }
 
@@ -436,13 +447,15 @@ final class TaskManager {
   }
 
   /// nagチェーンの起点日時を返す。
-  /// スケジュールが当日に適用される場合は当日の時刻（過去でも可）を使い、
-  /// 他のタスク追加でrescheduleされても当日分のnagが失われないようにする。
+  /// 設定時刻が現在時刻より未来の場合は当日の時刻を返す。
+  /// 設定時刻が過去の場合は次回発火日時を返し、即時nagの発火を防ぐ。
   private func nagChainBaseDate(for schedule: RepeatSchedule) -> Date? {
     guard let tod = schedule.timeOfDay else { return nil }
     let cal = Calendar.current
     let now = Date()
     let todayBase = cal.date(bySettingHour: tod.hour, minute: tod.minute, second: 0, of: now)!
+    // 設定時刻が現在時刻を過ぎている場合は次回発火日時をベースにする
+    guard todayBase > now else { return nextFireDate(for: schedule) }
     switch schedule {
     case .daily:
       return todayBase
@@ -469,9 +482,25 @@ final class TaskManager {
 
   /// Returns the next scheduled fire date for a task (used by UI for section grouping).
   /// For `.once` tasks the due date is used as the next occurrence.
+  /// For completed repeating tasks, skip today so the next occurrence is tomorrow or later.
   func nextOccurrenceDate(for task: TaskItem) -> Date? {
     if case .once = task.repeatSchedule { return task.dueDate }
+    if let override = task.nextDateOverride { return override }
+    if task.isCompleted {
+      let endOfToday = Calendar.current.startOfDay(for: Date()).addingTimeInterval(24 * 3600 - 1)
+      return nextFireDate(for: task.repeatSchedule, after: endOfToday)
+    }
     return nextFireDate(for: task.repeatSchedule)
+  }
+
+  /// Manually override the next occurrence date (e.g. to undo accidental completion).
+  func overrideNextDate(for taskID: UUID, date: Date) {
+    guard let index = tasks.firstIndex(where: { $0.id == taskID }) else { return }
+    cancelNotifications(for: tasks[index])
+    tasks[index].nextDateOverride = date
+    tasks[index].isCompleted = false
+    tasks[index].lastCompletedDate = nil
+    rescheduleAllNotifications()
   }
 
   /// Returns true if this task's schedule applies to today's calendar date.
