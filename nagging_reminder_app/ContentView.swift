@@ -110,11 +110,11 @@ struct ContentView: View {
         Image("HeaderIcon")
           .resizable()
           .scaledToFit()
-          .frame(width: 44, height: 44)
+          .frame(width: 36, height: 36)
           .clipShape(Circle())
           .padding(.trailing, 6)
         Text(LocalizedStringResource("tab.tasks"))
-          .font(.largeTitle.bold())
+          .font(.title.bold())
           .tracking(-0.5)
         Spacer()
         Button {
@@ -139,8 +139,8 @@ struct ContentView: View {
         }
       }
       .padding(.horizontal, 24)
-      .padding(.top, 12)
-      .padding(.bottom, 16)
+      .padding(.top, 8)
+      .padding(.bottom, 10)
     }
     .background(Color(.systemBackground))
   }
@@ -211,20 +211,20 @@ struct ContentView: View {
 
   private var taskListSection: some View {
     ScrollView {
-      LazyVStack(spacing: 12) {
+      LazyVStack(spacing: 8) {
 
         // OVERDUE
         if !overdueTasksToday.isEmpty {
           sectionHeader(String(localized: "OVERDUE"), accent: .red)
           ForEach(overdueTasksToday) { task in
-            taskCard(task, badge: task.repeatSchedule.shortLabel)
+            taskCard(task)
           }
         }
 
         // TODAY
         if !upcomingTasksToday.isEmpty || overdueTasksToday.isEmpty {
           sectionHeader(String(localized: "TODAY"), accent: .blue).padding(
-            .top, overdueTasksToday.isEmpty ? 0 : 8)
+            .top, overdueTasksToday.isEmpty ? 0 : 4)
           if upcomingTasksToday.isEmpty {
             Text(LocalizedStringResource("message.all.done"))
               .font(.subheadline)
@@ -234,45 +234,44 @@ struct ContentView: View {
               .padding(.bottom, 4)
           } else {
             ForEach(upcomingTasksToday) { task in
-              taskCard(task, badge: task.repeatSchedule.shortLabel)
+              taskCard(task)
             }
           }
         }
 
         // TOMORROW
         if !tomorrowTasks.isEmpty {
-          sectionHeader(String(localized: "TOMORROW")).padding(.top, 8)
+          sectionHeader(String(localized: "TOMORROW")).padding(.top, 4)
           ForEach(tomorrowTasks) { task in
-            taskCard(task, badge: String(localized: "TOMORROW"))
+            taskCard(task)
           }
         }
 
         // THIS WEEK
         if !thisWeekTasks.isEmpty {
-          sectionHeader(String(localized: "THIS WEEK")).padding(.top, 8)
+          sectionHeader(String(localized: "THIS WEEK")).padding(.top, 4)
           ForEach(thisWeekTasks) { task in
-            taskCard(task, badge: dateLabel(for: task))
+            taskCard(task)
           }
         }
 
         // LATER
         if !laterTasks.isEmpty {
-          sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 8)
+          sectionHeader(String(localized: "LATER"), accent: Color(.systemGray)).padding(.top, 4)
           ForEach(laterTasks) { task in
-            taskCard(task, badge: dateLabel(for: task))
+            taskCard(task)
           }
         }
       }
       .padding(.horizontal, 24)
-      .padding(.top, 16)
-      .padding(.bottom, 100)
+      .padding(.top, 8)
+      .padding(.bottom, 80)
     }
   }
 
-  private func taskCard(_ task: TaskItem, badge: String) -> some View {
+  private func taskCard(_ task: TaskItem) -> some View {
     TaskCardView(
       task: task,
-      badgeLabel: badge,
       onComplete: {
         taskManager.completeTask(task)
         if !purchaseManager.isAdFree { interstitialAdManager.showIfReady() }
@@ -324,7 +323,7 @@ struct ContentView: View {
   private func sectionHeader(_ title: String, accent: Color? = nil) -> some View {
     HStack {
       Text(title)
-        .font(.system(size: 11, weight: .semibold))
+        .font(.system(size: 14, weight: .semibold))
         .foregroundStyle(accent ?? Color(.systemGray))
         .tracking(1)
         .padding(.horizontal, accent != nil ? 8 : 0)
@@ -335,30 +334,8 @@ struct ContentView: View {
         )
       Spacer()
     }
-    .padding(.leading, 4)
-    .padding(.bottom, 4)
-  }
-
-  /// Badge label showing the next occurrence date.
-  /// ja: "5月10日（日）", ko: "5월10일（일）", others: "WED 12 MAR"
-  private func dateLabel(for task: TaskItem) -> String {
-    guard let next = taskManager.nextOccurrenceDate(for: task) else {
-      return task.repeatSchedule.shortLabel
-    }
-    let fmt = DateFormatter()
-    let langCode = Locale.current.language.languageCode?.identifier ?? ""
-    switch langCode {
-    case "ja":
-      fmt.locale = Locale(identifier: "ja_JP")
-      fmt.dateFormat = "M月d日（E）"
-    case "ko":
-      fmt.locale = Locale(identifier: "ko_KR")
-      fmt.dateFormat = "M월d일（E）"
-    default:
-      fmt.dateFormat = "EEE d MMM"
-      return fmt.string(from: next).uppercased()
-    }
-    return fmt.string(from: next)
+    .padding(.leading, 2)
+    .padding(.bottom, 2)
   }
 
   // MARK: - Bottom Tab Bar
@@ -374,7 +351,7 @@ struct ContentView: View {
       Spacer()
     }
     .padding(.horizontal, 32)
-    .padding(.top, 24)
+    .padding(.top, 14)
     .background(
       Color(.systemBackground)
         .ignoresSafeArea()
@@ -405,7 +382,6 @@ struct ContentView: View {
 
 struct TaskCardView: View {
   let task: TaskItem
-  let badgeLabel: String
   let onComplete: () -> Void
   let onDelete: () -> Void
   let onEdit: () -> Void
@@ -542,30 +518,20 @@ struct TaskCardView: View {
 
   private var cardContent: some View {
     HStack(spacing: 12) {
-      // Task name + schedule subtitle
-      VStack(alignment: .leading, spacing: 3) {
-        Text(task.name)
-          .font(.system(size: 16, weight: .medium))
-          .foregroundStyle(Color(.label))
-
-        Text(scheduleSubtitle)
-          .font(.system(size: 12))
-          .foregroundStyle(Color(.systemGray))
-      }
+      Text(task.name)
+        .font(.system(size: 15, weight: .medium))
+        .foregroundStyle(Color(.label))
+        .lineLimit(1)
 
       Spacer()
 
-      // Badge
-      Text(badgeLabel)
-        .font(.system(size: 10, weight: .bold))
-        .tracking(0.5)
-        .foregroundStyle(badgeForeground)
-        .padding(.horizontal, 10)
-        .padding(.vertical, 4)
-        .background(badgeBackground)
-        .clipShape(Capsule())
+      Text(scheduleSubtitle)
+        .font(.system(size: 12))
+        .foregroundStyle(Color(.systemGray))
+        .lineLimit(1)
     }
-    .padding(16)
+    .padding(.horizontal, 16)
+    .padding(.vertical, 16)
     .background(Color(.secondarySystemBackground))
     .clipShape(RoundedRectangle(cornerRadius: 16))
     .overlay(
@@ -575,13 +541,6 @@ struct TaskCardView: View {
     .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
   }
 
-  private var badgeForeground: Color {
-    task.repeatSchedule.isRepeating ? .blue : Color(.systemGray)
-  }
-
-  private var badgeBackground: Color {
-    task.repeatSchedule.isRepeating ? Color.blue.opacity(0.1) : Color(.systemGray6)
-  }
 }
 
 #Preview {
