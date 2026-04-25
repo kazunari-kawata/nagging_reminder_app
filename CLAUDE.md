@@ -17,15 +17,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Edit the variables at the top of `build.sh` if your simulator name differs from `iPhone 17 Pro`. Verify with `xcrun simctl list devices`. Derived data is written to `./build/` (committed; safe to delete).
 
-Tests use Swift Testing (`import Testing`, `@Test`, `#expect`), not XCTest. The current test target (`nagging_reminder_appTests/`) only has a placeholder. Run via Xcode (`⌘U`) or:
+Tests use Swift Testing (`import Testing`, `@Test`, `#expect`), not XCTest. Suites cover Codable round-trip (`RepeatScheduleTests`), legacy-key migration (`TaskItemMigrationTests`), and the IAP error model (`PurchaseErrorTests`); shared tags (`.codable`, `.migration`, `.purchases`) live in `TestTags.swift`. The test target uses an Xcode synchronized folder group, so any new `.swift` file dropped into `nagging_reminder_appTests/` is auto-included — no `.pbxproj` edit needed. Run via Xcode (`⌘U`) or:
 
 ```bash
 xcodebuild test -scheme nagging_reminder_app \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
   -derivedDataPath ./build
-# Single test:
-xcodebuild test ... -only-testing:nagging_reminder_appTests/nagging_reminder_appTests/example
+# Single suite:
+xcodebuild test ... -only-testing:nagging_reminder_appTests/RepeatScheduleTests
+# By tag (e.g. all migration tests):
+xcodebuild test ... -only-test-tag:migration
 ```
+
+New suites should stay pure-data — `TaskManager` and the other managers touch `UserDefaults.standard` and `UNUserNotificationCenter.current()` in their initializers, so testing them parallel-safe needs DI (not yet wired up).
 
 There is no separate lint step — Xcode's compiler warnings are the bar.
 
