@@ -73,9 +73,11 @@ struct TaskFormView: View {
               }
             }
           if isOverLimit {
-            Text("\(taskNameLimit)文字以内にしてください")
-              .font(.caption)
-              .foregroundStyle(.red)
+            Text(
+              String(format: String(localized: "Must be %lld characters or fewer"), taskNameLimit)
+            )
+            .font(.caption)
+            .foregroundStyle(.red)
           }
           HStack {
             Spacer()
